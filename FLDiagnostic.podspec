@@ -10,12 +10,9 @@ Pod::Spec.new do |s|
   s.platform            = :ios, "10.0"
   s.source = { :git => "https://github.com/blinovarcsinus/FLDiagnostic.git", 
              :tag => "#{s.version}" }
-  s.source_files        = "FLDiagnostic"
+  s.source_files        = "FLDiagnostic", "FLDiagnostic/**/*.{h,m,swift}"
   s.swift_version       = "5.0"
 
-  s.dependency 'SwiftLint', '~> 0.30.1'
-  s.dependency 'Fabric', '~> 1.9.0'
-  s.dependency 'Crashlytics', '~> 3.12.0'
   s.dependency 'SnapKit', '~> 5.0.0'
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
@@ -27,5 +24,5 @@ Pod::Spec.new do |s|
   s.dependency 'RxDataSources', '~> 4.0'
   s.dependency 'RxAppState', '~> 1.6.0'
   s.dependency 'Mute', '~> 0.5'
-
+  s.dependency 'SVProgressHUD'
 end
