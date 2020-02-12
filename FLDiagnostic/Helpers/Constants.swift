@@ -23,5 +23,4 @@ struct Constant {
   }
 
   static let testsCount = 13
-  static let faceIdAutentificationString = "Biometric Authntication testing"
 }

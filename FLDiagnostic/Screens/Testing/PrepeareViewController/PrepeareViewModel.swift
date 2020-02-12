@@ -57,7 +57,13 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
          }
        }).disposed(by: disposeBag)
   }
-  
+
+  private func showColorPickController() {
+    let viewModel = DeviceColorViewModel()
+    guard let viewController = DeviceColorViewController.create(viewModel) else { return }
+    showViewController.onNext(viewController)
+  }
+
   private func getActiveSesion() {
     APIService.shared.getActiveDiagnostic().subscribe(onNext: { (result) in
       switch result {

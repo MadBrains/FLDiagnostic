@@ -36,6 +36,7 @@ class Test: Codable {
   var canBeFailed: Bool
   var infoNeeded: Bool { return !(information?.isEmpty ?? true) }
   var isPassed: Bool?
+  var timeSpent: Int?
   
   init() {
     self.id = ""
@@ -62,6 +63,7 @@ class Question: Codable {
   
   var isPassed: Bool?
   var answer: String?
-  
+  var timeSpent: Int?
+
   var infoNeeded: Bool { return !(information?.isEmpty ?? true) }
 }

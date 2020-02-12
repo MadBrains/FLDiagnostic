@@ -27,9 +27,11 @@ class GradeViewController: BaseViewController {
     model.gradeImage.bind(to: gradeImageView.rx.image).disposed(by: disposeBag)
     model.gradeTitle.bind(to: gradeTitleLabel.rx.text).disposed(by: disposeBag)
     model.gradeTitleColor.bind(to: gradeTitleLabel.rx.textColor).disposed(by: disposeBag)
+    model.recalsculateHidden.bind(to: recalculateButton.rx.isHidden).disposed(by: disposeBag)
     
     endTestButton.rx.tap.bind(to: model.endTestingButtonPressed).disposed(by: disposeBag)
     recalculateButton.rx.tap.bind(to: model.recalculateButtonPressed).disposed(by: disposeBag)
+    
   }
   
   private func setupStyle() {

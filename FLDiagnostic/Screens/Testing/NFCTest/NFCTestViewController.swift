@@ -39,7 +39,8 @@ class NFCTestViewController: BaseViewController {
 
     dontWorkingButton.rx.tap
       .subscribe(onNext: {
-        self.viewModel.testFailed()
+        self.viewModel.test.isPassed = false
+        self.viewModel.notWorkingDiagnostic()
       })
       .disposed(by: disposeBag)
 
@@ -61,7 +62,7 @@ class NFCTestViewController: BaseViewController {
     DispatchQueue.main.async {
       self.testCompletedView.isHidden = false
     }
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [viewModel] in
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
       viewModel?.startNextTest()
     }
   }
@@ -84,7 +85,7 @@ class NFCTestViewController: BaseViewController {
     bringPhoneToRFIDAttributedString.append(rfidIconString)
     bringPhoneToRFIDLabel.attributedText = bringPhoneToRFIDAttributedString
 
-    setDefaultNavigationBar(page: viewModel.page, infoHidden: viewModel.test.infoNeeded)
+    setDefaultNavigationBar(page: viewModel.page, info: viewModel.test.information)
   }
 }
 @available(iOS 11.0, *)

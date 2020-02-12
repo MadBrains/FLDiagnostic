@@ -36,3 +36,16 @@ class ShadowedView: RoundedView {
         }
     }
 }
+@IBDesignable
+class BorderedView: RoundedView {
+  @IBInspectable var borderWidth: CGFloat = 0.0 {
+      didSet {
+        layer.borderWidth = borderWidth
+      }
+  }
+  @IBInspectable var borderColor: UIColor = .clear {
+      didSet {
+        layer.borderColor = borderColor.cgColor
+      }
+  }
+}

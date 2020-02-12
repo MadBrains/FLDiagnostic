@@ -10,18 +10,22 @@ import UIKit
 import Alamofire
 
 class DiagnosticService {
-  
+  typealias TestingEndedWithGrade = (_ grade: String?, _ error: String?) -> Void
   static let shared = DiagnosticService()
   
   var id: String?
   var imei: String = ""
   var tests: [Test] { return diagnostic?.device.model?.tests ?? [] }
   var questions: [Question] { return diagnostic?.device.model?.questions ?? [] }
-  var allPages: Int { return tests.count + questions.count }
+  var allPages: Int { return testControllers.count }
+  var testEndDate = Date()
   var testDate = Date()
   var testControllers = [UIViewController]()
   var batteryLevelOnStart: Int = 0
-
+  var questionsResetCount: Int = 0
+  
+  var onGetGrade: TestingEndedWithGrade?
+  
   private var currentPage: Int = 0
   private var diagnostic: DiagnosticResponse?
 
@@ -34,12 +38,17 @@ class DiagnosticService {
     self.diagnostic = diagnostic
     currentPage = 0
     batteryLevelOnStart = DeviceService.batteryLevel
-    testDate = Date()
+    resetTimer()
     createControllersStack()
   }
 
+  func resetTimer() {
+    testEndDate = Date().addMinutes(minutes: 20)
+    testDate = Date()
+  }
+
   func getNextTestViewController() -> UIViewController? {
-    if currentPage - 1 <= tests.count {
+    if currentPage <= testControllers.count - 1 {
       let viewController = testControllers[currentPage]
       currentPage += 1
       return viewController
@@ -49,16 +58,22 @@ class DiagnosticService {
 
   //swiftlint:disable cyclomatic_complexity
 
-
   private func createControllersStack() {
-    var controllers = [UIViewController]()
     var page = 0
+    let model = DeviceColorViewModel()
+    var controllers = [UIViewController]()
+    if let controller = DeviceColorViewController.create(model) {
+      controllers.append(controller)
+    }
 
     for test in tests {
       page += 1
       print(page)
       print(test.code)
       switch test.code {
+      case "bind_accounts":
+        page -= 1
+        test.isPassed = true
       case "bluetooth":
         let viewModel = BluetoothTestViewModel(test, page: page)
         guard let viewController = BluetoothTestViewController.create(viewModel) else { continue }
@@ -152,16 +167,23 @@ class DiagnosticService {
 
     for question in questions {
       page += 1
-      if question.type == "general" {
+      switch question.type {
+      case "general":
         let viewModel = BinaryQuestionViewModel(question, page)
         guard let viewController = BinarQuestionViewController.create(viewModel) else { continue }
         controllers.append(viewController)
-      } else if question.type == "number_from_interval" {
+      case "number_from_interval":
         let viewModel = TextQuestionViewModel(question, page)
         guard let viewController = TextQuestionViewController.create(viewModel) else { continue }
         controllers.append(viewController)
+      default:
+        break
       }
 
+    }
+    let viewModel = ResetQuestionsViewModel(isResetting: false)
+    if let viewController = ResetQuestionsViewController.create(viewModel) {
+      controllers.append(viewController)
     }
 
     self.testControllers = controllers
@@ -171,7 +193,8 @@ class DiagnosticService {
     var results = [Parameters]()
 
     for test in tests {
-      let result: Parameters = ["testId": test.id, "isPassed": test.isPassed == nil ? NSNull() : test.isPassed, "timeSpent": 0]
+      print(test.timeSpent)
+      let result: Parameters = ["testId": test.id, "isPassed": test.isPassed == nil ? NSNull() : test.isPassed, "timeSpent": test.timeSpent == nil ? NSNull() : test.timeSpent]
       results.append(result)
     }
     return results
@@ -181,15 +204,21 @@ class DiagnosticService {
     var results = [Parameters]()
 
     for question in questions {
-      if question.type == "number_from_interval" {
-        let result: Parameters = ["questionId": question.id, "answer": question.isPassed == nil ? NSNull() : question.isPassed]
+      if question.type == "general" {
+        let result: Parameters = ["questionId": question.id, "answer": question.isPassed == nil ? NSNull() : question.isPassed, "timeSpent": question.timeSpent == nil ? NSNull() : question.timeSpent]
         results.append(result)
-      } else if question.type == "general" {
-        let result: Parameters = ["questionId": question.id, "answer": question.answer == nil ? NSNull() : question.answer]
+      } else if question.type == "number_from_interval" {
+        let result: Parameters = ["questionId": question.id, "answer": question.answer == nil ? NSNull() : question.answer, "timeSpent": question.timeSpent == nil ? NSNull() : question.timeSpent]
         results.append(result)
       }
     }
     return results
+  }
+  
+  func calculateSpentTime() -> Int {
+    let testTime = testDate
+    testDate = Date()
+    return Int(Date().timeIntervalSince(testTime))
   }
   //front_camera
 }

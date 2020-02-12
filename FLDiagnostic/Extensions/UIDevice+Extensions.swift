@@ -20,8 +20,8 @@ public extension UIDevice {
             }
         }
         var modelMap : [ String : Model ] = [
-            "i386"       : .simulator,
-            "x86_64"     : .simulator,
+            "i386"       : .iPhone5,
+            "x86_64"     : .iPhone5,
             "iPod1,1"    : .iPod1,
             "iPod2,1"    : .iPod2,
             "iPod3,1"    : .iPod3,

@@ -32,7 +32,7 @@ class BinarQuestionViewController: BaseViewController {
   }
   
   private func setupStyle() {
-    setDefaultNavigationBar(page: model.page, infoHidden: model.question.infoNeeded)
+    setDefaultNavigationBar(page: model.page, info: model.question.information)
   }
 
 }

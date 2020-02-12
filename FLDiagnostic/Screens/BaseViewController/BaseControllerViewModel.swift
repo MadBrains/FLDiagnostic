@@ -15,9 +15,10 @@ class BaseControllerViewModel: NSObject {
   let presentViewController = PublishSubject<UIViewController>()
   var showViewController = PublishSubject<UIViewController>()
   var openURL = PublishSubject<URL>()
-  var showError = PublishSubject<String>()
+  var showError = PublishSubject<(message: String, action: ((UIAlertAction) -> Void)?)>()
+  var modalAlert = PublishSubject<UIViewController>()
   var isLoading = ActivityIndicator()
-  
+  var dismissNavigation = PublishSubject<Void>()
   private var disposeBag = DisposeBag()
   
   override init() {
@@ -40,10 +41,26 @@ class BaseControllerViewModel: NSObject {
   
   func abortDiagnostik() {
     let alertController = UIAlertController(title: "Прервать тест", message: "Устройство не получит грейд.\nВы действительно хотите \nпрервать тест?", preferredStyle: .alert)
-    let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+    alertController.view.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    let cancelAction = UIAlertAction(title: "Отмена", style: .destructive, handler: nil)
     alertController.addAction(cancelAction)
     
-    let abortAction = UIAlertAction(title: "Прервать", style: .destructive) { (_) in
+    let abortAction = UIAlertAction(title: "Прервать", style: .default) { (_) in
+      self.saveDiagnostics()
+    }
+    alertController.addAction(abortAction)
+
+    presentViewController.onNext(alertController)
+  }
+
+  func notWorkingDiagnostic() {
+    let alertController = UIAlertController(title: "Предупреждение", message:
+    "Устройству будет присвоен ценовой рейтинг \"Не может быть выкуплен\". Вы действительно хотите продолжить?", preferredStyle: .alert)
+    alertController.view.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+    alertController.addAction(cancelAction)
+
+    let abortAction = UIAlertAction(title: "Продолжить", style: .destructive) { (_) in
       self.saveDiagnostics()
     }
     alertController.addAction(abortAction)
@@ -62,6 +79,7 @@ class BaseControllerViewModel: NSObject {
       case .success(let response):
         self.getGrade()
       case .failure(let error):
+        self.showError.onNext((error.localizedDescription, nil))
         break;
       }
     }).disposed(by: disposeBag)
@@ -74,13 +92,14 @@ class BaseControllerViewModel: NSObject {
       case .success(let response):
         self.showGradeViewController(response)
       case .failure(let error):
+        self.showError.onNext((error.localizedDescription, nil))
         break;
       }
       }).disposed(by: disposeBag)
   }
   
   private func showGradeViewController(_ response: ResultResponse) {
-    let viewModel = GradeViewModel(grade: response.diagnostic.results?.first?.grade ?? "A")
+    let viewModel = GradeViewModel(grade: response.diagnostic.results?.last?.grade ?? "A")
     guard let viewController = GradeViewController.create(viewModel) else { return }
     showViewController.onNext(viewController)
   }

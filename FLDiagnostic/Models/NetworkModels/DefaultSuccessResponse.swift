@@ -9,5 +9,5 @@
 import Foundation
 
 class DefaultSuccessResponse: Codable {
-  var status: String
+  var status: String?
 }

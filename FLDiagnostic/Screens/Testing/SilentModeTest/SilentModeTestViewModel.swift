@@ -13,6 +13,7 @@ import RxSwift
 class SilentModeTestViewModel: BaseControllerViewModel {
   var test: Test
   var page: Int
+  var isMute: Bool?
 
   init(_ test: Test, page: Int) {
     self.test = test
@@ -21,17 +22,19 @@ class SilentModeTestViewModel: BaseControllerViewModel {
   }
   let disposeBag = DisposeBag()
   var completed: Bool = false
-  var startSilentModeState = false
 
   func startVolumeOffTest() -> Observable<Void> {
     let volume = PublishSubject<Void>()
 
-    Mute.shared.checkInterval = 1
+    Mute.shared.checkInterval = 0
     Mute.shared.alwaysNotify = true
-    startSilentModeState = Mute.shared.isMute
     Mute.shared.notify = { mute in
-      if mute == self.startSilentModeState {
+      if self.isMute == nil {
+        self.isMute = mute
+      } else if self.isMute != mute {
+        self.isMute = mute
         volume.onNext(())
+        Mute.shared.isPaused = true
       }
     }
     return volume
@@ -46,6 +49,7 @@ class SilentModeTestViewModel: BaseControllerViewModel {
     if completed == true { return }
     completed = true
     
+    test.timeSpent = DiagnosticService.shared.calculateSpentTime()
     test.isPassed = true
     showNextTestViewController()
   }

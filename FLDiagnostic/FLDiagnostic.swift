@@ -10,9 +10,15 @@ import UIKit
 import RxSwift
 
 public class FLDiagnostic {
+  public typealias GradeBlock = (_ grade: String?, _ error: String?) -> Void
   
-  public static func startTesting(_ diagnosticId: String, _ imei: String) {
+  public static func startTesting(_ diagnosticId: String, _ imei: String, finalGrade: GradeBlock? = nil) {
+    
     DiagnosticService.shared.setCurrentDiagnostikID(diagnosticId, imei)
+    
+    DiagnosticService.shared.onGetGrade = { (grade: String?, error: String?) -> Void in
+      finalGrade?(grade, error)
+    }
     
     if var topController = UIApplication.shared.keyWindow?.rootViewController {
         while let presentedViewController = topController.presentedViewController {
@@ -31,6 +37,8 @@ public class FLDiagnostic {
           ]
       topController.present(navigationController, animated: true, completion: nil)
     }
+    
+    
   }
   
   

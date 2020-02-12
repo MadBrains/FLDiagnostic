@@ -19,15 +19,19 @@ class DeviceService {
   static var deviceModel: String {
     return UIDevice.current.type.rawValue
   }
-  static var batteryLevel: Int { Int(UIDevice.current.batteryLevel * 100.0) }
+  static var batteryLevel: Int {
+    UIDevice.current.isBatteryMonitoringEnabled = true
+    return Int(UIDevice.current.batteryLevel * 100)
+  }
   static var osVersion: String { UIDevice.current.systemVersion }
   
   static var totalDiskSpaceInGB: Int {
-    return Int(Float(ByteCountFormatter.string(fromByteCount: totalDiskSpaceInBytes, countStyle: ByteCountFormatter.CountStyle.decimal).filter("0123456789.".contains)) ?? 0.0)
+    let gb = ByteCountFormatter.string(fromByteCount: totalDiskSpaceInBytes, countStyle: ByteCountFormatter.CountStyle.decimal).filter("0123456789.,".contains).replacingOccurrences(of: ",", with: ".")
+    return Int(Double(gb)?.rounded() ?? 0)
   }
   
   static var diskSpaceGB: String {
-    return ByteCountFormatter.string(fromByteCount: totalDiskSpaceInBytes, countStyle: ByteCountFormatter.CountStyle.decimal)
+    return "\(totalDiskSpaceInGB) GB"
   }
   
   static var modelNumber: String {

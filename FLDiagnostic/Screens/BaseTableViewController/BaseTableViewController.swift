@@ -25,8 +25,8 @@ class BaseTableViewController: BaseViewController {
       .disposed(by: disposeBag)
     
     structureViewModel.tableViewOutput.cellModels.asObservable()
-      .bind(to: tableView.rx.items) { tableView, _, model in
-        self.registerNib(self.tableView, cellName: model.cellIdentifier)
+      .bind(to: tableView.rx.items) { [unowned self] tableView, _, model in
+        self.registerNib(tableView, cellName: model.cellIdentifier)
         if let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier) as? BaseTableViewCell {
           cell.configureCell(model)
           return cell
@@ -55,9 +55,8 @@ class BaseTableViewController: BaseViewController {
   }
     
   func registerNib(_ tableView: UITableView, cellName: String) {
-    tableView.register(UINib(nibName: cellName, bundle: Bundle.main), forCellReuseIdentifier: cellName)
+    tableView.register(UINib(nibName: cellName, bundle: Bundle(for: FLDiagnostic.self)), forCellReuseIdentifier: cellName)
   }
-  
 }
 
 extension BaseTableViewController: UITableViewDelegate {

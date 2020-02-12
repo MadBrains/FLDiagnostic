@@ -22,6 +22,7 @@ class MoistureUnderGlassTestViewModel: BaseControllerViewModel {
   }
 
   func startNextTest() {
+    test.timeSpent = DiagnosticService.shared.calculateSpentTime()
     test.isPassed = true
     showNextTestViewController()
   }

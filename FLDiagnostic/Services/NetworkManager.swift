@@ -8,15 +8,25 @@
 
 import Foundation
 import Reachability
+import RxSwift
+import RxCocoa
+import Alamofire
 
 class NetworkManager: NSObject {
+  typealias Status = Alamofire.NetworkReachabilityManager.NetworkReachabilityStatus
+
   var reachability: Reachability!
 
   static let shared: NetworkManager = { return NetworkManager() }()
+  
+  private let manager = Alamofire.NetworkReachabilityManager(host: "apple.com")
+  private(set) var status = BehaviorRelay<Status>(value: .notReachable)
 
   override init() {
       super.init()
-
+      manager?.listener = { self.status.accept($0) }
+      manager?.startListening()
+    
       reachability = Reachability()!
 
       // Register an observer for the network status

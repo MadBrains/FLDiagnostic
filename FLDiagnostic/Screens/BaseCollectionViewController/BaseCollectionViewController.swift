@@ -45,7 +45,7 @@ class BaseCollectionViewController: BaseViewController {
   }
     
   func registerNib(_ collectionView: UICollectionView, cellName: String) {
-    collectionView.register(UINib(nibName: cellName, bundle: Bundle.main), forCellWithReuseIdentifier: cellName)
+    collectionView.register(UINib(nibName: cellName, bundle: Bundle(for: FLDiagnostic.self)), forCellWithReuseIdentifier: cellName)
   }
   
 }

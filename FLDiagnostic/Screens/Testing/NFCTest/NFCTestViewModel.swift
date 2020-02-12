@@ -34,10 +34,12 @@ class NFCTestViewModel: BaseControllerViewModel {
   }
 
   func testFailed() {
-    print("NFC test failed!")
+    test.isPassed = false
+    abortDiagnostik()
   }
 
   func startNextTest(isSafeArea: Bool = false) {
+    test.isPassed = true
     showNextTestViewController()
   }
 }

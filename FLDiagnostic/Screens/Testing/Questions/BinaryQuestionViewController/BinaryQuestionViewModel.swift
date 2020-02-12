@@ -32,6 +32,7 @@ class BinaryQuestionViewModel: BaseControllerViewModel {
     desctiptionText.onNext(question.secondaryText)
     
     yesButtonPressed.asObserver().subscribe(onNext: { [unowned self]() in
+      self.question.timeSpent = DiagnosticService.shared.calculateSpentTime()
       self.question.isPassed = true
       self.showNextViewController()
     }).disposed(by: disposeBag)

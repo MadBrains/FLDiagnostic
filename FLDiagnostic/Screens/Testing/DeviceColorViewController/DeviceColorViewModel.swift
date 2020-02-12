@@ -9,14 +9,6 @@
 import RxSwift
 
 class DeviceColorViewModel: BaseCollectionViewViewModel {
-  var test: Test
-  var page: Int
-
-  init(_ test: Test, page: Int) {
-    self.test = test
-    self.page = page
-    super.init()
-  }
   
   var nextButtonTitle = BehaviorSubject<String>(value: "Цвет не выбран")
   var nextButtonEnabled = BehaviorSubject<Bool>(value: false)
@@ -32,7 +24,19 @@ class DeviceColorViewModel: BaseCollectionViewViewModel {
     self.nextButtonPressed.asObserver()
       .filter({ self.selectedColor != nil })
       .subscribe(onNext: { [unowned self] () in
-        self.showNextTestViewController()
+        guard let color = self.selectedColor?.name else { return }
+        APIService.shared.pathDevice(color: color).subscribe(onNext: { response in
+          switch response {
+          case .success(_):
+            DiagnosticService.shared.resetTimer()
+            self.showNextTestViewController()
+          case .failure(let error):
+            self.showError.onNext((error.localizedDescription, nil))
+          default:
+            break
+          }
+        })
+          .disposed(by: self.disposeBag)
     }).disposed(by: disposeBag)
   }
   
@@ -40,6 +44,7 @@ class DeviceColorViewModel: BaseCollectionViewViewModel {
     var models = [BaseCellModel]()
     
     for color in colors {
+      
       let colorModel = DeviceColorCellModel(deviceColor: color, isSelected: color == selectedColor)
       colorModel.onClickCellBlock = { [unowned self] (cellModel: BaseCellModel) -> Void in
         if self.selectedColor?.color == color.color {

@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
       return false
     }
   }
+  
   var bottomInset: CGFloat {
     if #available(iOS 11.0, *) {
       return UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
@@ -24,6 +25,9 @@ class BaseViewController: UIViewController {
       return 0
     }
   }
+  private var timerButton: UIBarButtonItem?
+  private var info: String = ""
+  private var timer: Timer?
   private var model: BaseControllerViewModel!
   private var disposeBag = DisposeBag()
   
@@ -58,15 +62,21 @@ class BaseViewController: UIViewController {
     
     model.openURL.asObserver().subscribe(onNext: { (url) in
       if UIApplication.shared.canOpenURL(url) {
-          UIApplication.shared.open(url, completionHandler: { (success) in
-              print("Settings opened: \(success)")
-          })
+        UIApplication.shared.open(url, options: [:]) { (success) in
+          print("Settings opened: \(success)")
+        }
       }
     }).disposed(by: disposeBag)
-    
-    model.showError.subscribe(onNext: { (message) in
-      let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
-      let okAction = UIAlertAction(title: "Хорошо", style: .default, handler: nil)
+
+    model.modalAlert
+      .subscribe(onNext: { alert in
+        self.present(alert, animated: true, completion: nil)
+      })
+      .disposed(by: disposeBag)
+
+    model.showError.subscribe(onNext: { (arg) in
+      let alertController = UIAlertController(title: "", message: arg.message, preferredStyle: .alert)
+      let okAction = UIAlertAction(title: "Хорошо", style: .default, handler: arg.action)
       alertController.addAction(okAction)
       self.present(alertController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
@@ -74,10 +84,15 @@ class BaseViewController: UIViewController {
     model.isLoading.asObservable()
     .bind(to: SVProgressHUD.rx.isAnimating)
     .disposed(by: disposeBag)
+    
+    model.dismissNavigation.subscribe(onNext: { () in
+      SVProgressHUD.dismiss()
+      self.navigationController?.dismiss(animated: true, completion: nil)
+    }).disposed(by: disposeBag)
   }
   
-  func setDefaultNavigationBar(page: Int = 0, _ nonNumericTitle: String? = nil, infoHidden: Bool = true) {
-  
+  func setDefaultNavigationBar(page: Int = 0, _ nonNumericTitle: String? = nil, info: String? = nil, timerNeeded: Bool = true, closeButtonIsAborting: Bool = true) {
+
     if let title = nonNumericTitle {
       navigationItem.title = title
     } else {
@@ -93,20 +108,83 @@ class BaseViewController: UIViewController {
           ]))
 
       titleLabel.attributedText = navTitle
+      titleLabel.sizeToFit()
       navigationItem.titleView = titleLabel
     }
-    
-    let closeBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_cross"), style: .plain, target: self, action: #selector(cancelDiagnosticAlert))
-    closeBarButtonItem.tintColor = .white
-    navigationItem.leftBarButtonItem = closeBarButtonItem
-    
-//    let infoBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_cross"), style: .plain, target: self, action: #selector(infoButtonPressed))
-//    infoBarButtonItem.tintColor = .white
-//    navigationItem.rightBarButtonItem = infoBarButtonItem
+    var closeBarButtonItem: UIBarButtonItem
+    if closeButtonIsAborting {
+      closeBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_cross"), style: .plain, target: self, action: #selector(cancelDiagnosticAlert))
+      closeBarButtonItem.tintColor = .white
+      navigationItem.setLeftBarButtonItems([closeBarButtonItem], animated: false)
+    } else {
+      closeBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrow"), style: .plain, target: self, action: #selector(closeController))
+      closeBarButtonItem.tintColor = .white
+      navigationItem.setLeftBarButtonItems([closeBarButtonItem], animated: false)
+    }
+
+    if timerNeeded {
+      let timerButtonItem = UIBarButtonItem(title: "14:30", style: .plain, target: self, action: #selector(nextTest))
+      //timerButtonItem.isEnabled = false
+      timerButtonItem.tintColor = .white
+      self.timerButton = timerButtonItem
+
+      navigationItem.setLeftBarButtonItems([closeBarButtonItem, timerButtonItem], animated: false)
+
+      updateTime()
+      timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+
+    if let info = info {
+      if info.isBlank == false {
+        setupInfo(info: info)
+        let infoBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "info_icon"), style: .plain, target: self, action: #selector(infoButtonPressed))
+        infoBarButtonItem.tintColor = .white
+        navigationItem.rightBarButtonItem = infoBarButtonItem
+      }
+    }
+
   }
-  
+
+  func setupInfo(info: String) {
+    self.info = info//.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+  }
+
   @objc func infoButtonPressed() {
+    showInfo()
+  }
+
+  func showInfo() {
+    let infoViewModel = InfoViewModel(info: info)
+    guard let infoViewController = InfoViewController.create(infoViewModel) else { return }
+    model.showViewController.onNext(infoViewController)
+  }
+
+  func showInternetError() {
+    let alertController = UIAlertController(title: "Отсутствует интернет-соединение", message: "Проверьте подключение к сети интернет и повторите попытку.", preferredStyle: .alert)
+    alertController.view.tintColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0.1960784314, alpha: 1)
+    alertController.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+    alertController.addAction(UIAlertAction(title: "Повторить", style: .default, handler: { _ in
+
+    }))
+    model.showViewController.onNext(alertController)
+  }
+
+  @objc func closeController() {
+    model.popViewController.onNext(())
+  }
+
+  @objc func nextTest() {
+    timer?.invalidate()
     model.showNextTestViewController()
+  }
+
+  @objc func updateTime() {
+    let userCalendar = Calendar.current
+    let timeLeft = userCalendar.dateComponents([.minute, .second], from: Date(), to: DiagnosticService.shared.testEndDate)
+    if timeLeft.minute == 5, timeLeft.second == 0 {
+      model.modalAlert.onNext(TimerAlertController.create(BaseControllerViewModel()))
+    }
+    timerButton?.title = String(format: "%02d:%02d", abs(timeLeft.minute ?? 0), abs(timeLeft.second ?? 0))
   }
   
   @objc func cancelDiagnosticAlert() {
@@ -125,13 +203,14 @@ class BaseViewController: UIViewController {
   
   private func cancelDiagnostic() {
     guard let id = DiagnosticService.shared.id else { removeNavigationController(); return }
-
+    timer?.invalidate()
     APIService.shared.cancelDiagnostic(id).trackActivity(model.isLoading).subscribe(onNext: { (result) in
-      exit(0)
+      DiagnosticService.shared.onGetGrade?(nil, "Диагностика была отменена")
+      self.removeNavigationController()
     }).disposed(by: disposeBag)
   }
   
   private func removeNavigationController() {
-    self.navigationController?.dismiss(animated: true, completion: nil)
+    model.dismissNavigation.onNext(())
   }
 }

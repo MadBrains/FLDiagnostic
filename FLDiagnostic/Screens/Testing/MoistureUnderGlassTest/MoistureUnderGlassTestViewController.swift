@@ -24,7 +24,8 @@ class MoistureUnderGlassTestViewController: BaseViewController {
 
         yesButton.rx.tap
             .subscribe(onNext: {
-                self.viewModel.testFailed()
+              self.viewModel.test.isPassed = false
+                self.viewModel.notWorkingDiagnostic()
             })
             .disposed(by: disposeBag)
 
@@ -40,7 +41,7 @@ class MoistureUnderGlassTestViewController: BaseViewController {
     }
 
     private func setupStyle() {
-      setDefaultNavigationBar(page: viewModel.page, infoHidden: viewModel.test.infoNeeded)
+      setDefaultNavigationBar(page: viewModel.page, info: viewModel.test.information)
     }
 }
 extension MoistureUnderGlassTestViewController {

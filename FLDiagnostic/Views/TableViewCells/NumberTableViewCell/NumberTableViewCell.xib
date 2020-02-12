@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ProximaNova-Regular.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
+        <array key="ProximaNova-Semibold.ttf">
+            <string>ProximaNova-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="170" id="zjP-Rf-ABN" customClass="NumberTableViewCell" customModule="FLDiagnostic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zjP-Rf-ABN" id="TyL-Bf-DUc">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leN-w0-DtS">
+                        <rect key="frame" x="16" y="16" width="382" height="22"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                        <color key="textColor" white="0.0" alpha="0.87" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muu-cN-MbF">
+                        <rect key="frame" x="16" y="43" width="382" height="19.5"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                        <color key="textColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LV-yJ-Nql" customClass="BorderedView" customModule="FLDiagnostic" customModuleProvider="target">
+                        <rect key="frame" x="16" y="91" width="382" height="52"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKu-be-z4I">
+                                <rect key="frame" x="14" y="0.0" width="354" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="yph-vD-D4C"/>
+                                </constraints>
+                                <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="onTextChanged:" destination="zjP-Rf-ABN" eventType="editingChanged" id="c2q-EQ-yjJ"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ZKu-be-z4I" secondAttribute="trailing" constant="14" id="1ET-M0-wVr"/>
+                            <constraint firstItem="ZKu-be-z4I" firstAttribute="top" secondItem="4LV-yJ-Nql" secondAttribute="top" id="DRG-vT-WOe"/>
+                            <constraint firstAttribute="bottom" secondItem="ZKu-be-z4I" secondAttribute="bottom" id="E0a-uH-jUM"/>
+                            <constraint firstItem="ZKu-be-z4I" firstAttribute="leading" secondItem="4LV-yJ-Nql" secondAttribute="leading" constant="14" id="fgW-Ml-APC"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.76078431369999999" green="0.76078431369999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Label  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzW-YH-qV4">
+                        <rect key="frame" x="32" y="84" width="41.5" height="15"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                        <color key="textColor" red="0.76078431369999999" green="0.76078431369999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="leN-w0-DtS" secondAttribute="trailing" constant="16" id="Gma-6p-e4t"/>
+                    <constraint firstItem="VzW-YH-qV4" firstAttribute="leading" secondItem="4LV-yJ-Nql" secondAttribute="leading" constant="16" id="KNx-VV-Lxk"/>
+                    <constraint firstAttribute="trailing" secondItem="4LV-yJ-Nql" secondAttribute="trailing" constant="16" id="LC1-5A-E6p"/>
+                    <constraint firstItem="4LV-yJ-Nql" firstAttribute="top" secondItem="VzW-YH-qV4" secondAttribute="bottom" constant="-8" id="LmM-eL-aL0"/>
+                    <constraint firstItem="leN-w0-DtS" firstAttribute="top" secondItem="TyL-Bf-DUc" secondAttribute="top" constant="16" id="QEU-sA-YNV"/>
+                    <constraint firstItem="Muu-cN-MbF" firstAttribute="leading" secondItem="TyL-Bf-DUc" secondAttribute="leading" constant="16" id="dIS-wP-WKU"/>
+                    <constraint firstAttribute="trailing" secondItem="Muu-cN-MbF" secondAttribute="trailing" constant="16" id="ejS-ty-SZS"/>
+                    <constraint firstItem="leN-w0-DtS" firstAttribute="leading" secondItem="TyL-Bf-DUc" secondAttribute="leading" constant="16" id="hH4-41-7fe"/>
+                    <constraint firstItem="Muu-cN-MbF" firstAttribute="top" secondItem="leN-w0-DtS" secondAttribute="bottom" constant="5" id="pTG-vC-Uf7"/>
+                    <constraint firstItem="4LV-yJ-Nql" firstAttribute="top" secondItem="Muu-cN-MbF" secondAttribute="bottom" constant="16" id="upy-MJ-dQH"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4LV-yJ-Nql" secondAttribute="bottom" constant="16" id="xlm-eC-Mvz"/>
+                    <constraint firstItem="4LV-yJ-Nql" firstAttribute="leading" secondItem="TyL-Bf-DUc" secondAttribute="leading" constant="16" id="zZ0-Ro-gDC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="aboutLabel" destination="VzW-YH-qV4" id="kdX-Bp-rkJ"/>
+                <outlet property="primaryLabel" destination="leN-w0-DtS" id="spk-nC-wZ2"/>
+                <outlet property="secondaryLabel" destination="Muu-cN-MbF" id="UeY-SN-jtW"/>
+                <outlet property="textInput" destination="ZKu-be-z4I" id="vXr-K9-Nvx"/>
+            </connections>
+            <point key="canvasLocation" x="106" y="260"/>
+        </tableViewCell>
+    </objects>
+</document>

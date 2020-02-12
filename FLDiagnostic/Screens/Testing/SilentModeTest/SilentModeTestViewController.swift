@@ -33,24 +33,20 @@ class SilentModeTestViewController: BaseViewController {
 
     notWorkingButton.rx.tap
       .subscribe(onNext: { [weak self] () in
-        self?.viewModel.testFailed()
+        self?.viewModel.notWorkingDiagnostic()
       })
       .disposed(by: disposeBag)
-    // на симуляторе нельзя проверить кнопки громкости
-    #if targetEnvironment(simulator)
-      self.endTest()
-    #endif
   }
 
   private func setupStyle() {
-    setDefaultNavigationBar(page: viewModel.page, infoHidden: viewModel.test.infoNeeded)
+    setDefaultNavigationBar(page: viewModel.page, info: viewModel.test.information)
   }
 
   func endTest() {
     DispatchQueue.main.async {
       self.testCompletedView.isHidden = false
     }
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [viewModel] in
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
       viewModel?.startNextTest()
     }
   }
