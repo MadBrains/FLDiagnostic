@@ -12,7 +12,7 @@ import SVProgressHUD
 class GradeViewModel: BaseControllerViewModel {
   var grade: String = ""
 
-  let gradeImage = BehaviorSubject<UIImage>(value: #imageLiteral(resourceName: "grade_b"))
+  let gradeImage = BehaviorSubject<UIImage>(value: UIImage.FLImage("grade_b"))
   let gradeTitle = BehaviorSubject<String>(value: "")
   let gradeTitleColor = BehaviorSubject<UIColor>(value: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
   var recalsculateHidden = BehaviorSubject<Bool>(value: false)
@@ -36,22 +36,22 @@ class GradeViewModel: BaseControllerViewModel {
 
     switch grade {
     case "A":
-      gradeImage.onNext(#imageLiteral(resourceName: "grade_a"))
+      gradeImage.onNext(UIImage.FLImage("grade_a"))
       gradeTitle.onNext("Как новый")
       gradeTitleColor.onNext(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
       recalsculateHidden.onNext(false)
     case "B":
-      gradeImage.onNext(#imageLiteral(resourceName: "grade_b"))
+      gradeImage.onNext(UIImage.FLImage("grade_b"))
       gradeTitle.onNext("Хорошее")
       gradeTitleColor.onNext(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
       recalsculateHidden.onNext(false)
     case "C":
-      gradeImage.onNext(#imageLiteral(resourceName: "grade_c"))
+      gradeImage.onNext(UIImage.FLImage("grade_c"))
       gradeTitle.onNext("Рабочий, не битый")
       gradeTitleColor.onNext(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
       recalsculateHidden.onNext(false)
     case "F":
-      gradeImage.onNext(#imageLiteral(resourceName: "grade_x"))
+      gradeImage.onNext(UIImage.FLImage("grade_x"))
       gradeTitle.onNext("Не может быть выкуплен")
       gradeTitleColor.onNext(#colorLiteral(red: 0.9176470588, green: 0, blue: 0, alpha: 1))
       recalsculateHidden.onNext(true)

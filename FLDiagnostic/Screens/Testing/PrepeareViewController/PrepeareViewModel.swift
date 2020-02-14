@@ -12,8 +12,8 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
   var serverText = BehaviorSubject<String>(value: "Подключение к серверу")
   var modelText = BehaviorSubject<String>(value: "Проверка модели")
   
-  var serverImage = BehaviorSubject<UIImage>(value: #imageLiteral(resourceName: "ic_checkbox_gray"))
-  var modelImage = BehaviorSubject<UIImage>(value: #imageLiteral(resourceName: "ic_checkbox_gray"))
+  var serverImage = BehaviorSubject<UIImage>(value: UIImage.FLImage("ic_checkbox_gray"))
+  var modelImage = BehaviorSubject<UIImage>(value: UIImage.FLImage("ic_checkbox_gray"))
   
   var nextButtonHidden = BehaviorSubject<Bool>(value: true)
   var nextButtonColor = BehaviorSubject<UIColor>(value: #colorLiteral(red: 1, green: 0.4918404222, blue: 0.2512650192, alpha: 1))
@@ -30,7 +30,7 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
     
     let deviceString = DeviceService.deviceModel + " " + "(\(DeviceService.diskSpaceGB))"
     modelText.onNext(deviceString)
-    modelImage.onNext(#imageLiteral(resourceName: "TestComplete"))
+    modelImage.onNext(UIImage.FLImage("TestComplete"))
     
     startDiagnosticSession()
     
@@ -45,7 +45,7 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
   
   private func startDiagnosticSession() {
     serverText.onNext("Подключаемся к серверу...")
-    serverImage.onNext(#imageLiteral(resourceName: "LoaderImage"))
+    serverImage.onNext(UIImage.FLImage("LoaderImage"))
     
     APIService.shared.getDiagnostics().subscribe(onNext: { (result) in
          switch result {
@@ -93,7 +93,7 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
   
   private func setErrorForConnection() {
     serverText.onNext("Ошибка подключения к серверу")
-    serverImage.onNext(#imageLiteral(resourceName: "TestError"))
+    serverImage.onNext(UIImage.FLImage("TestError"))
     
     nextButtonHidden.onNext(false)
     nextButtonColor.onNext(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
@@ -104,7 +104,7 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
   private func setSuccessForConnection() {
     self.successConnection = true
     serverText.onNext("Подключение установлено")
-    serverImage.onNext(#imageLiteral(resourceName: "TestComplete"))
+    serverImage.onNext(UIImage.FLImage("TestComplete"))
     
     nextButtonHidden.onNext(false)
     nextButtonColor.onNext(#colorLiteral(red: 1, green: 0.4918404222, blue: 0.2512650192, alpha: 1))

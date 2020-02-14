@@ -70,7 +70,7 @@ class NFCTestViewController: BaseViewController {
   private func setupStyle() {
     let turnOnNFCAttributedString = NSMutableAttributedString(string:"Включите NFC ")
     let nfcIconAttachment = NSTextAttachment()
-    nfcIconAttachment.image = #imageLiteral(resourceName: "nfcIcon")
+    nfcIconAttachment.image = UIImage.FLImage("nfcIcon")
     nfcIconAttachment.bounds = CGRect(x: 0, y: 0, width: 16, height: 16)
     let nfcIconString = NSAttributedString(attachment: nfcIconAttachment)
     turnOnNFCAttributedString.append(nfcIconString)
@@ -79,7 +79,7 @@ class NFCTestViewController: BaseViewController {
 
     let bringPhoneToRFIDAttributedString = NSMutableAttributedString(string:"Приложите смартфон к карточке с RFID-меткой ")
     let rfidIconAttachment = NSTextAttachment()
-    rfidIconAttachment.image = #imageLiteral(resourceName: "RFIDIcon")
+    rfidIconAttachment.image = UIImage.FLImage("RFIDIcon")
     rfidIconAttachment.bounds = CGRect(x: 0, y: -6, width: 28, height: 28)
     let rfidIconString = NSAttributedString(attachment: rfidIconAttachment)
     bringPhoneToRFIDAttributedString.append(rfidIconString)

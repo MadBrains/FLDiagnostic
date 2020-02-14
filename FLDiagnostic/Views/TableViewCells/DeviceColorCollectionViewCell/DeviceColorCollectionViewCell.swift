@@ -16,7 +16,7 @@ class DeviceColorCollectionViewCell: BaseCollectionViewCell {
     super.configureCell(cellModel)
     guard let model = cellModel as? DeviceColorCellModel else { return }
     
-    checkImageView.image = #imageLiteral(resourceName: "ic_check_white").withRenderingMode(.alwaysTemplate)
+    checkImageView.image = UIImage.FLImage("ic_check_white").withRenderingMode(.alwaysTemplate)
     checkImageView.tintColor = model.deviceColor.checkTint
     checkImageView.isHidden = !model.isSelected
     

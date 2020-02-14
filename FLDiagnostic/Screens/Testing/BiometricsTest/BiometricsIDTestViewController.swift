@@ -32,11 +32,11 @@ class BiometricsTestViewController: BaseViewController {
 
     if isSafeArea {
       biometricsTestTextLabel.text = "Проверьте работу face id, если face id не срабатывает, попробуйте проверить его вручную"
-      biometricsArtDontHaveImageView.image = #imageLiteral(resourceName: "FaceIDArt")
+      biometricsArtDontHaveImageView.image = UIImage.FLImage("FaceIDArt")
       biometricsArtDontHaveLabel.text = "Face id \nне найден"
     } else {
       biometricsTestTextLabel.text = "Прикоснитесь к сканеру отпечатка пальцев, если сканер не срабатывает, попробуйте проверить его вручную"
-      biometricsArtDontHaveImageView.image = #imageLiteral(resourceName: "TouchIdArt")
+      biometricsArtDontHaveImageView.image = UIImage.FLImage("TouchIdArt")
       biometricsArtDontHaveLabel.text = "Сканер отпечатка пальца \nне найден"
     }
 

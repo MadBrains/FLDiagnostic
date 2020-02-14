@@ -23,7 +23,7 @@ class TestWifiViewModel: BaseControllerViewModel {
   var notWorkingHidden = BehaviorSubject<Bool>(value: false)
   var retryHidden = BehaviorSubject<Bool>(value: false)
   
-  var infoImage = BehaviorSubject<UIImage>(value: #imageLiteral(resourceName: "ic_wifi_off_grey"))
+  var infoImage = BehaviorSubject<UIImage>(value: UIImage.FLImage("ic_wifi_off_grey"))
   var infoText = BehaviorSubject<String>(value: "Не подключен")
   var infoTextColor = BehaviorSubject<UIColor>(value: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
   var titleText = BehaviorSubject<String>(value: "")
@@ -89,7 +89,7 @@ class TestWifiViewModel: BaseControllerViewModel {
     titleText.onNext("")
     infoTextColor.onNext(#colorLiteral(red: 0, green: 0.7529411765, blue: 0.1882352941, alpha: 1))
     infoText.onNext("Тест успешно пройден")
-    infoImage.onNext(#imageLiteral(resourceName: "TestComplete"))
+    infoImage.onNext(UIImage.FLImage("TestComplete"))
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
       self.test.timeSpent = DiagnosticService.shared.calculateSpentTime()
@@ -102,7 +102,7 @@ class TestWifiViewModel: BaseControllerViewModel {
     titleText.onNext("")
     infoTextColor.onNext(#colorLiteral(red: 0.9176470588, green: 0, blue: 0, alpha: 1))
     infoText.onNext("Не подключены к сети Wi-Fi\nПодключитесь к любой сети Wi-Fi\n")
-    infoImage.onNext(#imageLiteral(resourceName: "TestError"))
+    infoImage.onNext(UIImage.FLImage("TestError"))
     
     retryHidden.onNext(false)
     notWorkingHidden.onNext(false)

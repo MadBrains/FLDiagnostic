@@ -25,7 +25,7 @@ class AccelerometerCheckView: UIImageView {
     func drawCurrentState() {
         if isChecked {
             DispatchQueue.main.async {
-                self.image = #imageLiteral(resourceName: "AccelerometerChecked")
+                self.image = UIImage.FLImage("AccelerometerChecked")
             }
         }
     }

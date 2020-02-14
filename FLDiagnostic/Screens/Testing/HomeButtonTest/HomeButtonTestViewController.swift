@@ -26,7 +26,7 @@ class HomeButtonTestViewController: BaseViewController {
 
     setupStyle()
 
-    phoneArtImageView.image = isSafeArea ? #imageLiteral(resourceName: "HomeButtonTestXArt") : #imageLiteral(resourceName: "HomeButtonTestArt")
+    phoneArtImageView.image = isSafeArea ? UIImage.FLImage("HomeButtonTestXArt") : UIImage.FLImage("HomeButtonTestArt")
 
     viewModel.testSucceed.asObserver().subscribe(onNext: { [unowned self] () in
       self.endTest()

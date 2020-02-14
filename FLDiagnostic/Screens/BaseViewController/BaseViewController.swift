@@ -113,11 +113,11 @@ class BaseViewController: UIViewController {
     }
     var closeBarButtonItem: UIBarButtonItem
     if closeButtonIsAborting {
-      closeBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ic_cross"), style: .plain, target: self, action: #selector(cancelDiagnosticAlert))
+      closeBarButtonItem = UIBarButtonItem(image: UIImage.FLImage("ic_cross"), style: .plain, target: self, action: #selector(cancelDiagnosticAlert))
       closeBarButtonItem.tintColor = .white
       navigationItem.setLeftBarButtonItems([closeBarButtonItem], animated: false)
     } else {
-      closeBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrow"), style: .plain, target: self, action: #selector(closeController))
+      closeBarButtonItem = UIBarButtonItem(image: UIImage.FLImage("arrow"), style: .plain, target: self, action: #selector(closeController))
       closeBarButtonItem.tintColor = .white
       navigationItem.setLeftBarButtonItems([closeBarButtonItem], animated: false)
     }
@@ -137,7 +137,7 @@ class BaseViewController: UIViewController {
     if let info = info {
       if info.isBlank == false {
         setupInfo(info: info)
-        let infoBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "info_icon"), style: .plain, target: self, action: #selector(infoButtonPressed))
+        let infoBarButtonItem = UIBarButtonItem(image: UIImage.FLImage("info_icon"), style: .plain, target: self, action: #selector(infoButtonPressed))
         infoBarButtonItem.tintColor = .white
         navigationItem.rightBarButtonItem = infoBarButtonItem
       }

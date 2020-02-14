@@ -54,7 +54,7 @@ class VolumeTestViewController: BaseViewController {
     case .up:
       UIView.animate(withDuration: 0.3, animations: {
         self.testLabel.text = "Нажмите кнопку \"Уменьшить громкость\""
-        self.testArt.image = #imageLiteral(resourceName: "VolumeDownTestArt")
+        self.testArt.image = UIImage.FLImage("VolumeDownTestArt")
       }) { _ in
         self.currentBittonTypeTest = .down
       }
