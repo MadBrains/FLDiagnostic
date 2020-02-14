@@ -47,11 +47,15 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
     serverText.onNext("Подключаемся к серверу...")
     serverImage.onNext(#imageLiteral(resourceName: "LoaderImage"))
     
-    APIService.shared.getActiveDiagnostic().subscribe(onNext: { (result) in
+    APIService.shared.getDiagnostics().subscribe(onNext: { (result) in
          switch result {
           case .success(let response):
-            DiagnosticService.shared.setCurrentDiagnostikSesion(response)
-            self.setSuccessForConnection()
+            if response.diagnostic.device.model == nil {
+              self.patchDevice()
+            } else {
+              DiagnosticService.shared.setCurrentDiagnostikSesion(response.diagnostic)
+              self.setSuccessForConnection()
+            }
           case .failure(let _):
             self.patchDevice()
          }
@@ -65,12 +69,12 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
   }
 
   private func getActiveSesion() {
-    APIService.shared.getActiveDiagnostic().subscribe(onNext: { (result) in
+    APIService.shared.getDiagnostics().subscribe(onNext: { (result) in
       switch result {
        case .success(let response):
-        DiagnosticService.shared.setCurrentDiagnostikSesion(response)
+        DiagnosticService.shared.setCurrentDiagnostikSesion(response.diagnostic)
         self.setSuccessForConnection()
-       case .failure(let _):
+       case .failure(let error):
        self.setErrorForConnection()
       }
     }).disposed(by: disposeBag)
@@ -81,7 +85,7 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
       switch response {
       case .success(let _):
         self.getActiveSesion()
-      case .failure(let _):
+      case .failure(let error):
         self.setErrorForConnection()
       }
     }).disposed(by: disposeBag)

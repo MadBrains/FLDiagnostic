@@ -21,20 +21,23 @@ class APIService {
   func pathDevice(color: String = "") -> Observable<Result<DeviceResponse, APIError>> {
     var params: Parameters
     if color.isEmpty {
-      params = ["imei": DiagnosticService.shared.imei,
-                  "os": "ios",
-                  "brandName": "apple",
-                  "modelName": DeviceService.deviceModel,
-                  "imeis": [DiagnosticService.shared.imei],
-                  "storageVolume": DeviceService.totalDiskSpaceInGB,
-                  "color": NSNull()]
-      dump(params)
+      params = ["diagnosticId": DiagnosticService.shared.id ?? "",
+                "os": "ios",
+                "brandName": "apple",
+                "modelName": DeviceService.deviceModel,
+                "storageVolume": DeviceService.totalDiskSpaceInGB,
+                "color": NSNull()]
 
     } else {
-      params = ["imei": DiagnosticService.shared.imei,
+      params = ["diagnosticId": DiagnosticService.shared.id ?? "",
                 "color": color]
     }
-      return defaultRequest(FLEndpoint.devices, method: .patch, parameters: params, decodingType: DeviceResponse.self)
+    
+    return defaultRequest(FLEndpoint.devices, method: .patch, parameters: params, decodingType: DeviceResponse.self)
+  }
+  
+  func getDiagnostics() -> Observable<Result<ResultResponse, APIError>> {
+    return defaultRequest(FLEndpoint.diagnostics, method: .get, decodingType: ResultResponse.self)
   }
   
   func getActiveDiagnostic() -> Observable<Result<DiagnosticResponse, APIError>> {
@@ -129,7 +132,7 @@ protocol Endpoint {
 extension FLEndpoint: Endpoint {
     
     var base: String {
-        return "https://dev19.arcdev.ru/api"
+        return DiagnosticService.shared.serverUrl
     }
     
     var path: String {

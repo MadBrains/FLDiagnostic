@@ -12,9 +12,9 @@ import RxSwift
 public class FLDiagnostic {
   public typealias GradeBlock = (_ grade: String?, _ error: String?) -> Void
   
-  public static func startTesting(_ diagnosticId: String, _ imei: String, finalGrade: GradeBlock? = nil) {
+  public static func startTesting(_ diagnosticId: String, _ url: String, finalGrade: GradeBlock? = nil) {
     
-    DiagnosticService.shared.setCurrentDiagnostikID(diagnosticId, imei)
+    DiagnosticService.shared.setCurrentDiagnostikID(diagnosticId, url)
     
     DiagnosticService.shared.onGetGrade = { (grade: String?, error: String?) -> Void in
       finalGrade?(grade, error)

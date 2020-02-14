@@ -15,6 +15,7 @@ class DiagnosticService {
   
   var id: String?
   var imei: String = ""
+  var serverUrl: String = ""
   var tests: [Test] { return diagnostic?.device.model?.tests ?? [] }
   var questions: [Question] { return diagnostic?.device.model?.questions ?? [] }
   var allPages: Int { return testControllers.count }
@@ -29,9 +30,9 @@ class DiagnosticService {
   private var currentPage: Int = 0
   private var diagnostic: DiagnosticResponse?
 
-  func setCurrentDiagnostikID(_ id: String, _ imei: String) {
+  func setCurrentDiagnostikID(_ id: String, _ url: String) {
     self.id = id
-    self.imei = imei
+    self.serverUrl = url
   }
   
   func setCurrentDiagnostikSesion(_ diagnostic: DiagnosticResponse) {
