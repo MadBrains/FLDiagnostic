@@ -19,8 +19,26 @@ extension UIFont {
   }
 
   static func proximaNova(size: CGFloat, weight: ProximaNovaWeight) -> UIFont {
-    //swiftlint:disable:next force_unwrapping
     return UIFont(name: Constant.Fonts.proximaNova + "-\(weight.rawValue)", size: size)!
+  }
+  
+  public static func loadFonts() {
+    loadFont(withName: Constant.Fonts.proximaNova + "-\(ProximaNovaWeight.black.rawValue)")
+    loadFont(withName: Constant.Fonts.proximaNova + "-\(ProximaNovaWeight.bold.rawValue)")
+    loadFont(withName: Constant.Fonts.proximaNova + "-\(ProximaNovaWeight.light.rawValue)")
+    loadFont(withName: Constant.Fonts.proximaNova + "-\(ProximaNovaWeight.regular.rawValue)")
+    loadFont(withName: Constant.Fonts.proximaNova + "-\(ProximaNovaWeight.semibold.rawValue)")
+  }
+  
+  private static func loadFont(withName fontName: String) {
+    let bundle = Bundle(for: FLDiagnostic.self)
+    guard let fontURL = bundle.url(forResource: fontName, withExtension: "ttf"),
+      let fontData = try? Data(contentsOf: fontURL) as CFData,
+      let provider = CGDataProvider(data: fontData),
+      let font = CGFont(provider) else {
+        return
+    }
+    CTFontManagerRegisterGraphicsFont(font, nil)
   }
 
 }
