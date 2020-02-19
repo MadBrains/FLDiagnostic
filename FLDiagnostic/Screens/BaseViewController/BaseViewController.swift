@@ -124,7 +124,7 @@ class BaseViewController: UIViewController {
 
     if timerNeeded {
       let timerButtonItem = UIBarButtonItem(title: "14:30", style: .plain, target: self, action: #selector(nextTest))
-      //timerButtonItem.isEnabled = false
+      timerButtonItem.isEnabled = false
       timerButtonItem.tintColor = .white
       self.timerButton = timerButtonItem
 
