@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 
 public class FLDiagnostic {
+  static let SDKVerison = "1.0.6"
+
   public typealias GradeBlock = (_ grade: String?, _ error: String?) -> Void
   
   public static func startTesting(_ diagnosticId: String, _ url: String, finalGrade: GradeBlock? = nil) {

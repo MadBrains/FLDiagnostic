@@ -43,7 +43,7 @@ class PrepeareViewController: BaseViewController {
   }
   
   private func setupStyle() {
-    setDefaultNavigationBar("Подготовка", timerNeeded: false)
+    setDefaultNavigationBar("Подготовка", timerNeeded: false,  versionNeeded: true)
     
     serverContainerView.layer.shadowColor = UIColor.black.cgColor
     serverContainerView.layer.shadowOpacity = 0.0996504

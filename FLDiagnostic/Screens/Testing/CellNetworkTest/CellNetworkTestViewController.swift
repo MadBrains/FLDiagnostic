@@ -111,7 +111,7 @@ class CellNetworkTestViewController: BaseViewController {
       })
       .disposed(by: disposeBag)
   }
-
+  
   func showSimErrorView() {
     callQuestionTestView.isHidden = true
     callTestView.isHidden = true
@@ -134,7 +134,6 @@ class CellNetworkTestViewController: BaseViewController {
   }
 
   func endTest() {
-    viewModel.stopCheckingSIMCard()
     DispatchQueue.main.async {
       self.showSimErrorView()
       self.testCompletedView.isHidden = false

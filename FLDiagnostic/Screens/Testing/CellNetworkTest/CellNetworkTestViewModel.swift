@@ -22,7 +22,6 @@ class CellNetworkTestViewModel: BaseControllerViewModel {
   }
   
   let availabilitySIM = BehaviorSubject<Bool>(value: true)
-  private var obs: NSKeyValueObservation?
 
   var notWorkingButtonPressed = PublishSubject<Void>()
   private let disposeBag = DisposeBag()
@@ -36,16 +35,16 @@ class CellNetworkTestViewModel: BaseControllerViewModel {
   }
   
   func checkSIMCard() {
-    let provider = CTTelephonyNetworkInfo().subscriberCellularProvider
-    availabilitySIM.onNext(provider?.mobileNetworkCode != nil)
-    
-    obs = provider?.observe(\.mobileNetworkCode, options: .new, changeHandler: { (ctCarrier, value) in
-      self.availabilitySIM.onNext(value.newValue != nil)
-    })
-  }
+    let info = CTTelephonyNetworkInfo()
+    let carrier = info.subscriberCellularProvider
+    availabilitySIM.onNext(carrier?.mobileNetworkCode != nil)
 
-  func stopCheckingSIMCard() {
-    obs?.invalidate()
+    info.subscriberCellularProviderDidUpdateNotifier = { inCTCarrier in
+        DispatchQueue.main.async(execute: {
+          self.availabilitySIM.onNext(inCTCarrier.mobileNetworkCode != nil)
+        })
+    }
+
   }
 
   func testFailed() {

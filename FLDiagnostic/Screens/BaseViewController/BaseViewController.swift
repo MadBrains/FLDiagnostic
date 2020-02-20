@@ -91,10 +91,31 @@ class BaseViewController: UIViewController {
     }).disposed(by: disposeBag)
   }
   
-  func setDefaultNavigationBar(page: Int = 0, _ nonNumericTitle: String? = nil, info: String? = nil, timerNeeded: Bool = true, closeButtonIsAborting: Bool = true) {
+  func setDefaultNavigationBar(page: Int = 0, _ nonNumericTitle: String? = nil, info: String? = nil, timerNeeded: Bool = true, versionNeeded: Bool = false, closeButtonIsAborting: Bool = true) {
 
     if let title = nonNumericTitle {
-      navigationItem.title = title
+      if versionNeeded == false {
+        navigationItem.title = title
+      } else {
+        let titleLabel = UILabel()
+        titleLabel.numberOfLines = 2
+        titleLabel.textAlignment = .center
+        
+        let navTitle = NSMutableAttributedString(string: title, attributes: [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.proximaNova(size: 20, weight: .regular)
+            ])
+
+        navTitle.append(NSMutableAttributedString(string: "\nВерсия SDK " + FLDiagnostic.SDKVerison, attributes: [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.proximaNova(size: 12, weight: .regular)
+            ]))
+
+        titleLabel.attributedText = navTitle
+        titleLabel.sizeToFit()
+        navigationItem.titleView = titleLabel
+      }
+      
     } else {
       let titleLabel = UILabel()
       let navTitle = NSMutableAttributedString(string: "\(page)", attributes: [
@@ -123,9 +144,11 @@ class BaseViewController: UIViewController {
     }
 
     if timerNeeded {
-      let timerButtonItem = UIBarButtonItem(title: "14:30", style: .plain, target: self, action: #selector(nextTest))
+      let timerButtonItem = UIBarButtonItem(title: "14:30", style: .plain, target: self, action: nil)
       timerButtonItem.isEnabled = false
       timerButtonItem.tintColor = .white
+      timerButtonItem.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+      timerButtonItem.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .disabled)
       self.timerButton = timerButtonItem
 
       navigationItem.setLeftBarButtonItems([closeBarButtonItem, timerButtonItem], animated: false)
