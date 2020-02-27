@@ -14,7 +14,8 @@ class SoundTestViewController: BaseViewController {
     private var viewModel: SoundTestViewModel!
     private let disposeBag = DisposeBag()
 
-    @IBOutlet private weak var testCompletedView: UIView!
+  @IBOutlet private weak var adviceView: UIView!
+  @IBOutlet private weak var testCompletedView: UIView!
 
     @IBOutlet private weak var playSoundAgainButton: UIButton!
     @IBOutlet private weak var noSoundButton: BorderedButton!
@@ -43,6 +44,8 @@ class SoundTestViewController: BaseViewController {
                 self.endTest()
             })
             .disposed(by: disposeBag)
+      
+      viewModel.isAdviceHidden.bind(to: adviceView.rx.isHidden).disposed(by: disposeBag)
     }
 
     override func viewDidAppear(_ animated: Bool) {

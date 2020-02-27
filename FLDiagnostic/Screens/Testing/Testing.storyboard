@@ -1684,22 +1684,48 @@
                                                     <constraint firstAttribute="height" constant="52" id="kVc-Ve-pkb"/>
                                                 </constraints>
                                             </stackView>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1z-7f-7zX">
+                                                <rect key="frame" x="0.0" y="395" width="335" height="120"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если звук не слышно, отключите бесшумный режим или увеличьте громкость" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkk-Mp-QvJ">
+                                                        <rect key="frame" x="16" y="16" width="303" height="88"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                                        <color key="textColor" red="0.96078431369999995" green="0.95294117649999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.094117647058823528" green="0.035294117647058823" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="bkk-Mp-QvJ" firstAttribute="leading" secondItem="j1z-7f-7zX" secondAttribute="leading" constant="16" id="2Pg-h0-Liv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bkk-Mp-QvJ" secondAttribute="bottom" constant="16" id="7Y7-dI-laM"/>
+                                                    <constraint firstItem="bkk-Mp-QvJ" firstAttribute="top" secondItem="j1z-7f-7zX" secondAttribute="top" constant="16" id="ZMd-XX-twP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bkk-Mp-QvJ" secondAttribute="trailing" constant="16" id="kWl-Wq-zzN"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="hft-aK-LEK" firstAttribute="top" secondItem="GH4-so-ffb" secondAttribute="top" constant="20" symbolic="YES" id="0lS-iR-Rjb"/>
                                             <constraint firstAttribute="bottom" secondItem="lt6-hi-AGl" secondAttribute="bottom" constant="16" id="ETn-SH-MfS"/>
                                             <constraint firstItem="vW7-JL-4Ax" firstAttribute="centerX" secondItem="GH4-so-ffb" secondAttribute="centerX" id="Kk7-Lh-Ocx"/>
+                                            <constraint firstItem="j1z-7f-7zX" firstAttribute="leading" secondItem="GH4-so-ffb" secondAttribute="leading" id="LNa-LE-uiu"/>
+                                            <constraint firstItem="lt6-hi-AGl" firstAttribute="top" secondItem="j1z-7f-7zX" secondAttribute="bottom" constant="32" id="NxB-pX-l95"/>
                                             <constraint firstItem="vW7-JL-4Ax" firstAttribute="centerY" secondItem="GH4-so-ffb" secondAttribute="centerY" id="aTA-Di-E26"/>
                                             <constraint firstItem="lt6-hi-AGl" firstAttribute="leading" secondItem="GH4-so-ffb" secondAttribute="leading" constant="16" id="bYk-xo-jy9"/>
                                             <constraint firstItem="hft-aK-LEK" firstAttribute="leading" secondItem="GH4-so-ffb" secondAttribute="leading" constant="20" symbolic="YES" id="eoA-f5-Y7Z"/>
                                             <constraint firstAttribute="trailing" secondItem="lt6-hi-AGl" secondAttribute="trailing" constant="16" id="hz8-fb-yLG"/>
+                                            <constraint firstAttribute="trailing" secondItem="j1z-7f-7zX" secondAttribute="trailing" id="i99-tS-YiJ"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vW7-JL-4Ax" secondAttribute="trailing" id="iR4-Pv-DW9"/>
                                             <constraint firstAttribute="trailing" secondItem="hft-aK-LEK" secondAttribute="trailing" constant="20" symbolic="YES" id="kMc-h8-llu"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgM-mN-odJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="615"/>
+                                    <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgM-mN-odJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="V1Z-xV-hVo">
                                                 <rect key="frame" x="84.5" y="272" width="166" height="71"/>
@@ -1769,6 +1795,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8vS-F5-em8"/>
                     <connections>
+                        <outlet property="adviceView" destination="j1z-7f-7zX" id="SLL-1P-nQC"/>
                         <outlet property="haveSoundButton" destination="gPK-qp-m7Q" id="sL4-IG-ftd"/>
                         <outlet property="noSoundButton" destination="Y1i-qi-xv9" id="nHc-Ig-1GB"/>
                         <outlet property="playSoundAgainButton" destination="hft-aK-LEK" id="mWI-lA-io3"/>
@@ -1777,7 +1804,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0E-GH-Je3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6758" y="139"/>
+            <point key="canvasLocation" x="6757.6000000000004" y="138.98050974512745"/>
         </scene>
         <!--Focus Test View Controller-->
         <scene sceneID="d7V-hc-inH">
@@ -2764,7 +2791,7 @@
             <objects>
                 <viewController storyboardIdentifier="DeviceColorViewController" id="cpR-2P-tNz" customClass="DeviceColorViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QPh-E0-Rs3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-CM-VKt" customClass="ShadowedView" customModule="FLDiagnostic" customModuleProvider="target">
@@ -2873,7 +2900,7 @@
             <objects>
                 <viewController storyboardIdentifier="TextQuestionViewController" id="2hX-sp-kee" customClass="TextQuestionViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNX-px-KWJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мелкие царапины" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbK-Ca-zwt">
@@ -2991,7 +3018,7 @@
             <objects>
                 <viewController storyboardIdentifier="TestWiFiViewController" id="s6c-d2-XsN" customClass="TestWiFiViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLs-DG-HO5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o7-Oh-Eyo" customClass="ShadowedView" customModule="FLDiagnostic" customModuleProvider="target">
@@ -3140,7 +3167,7 @@
             <objects>
                 <viewController storyboardIdentifier="BinarQuestionViewController" id="Pr1-ZN-7Ve" customClass="BinarQuestionViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kkr-ir-oqI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Есть ли потертости?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRd-Tb-rw1">
@@ -3236,7 +3263,7 @@
             <objects>
                 <viewController storyboardIdentifier="IMEIViewController" id="miN-8u-7re" customClass="IMEIViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xXx-d8-afR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMEI первого SIM-слота" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CON-v0-xes">

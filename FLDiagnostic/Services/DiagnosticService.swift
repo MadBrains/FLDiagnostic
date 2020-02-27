@@ -156,11 +156,13 @@ class DiagnosticService {
         guard let viewController = MoistureUnderGlassTestViewController.create(viewModel) else { continue }
         controllers.append(viewController)
       case "nfc":
-        if #available(iOS 11.0, *) {
-          let viewModel = NFCTestViewModel(test, page: page)
-          guard let viewController = NFCTestViewController.create(viewModel) else { continue }
-          controllers.append(viewController)
-        }
+        page -= 1
+        test.isPassed = true
+//        if #available(iOS 11.0, *) {
+//          let viewModel = NFCTestViewModel(test, page: page)
+//          guard let viewController = NFCTestViewController.create(viewModel) else { continue }
+//          controllers.append(viewController)
+//        }
       default:
         page -= 1
       }
