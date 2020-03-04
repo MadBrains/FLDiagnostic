@@ -42,7 +42,7 @@ class TestWifiViewModel: BaseControllerViewModel {
       self.isSucceed = true
       
       self.test.isPassed = false
-      self.notWorkingDiagnostic()
+      self.notWorkingDiagnostic(self.test)
     }).disposed(by: disposeBag)
     
     retryButtonPressed.asObserver().subscribe(onNext: { [unowned self] () in

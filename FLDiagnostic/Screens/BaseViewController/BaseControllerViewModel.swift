@@ -53,7 +53,12 @@ class BaseControllerViewModel: NSObject {
     presentViewController.onNext(alertController)
   }
 
-  func notWorkingDiagnostic() {
+  func notWorkingDiagnostic(_ test: Test) {
+    if test.canBeFailed == true {
+      showNextTestViewController()
+      return
+    }
+    
     let alertController = UIAlertController(title: "Предупреждение", message:
     "Устройству будет присвоен ценовой рейтинг \"Не может быть выкуплен\". Вы действительно хотите продолжить?", preferredStyle: .alert)
     alertController.view.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

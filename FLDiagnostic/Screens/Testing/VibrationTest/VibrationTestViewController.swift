@@ -30,9 +30,9 @@ class VibrationTestViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         noVibroButton.rx.tap
-            .subscribe(onNext: {
+            .subscribe(onNext: { [unowned self] in
               self.viewModel.test.isPassed = false
-                self.viewModel.notWorkingDiagnostic()
+              self.viewModel.notWorkingDiagnostic(self.viewModel.test)
             })
             .disposed(by: disposeBag)
 

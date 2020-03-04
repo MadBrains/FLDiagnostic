@@ -86,16 +86,16 @@ class CellNetworkTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     noSoundButton.rx.tap
-      .subscribe(onNext: {
+      .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
-        self.viewModel.notWorkingDiagnostic()
+        self.viewModel.notWorkingDiagnostic(self.viewModel.test)
       })
       .disposed(by: disposeBag)
 
     noCallButton.rx.tap
-      .subscribe(onNext: {
+      .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
-        self.viewModel.notWorkingDiagnostic()
+        self.viewModel.notWorkingDiagnostic(self.viewModel.test)
       })
       .disposed(by: disposeBag)
 

@@ -18,7 +18,7 @@ class DiagnosticService {
   var serverUrl: String = ""
   var tests: [Test] { return diagnostic?.device.model?.tests ?? [] }
   var questions: [Question] { return diagnostic?.device.model?.questions ?? [] }
-  var allPages: Int { return testControllers.count }
+  var allPages: Int { return testControllers.count - 2 }
   var testEndDate = Date()
   var testDate = Date()
   var testControllers = [UIViewController]()

@@ -30,7 +30,7 @@ class CellNetworkTestViewModel: BaseControllerViewModel {
     super.setupModel()
     checkSIMCard()
     notWorkingButtonPressed.subscribe(onNext: { [unowned self] () in
-      self.notWorkingDiagnostic()
+      self.notWorkingDiagnostic(self.test)
     }).disposed(by: disposeBag)
   }
   

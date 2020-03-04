@@ -35,8 +35,8 @@ class VolumeTestViewController: BaseViewController {
         .disposed(by: disposeBag)
 
         notWorkingButton.rx.tap
-        .subscribe(onNext: { [weak self] () in
-            self?.viewModel.notWorkingDiagnostic()
+        .subscribe(onNext: { [unowned self] () in
+          self.viewModel.notWorkingDiagnostic(self.viewModel.test)
         })
         .disposed(by: disposeBag)
         // на симуляторе нельзя проверить кнопки громкости
