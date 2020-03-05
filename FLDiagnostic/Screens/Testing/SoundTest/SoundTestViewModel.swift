@@ -55,7 +55,7 @@ class SoundTestViewModel: BaseControllerViewModel {
   func playSound() {
       stopSound()
       
-      let path = Bundle.main.path(forResource: "testSound", ofType: "mp3")
+      let path = Bundle(for: FLDiagnostic.self).path(forResource: "testSound", ofType: "mp3")
       let url = URL(fileURLWithPath: path ?? "")
 
       player = try? AVAudioPlayer(contentsOf: url)

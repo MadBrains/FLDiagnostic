@@ -10,12 +10,13 @@ import UIKit
 import RxSwift
 
 public class FLDiagnostic {
-  static let SDKVerison = "1.0.9"
+  static let SDKVerison = "1.0.9.1"
 
   public typealias GradeBlock = (_ grade: String?, _ error: String?) -> Void
   
   public static func startTesting(_ diagnosticId: String, _ url: String, finalGrade: GradeBlock? = nil) {
     UIFont.loadFonts()
+    
     DiagnosticService.shared.setCurrentDiagnostikID(diagnosticId, url)
     
     DiagnosticService.shared.onGetGrade = { (grade: String?, error: String?) -> Void in

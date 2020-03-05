@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = "FLDiagnostic"
-  s.version             = "1.0.9"
+  s.version             = "1.0.9.1"
   s.summary             = "Summary"
   s.description         = "Description"
   s.resources = "FLDiagnostic/**/*.{xcassets,ttf,mp3}"
