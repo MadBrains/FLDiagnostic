@@ -53,8 +53,9 @@ class BaseControllerViewModel: NSObject {
     presentViewController.onNext(alertController)
   }
 
-  func notWorkingDiagnostic(_ test: Test) {
-    if test.canBeFailed == true {
+  //Передаем сюда вопрос только с экрана повторных ответов
+  func notWorkingDiagnostic(_ test: Test?, _ question: Question? = nil) {
+    if test?.canBeFailed == true {
       showNextTestViewController()
       return
     }
@@ -66,6 +67,11 @@ class BaseControllerViewModel: NSObject {
     alertController.addAction(cancelAction)
 
     let abortAction = UIAlertAction(title: "Продолжить", style: .destructive) { (_) in
+      //Меняет ответ для вопроса, если денаим диангностику из экрана повторных ответов
+      if let question = question {
+        if let isPassed = question.isPassed { question.isPassed = !isPassed }
+      }
+
       self.saveDiagnostics()
     }
     alertController.addAction(abortAction)

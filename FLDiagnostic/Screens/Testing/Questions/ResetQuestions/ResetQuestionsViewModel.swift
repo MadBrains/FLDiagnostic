@@ -45,6 +45,10 @@ class ResetQuestionsViewModel: BaseTableViewViewModel {
       binaryCellModel.onBinaryButtonTapped = { [unowned self] (answer: Bool) -> Void in
         question.isPassed = answer
       }
+      
+      binaryCellModel.onAbortDiagnostic = { [unowned self] () -> Void in
+        self.notWorkingDiagnostic(nil, question)
+      }
       cellModels.append(binaryCellModel)
     }
     let numberQuestions = questions.filter({ $0.type == "number_from_interval" })

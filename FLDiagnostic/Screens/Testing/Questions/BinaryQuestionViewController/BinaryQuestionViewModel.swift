@@ -24,6 +24,8 @@ class BinaryQuestionViewModel: BaseControllerViewModel {
   var yesButtonPressed = PublishSubject<Void>()
   var noButtonPressed = PublishSubject<Void>()
   
+  var yesGrade: GradeMapBinary?
+  var noGrade:  GradeMapBinary?
   private var disposeBag = DisposeBag()
   
   override func setupModel() {
@@ -31,15 +33,28 @@ class BinaryQuestionViewModel: BaseControllerViewModel {
     titleText.onNext(question.primaryText)
     desctiptionText.onNext(question.secondaryText)
     
+    yesGrade = question.gradeMapBinary?.first(where: { $0.value == true })
+    noGrade = question.gradeMapBinary?.first(where: { $0.value == false })
+    
     yesButtonPressed.asObserver().subscribe(onNext: { [unowned self]() in
       self.question.timeSpent = DiagnosticService.shared.calculateSpentTime()
       self.question.isPassed = true
-      self.showNextViewController()
+      
+      if self.yesGrade?.grade == "F" && self.question.affectsScore == true {
+        self.notWorkingDiagnostic(nil)
+      } else {
+        self.showNextViewController()
+      }
     }).disposed(by: disposeBag)
     
     noButtonPressed.asObserver().subscribe(onNext: { [unowned self]() in
       self.question.isPassed = false
-      self.showNextViewController()
+      
+      if self.noGrade?.grade == "F" && self.question.affectsScore == true {
+        self.notWorkingDiagnostic(nil)
+      } else {
+        self.showNextViewController()
+      }
     }).disposed(by: disposeBag)
   }
   

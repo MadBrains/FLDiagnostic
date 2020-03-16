@@ -56,14 +56,32 @@ class Question: Codable {
   var information: String?
   var answerRequired: Bool
   var affectsScore: Bool
-  var minScore: Int
-  var maxScore: Int
-  var minNumber: Int
-  var maxNumber: Int
+  var minScore: Int?
+  var maxScore: Int?
+  var minNumber: Int?
+  var maxNumber: Int?
   
   var isPassed: Bool?
   var answer: String?
   var timeSpent: Int?
-
+  var gradeMapInterval: [GradeMapInterval]?
+  var gradeMapBinary: [GradeMapBinary]?
   var infoNeeded: Bool { return !(information?.isEmpty ?? true) }
+}
+
+class GradeMapBinary: Codable {
+  var value: Bool
+  var grade: String
+}
+
+class GradeMapInterval: Codable {
+  var grade: String
+  var value: GradeMapIntervalValue
+}
+
+class GradeMapIntervalValue: Codable {
+  //var to: Int?
+  //var from: Int?
+  var includeTo: Bool
+  var includeFrom: Bool
 }

@@ -14,7 +14,8 @@ class BinarQuestionViewController: BaseViewController {
   @IBOutlet private weak var subtitleLabel: UILabel!
   @IBOutlet private weak var yesButton: BorderedButton!
   @IBOutlet private weak var noButton: BorderedButton!
-
+  @IBOutlet private weak var buttonsStackView: UIStackView!
+  
   private var model: BinaryQuestionViewModel!
   private var disposeBag = DisposeBag()
 
@@ -32,6 +33,14 @@ class BinarQuestionViewController: BaseViewController {
   }
   
   private func setupStyle() {
+    if let _ = model.noGrade {
+      buttonsStackView.addArrangedSubview(buttonsStackView.subviews[0])
+      yesButton.backgroundColor = #colorLiteral(red: 1, green: 0.4039215686, blue: 0.1960784314, alpha: 1)
+      yesButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+      noButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+      noButton.setTitleColor(#colorLiteral(red: 1, green: 0.4039215686, blue: 0.1960784314, alpha: 1), for: .normal)
+
+    }
     setDefaultNavigationBar(page: model.page, info: model.question.information)
   }
 
