@@ -12,6 +12,11 @@ import RxCocoa
 import RxSwift
 import UIKit
 
+enum VolumeButtonType {
+  case up
+  case down
+}
+
 class VolumeTestViewModel: BaseControllerViewModel {
   var test: Test
   var page: Int
@@ -23,39 +28,24 @@ class VolumeTestViewModel: BaseControllerViewModel {
   }
   let disposeBag = DisposeBag()
 
-  enum VolumeButtonType {
-    case up
-    case down
-  }
   var completed: Bool = false
-  var obs: NSKeyValueObservation?
+  var volume: Float = 0.0
+  var volumeChanged = PublishSubject<VolumeButtonType>()
 
-  func startVolumeTest() -> Observable<VolumeButtonType> {
-    MPVolumeView.setVolume(0.5)
-    let volume = PublishSubject<VolumeButtonType>()
-    let audioSession = AVAudioSession.sharedInstance()
-    do {
-      try audioSession.setActive(true, options: AVAudioSession.SetActiveOptions())
-    } catch {
-      self.testFailed()
-      return .error(error)
-    }
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-      let oldVolumeBeforeObserve = audioSession.outputVolume
-
-      self.obs = audioSession.observe(\.outputVolume, options: [.new, .old]) { (audioSession, change) in
-        if let newVolume = change.newValue {
-          let oldVolume = change.oldValue ?? oldVolumeBeforeObserve
-          if oldVolume < newVolume {
-            volume.onNext(.up)
-          } else if oldVolume > newVolume {
-            volume.onNext(.down)
-          }
+  override func setupModel() {
+    super.setupModel()
+    
+    volume = AVAudioSession.sharedInstance().outputVolume
+    NotificationCenter.default.rx.notification(NSNotification.Name(rawValue: volumeNotificationName)).subscribe(onNext: { [weak self] (notification) in
+      if let newVolume = notification.userInfo?[volumeParameter] as? Float {
+        if self?.volume ?? 0 < newVolume {
+          self?.volumeChanged.onNext(.up)
+        } else if self?.volume ?? 0 > newVolume {
+          self?.volumeChanged.onNext(.down)
         }
+        self?.volume = newVolume
       }
-    }
-
-    return volume.asObservable()
+    }).disposed(by: disposeBag)
   }
 
   func testFailed() {
@@ -64,7 +54,6 @@ class VolumeTestViewModel: BaseControllerViewModel {
   }
   
   func startNextTest(isSafeArea: Bool = false) {
-    obs?.invalidate()
     test.timeSpent = DiagnosticService.shared.calculateSpentTime()
     test.isPassed = true
     showNextTestViewController()

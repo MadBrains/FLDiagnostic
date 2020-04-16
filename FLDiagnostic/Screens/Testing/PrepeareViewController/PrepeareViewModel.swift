@@ -48,18 +48,13 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
     serverImage.onNext(UIImage.FLImage("LoaderImage"))
     
     APIService.shared.getDiagnostics().subscribe(onNext: { (result) in
-         switch result {
-          case .success(let response):
-            if response.diagnostic.device.model == nil {
-              self.patchDevice()
-            } else {
-              DiagnosticService.shared.setCurrentDiagnostikSesion(response.diagnostic)
-              self.setSuccessForConnection()
-            }
-          case .failure(let _):
-            self.patchDevice()
-         }
-       }).disposed(by: disposeBag)
+     switch result {
+      case .success(let response):
+        self.patchDevice()
+      case .failure(let _):
+        self.patchDevice()
+     }
+    }).disposed(by: disposeBag)
   }
 
   private func showColorPickController() {

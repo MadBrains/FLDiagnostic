@@ -20,20 +20,15 @@ class APIService {
   
   func pathDevice(color: String = "") -> Observable<Result<DeviceResponse, APIError>> {
     var params: Parameters
-    if color.isEmpty {
-      params = ["diagnosticId": DiagnosticService.shared.id ?? "",
+      params = ["imei": DiagnosticService.shared.imei,
                 "os": "ios",
                 "brandName": "apple",
                 "modelName": DeviceService.deviceModel,
                 "storageVolume": DeviceService.totalDiskSpaceInGB,
-                "color": NSNull()]
-
-    } else {
-      params = ["diagnosticId": DiagnosticService.shared.id ?? "",
-                "color": color]
-    }
+                "color": color == "" ? NSNull() : color,
+                "imeis": [DiagnosticService.shared.imei]]
     
-    return defaultRequest(FLEndpoint.devices, method: .patch, parameters: params, decodingType: DeviceResponse.self)
+    return defaultRequest(FLEndpoint.deviceInfo, method: .post, parameters: params, decodingType: DeviceResponse.self)
   }
   
   func getDiagnostics() -> Observable<Result<ResultResponse, APIError>> {
@@ -116,7 +111,7 @@ class APIService {
 enum FLEndpoint {
   case login
   case diagnostics
-  case devices
+  case deviceInfo
   case diagnosticsActive
   case diagnosticsFinish(_ id: String)
   case diagnosticsCancel(_ id: String)
@@ -139,7 +134,7 @@ extension FLEndpoint: Endpoint {
         switch self {
         case .login: return "/auth/login"
         case .diagnostics: return "/diagnostics/\(DiagnosticService.shared.id ?? "")"
-        case .devices: return "/devices"
+        case .deviceInfo: return "/diagnostics/\(DiagnosticService.shared.id ?? "")/device-info"
         case .diagnosticsActive: return "/diagnostics/active?deviceImei=\(DiagnosticService.shared.imei)"
         case .diagnosticsCancel(let id): return "/diagnostics/\(id)/cancel"
         case .diagnosticsSave(let id): return "/diagnostics/\(id)/results"

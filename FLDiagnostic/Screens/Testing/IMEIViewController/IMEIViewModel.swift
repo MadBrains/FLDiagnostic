@@ -22,6 +22,8 @@ class IMEIViewModel: BaseControllerViewModel {
   var imeiTextChanged = BehaviorSubject<String>(value: "")
   var nextButtonPressed = PublishSubject<Void>()
   var settingsButtonPressed = PublishSubject<Void>()
+  
+  private var imei: String = ""
   private var disposeBag = DisposeBag()
   
   override func setupModel() {
@@ -39,10 +41,12 @@ class IMEIViewModel: BaseControllerViewModel {
 
     titleText.onNext("IMEI первого SIM-слота")
     desctiptionText.onNext(mutableAttributedString)
-    fieldDescriptionText.onNext("15 цифр")
+    fieldDescriptionText.onNext("При возврате на экран номер автоматически будет введен в поле")
     
-    nextButtonPressed.asObserver().subscribe(onNext: { [unowned self] () in
-      self.showNextViewController()
+    nextButtonPressed.asObserver().subscribe(onNext: { [weak self] () in
+      guard let imei = self?.imei else { return }
+      DiagnosticService.shared.imei = imei
+      self?.showPrepareViewController()
     }).disposed(by: disposeBag)
     
     settingsButtonPressed.asObserver().subscribe(onNext: { [unowned self] () in
@@ -50,10 +54,11 @@ class IMEIViewModel: BaseControllerViewModel {
       self.openURL.onNext(url)
     }).disposed(by: disposeBag)
     
-    imeiTextChanged.asObserver().subscribe(onNext: { [unowned self] (imei) in
+    imeiTextChanged.asObserver().subscribe(onNext: { [weak self] (imei) in
       let propperImei = imei.filter("0123456789".contains).count == 15
-      self.isNextEnabled.onNext(propperImei)
-      self.nextButtonColor.onNext(propperImei ? #colorLiteral(red: 1, green: 0.4039215686, blue: 0.1960784314, alpha: 1) : #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1))
+      self?.imei = imei.filter("0123456789".contains)
+      self?.isNextEnabled.onNext(propperImei)
+      self?.nextButtonColor.onNext(propperImei ? #colorLiteral(red: 1, green: 0.4039215686, blue: 0.1960784314, alpha: 1) : #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1))
     }).disposed(by: disposeBag)
     
     checkPasteboard()
@@ -73,8 +78,10 @@ class IMEIViewModel: BaseControllerViewModel {
     }
   }
   
-  private func showNextViewController() {
-    showNextTestViewController()
+  private func showPrepareViewController() {
+    let viewModel = PrepeareControllerViewModel()
+    guard let viewController = PrepeareViewController.create(viewModel) else { return }
+    showViewController.onNext(viewController)
   }
   
   func formattedIMEI(_ string: String) -> String {

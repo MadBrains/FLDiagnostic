@@ -48,6 +48,7 @@ class BinaryQuestionViewModel: BaseControllerViewModel {
     }).disposed(by: disposeBag)
     
     noButtonPressed.asObserver().subscribe(onNext: { [unowned self]() in
+      self.question.timeSpent = DiagnosticService.shared.calculateSpentTime()
       self.question.isPassed = false
       
       if self.noGrade?.grade == "F" && self.question.affectsScore == true {

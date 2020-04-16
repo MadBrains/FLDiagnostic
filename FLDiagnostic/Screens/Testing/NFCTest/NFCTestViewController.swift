@@ -77,7 +77,7 @@ class NFCTestViewController: BaseViewController {
     turnOnNFCAttributedString.append(NSAttributedString(string:" в настройках телефона"))
     turnOnNFCLabel.attributedText = turnOnNFCAttributedString
 
-    let bringPhoneToRFIDAttributedString = NSMutableAttributedString(string:"Приложите смартфон к карточке с RFID-меткой ")
+    let bringPhoneToRFIDAttributedString = NSMutableAttributedString(string:"Приложите банковскую карту с возможностью бесконтактной оплаты")
     let rfidIconAttachment = NSTextAttachment()
     rfidIconAttachment.image = UIImage.FLImage("RFIDIcon")
     rfidIconAttachment.bounds = CGRect(x: 0, y: -6, width: 28, height: 28)

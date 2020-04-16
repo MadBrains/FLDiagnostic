@@ -11,7 +11,7 @@ import Foundation
 class DeviceResponse: Codable {
   var id: String
   var model: DeviceModel?
-  var imeis: [String]
+  var imeis: [String]?
   var storageVolume: Int?
   var color: String?
 }

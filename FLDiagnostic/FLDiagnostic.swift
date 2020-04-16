@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 public class FLDiagnostic {
-  static let SDKVerison = "1.1.0"
+  static let SDKVerison = "1.2.1"
 
   public typealias GradeBlock = (_ grade: String?, _ error: String?) -> Void
   
@@ -28,8 +28,8 @@ public class FLDiagnostic {
             topController = presentedViewController
         }
       
-      let viewModel = PrepeareControllerViewModel()
-      guard let viewController = PrepeareViewController.create(viewModel) else { return }
+      let viewModel = IMEIViewModel()
+      guard let viewController = IMEIViewController.create(viewModel) else { return }
       let navigationController = UINavigationController(rootViewController: viewController)
       navigationController.modalPresentationStyle = .fullScreen
       navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.09803921569, green: 0.02745098039, blue: 0.368627451, alpha: 1)

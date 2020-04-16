@@ -14,10 +14,10 @@ class DiagnosticService {
   static let shared = DiagnosticService()
   
   var id: String?
-  var imei: String = ""
+  var imei: String = "555555555555555"
   var serverUrl: String = ""
-  var tests: [Test] { return diagnostic?.device.model?.tests ?? [] }
-  var questions: [Question] { return diagnostic?.device.model?.questions ?? [] }
+  var tests: [Test] { return diagnostic?.model?.tests ?? [] }
+  var questions: [Question] { return diagnostic?.model?.questions ?? [] }
   var allPages: Int { return testControllers.count - 2 }
   var testEndDate = Date()
   var testDate = Date()
@@ -215,6 +215,7 @@ class DiagnosticService {
         results.append(result)
       }
     }
+    
     return results
   }
   

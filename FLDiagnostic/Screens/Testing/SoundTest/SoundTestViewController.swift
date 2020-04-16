@@ -47,6 +47,10 @@ class SoundTestViewController: BaseViewController {
       
       viewModel.isAdviceHidden.bind(to: adviceView.rx.isHidden).disposed(by: disposeBag)
     }
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    viewModel.stopSound()
+  }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

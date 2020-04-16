@@ -12,8 +12,8 @@ import RxSwift
 import UIKit
 import Mute
 
-private let volumeNotificationName = "AVSystemController_SystemVolumeDidChangeNotification"
-private let volumeParameter = "AVSystemController_AudioVolumeNotificationParameter"
+let volumeNotificationName = "AVSystemController_SystemVolumeDidChangeNotification"
+let volumeParameter = "AVSystemController_AudioVolumeNotificationParameter"
 
 class SoundTestViewModel: BaseControllerViewModel {
   var test: Test
@@ -35,7 +35,7 @@ class SoundTestViewModel: BaseControllerViewModel {
 
   override func setupModel() {
     super.setupModel()
-    NotificationCenter.default.rx.notification(NSNotification.Name(rawValue: volumeNotificationName)).subscribe(onNext: { [unowned self] (notification) in
+    NotificationCenter.default.rx.notification(NSNotification.Name(rawValue: volumeNotificationName)).subscribe(onNext: { (notification) in
       let volume = notification.userInfo![volumeParameter] as! Float
       self.volume = volume
       self.checkDeviceVolume()

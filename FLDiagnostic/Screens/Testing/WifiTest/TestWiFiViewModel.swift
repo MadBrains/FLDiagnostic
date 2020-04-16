@@ -64,6 +64,9 @@ class TestWifiViewModel: BaseControllerViewModel {
     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
       NetworkManager.isReachableViaWiFi { [unowned self] (connected) in
         self.isProgressing.onNext(false)
+        
+        if self.isSucceed == true { return }
+        
         if connected {
           self.setTestSucceed()
         } else {

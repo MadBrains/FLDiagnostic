@@ -12,6 +12,7 @@ class DiagnosticResponse: Codable {
   var id: String
   var estimatedTime: Int
   var device: DeviceResponse
+  var model: DeviceModel?
   var status: String?
   var results: [DiagnosticResults]?
 }

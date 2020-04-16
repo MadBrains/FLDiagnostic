@@ -47,6 +47,8 @@ class IMEIViewController: BaseViewController {
   }
   
   private func setupStyle() {
+    setDefaultNavigationBar("", timerNeeded: false,  versionNeeded: false)
+
     imeiTextField.delegate = self
     textFieldContainerView.layer.borderColor = #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8705882353, alpha: 1)
     textFieldContainerView.layer.borderWidth = 2

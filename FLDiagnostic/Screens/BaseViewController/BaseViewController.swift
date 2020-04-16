@@ -25,6 +25,7 @@ class BaseViewController: UIViewController {
       return 0
     }
   }
+  private var page: Int = 0
   private var timerButton: UIBarButtonItem?
   private var info: String = ""
   private var timer: Timer?
@@ -40,24 +41,24 @@ class BaseViewController: UIViewController {
   
   func setup(_ model: BaseControllerViewModel) {
     self.model = model
-    model.dismissViewController.asObserver().subscribe(onNext: { [unowned self] () in
-      self.dismiss(animated: true, completion: nil)
+    model.dismissViewController.asObserver().subscribe(onNext: { [weak self] () in
+      self?.dismiss(animated: true, completion: nil)
     }).disposed(by: disposeBag)
        
-    model.popViewController.asObserver().subscribe(onNext: { [unowned self] () in
-      self.navigationController?.popViewController(animated: true)
+    model.popViewController.asObserver().subscribe(onNext: { [weak self] () in
+      self?.navigationController?.popViewController(animated: true)
     }).disposed(by: disposeBag)
        
-    model.presentViewController.asObserver().subscribe(onNext: { [unowned self] (viewController) in
-      self.present(viewController, animated: true, completion: nil)
+    model.presentViewController.asObserver().subscribe(onNext: { [weak self] (viewController) in
+      self?.present(viewController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
        
-    model.showViewController.asObserver().subscribe(onNext: { [unowned self] (viewController) in
-      self.navigationController?.show(viewController, sender: self)
+    model.showViewController.asObserver().subscribe(onNext: { [weak self] (viewController) in
+      self?.navigationController?.show(viewController, sender: self)
     }).disposed(by: disposeBag)
        
-    model.dismissNavigationController.asObserver().subscribe(onNext: { () in
-      self.navigationController?.dismiss(animated: true, completion: nil)
+    model.dismissNavigationController.asObserver().subscribe(onNext: { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
     }).disposed(by: disposeBag)
     
     model.openURL.asObserver().subscribe(onNext: { (url) in
@@ -69,30 +70,30 @@ class BaseViewController: UIViewController {
     }).disposed(by: disposeBag)
 
     model.modalAlert
-      .subscribe(onNext: { alert in
-        self.present(alert, animated: true, completion: nil)
+      .subscribe(onNext: { [weak self] alert in
+        self?.present(alert, animated: true, completion: nil)
       })
       .disposed(by: disposeBag)
 
-    model.showError.subscribe(onNext: { (arg) in
+    model.showError.subscribe(onNext: { [weak self] (arg) in
       let alertController = UIAlertController(title: "", message: arg.message, preferredStyle: .alert)
       let okAction = UIAlertAction(title: "Хорошо", style: .default, handler: arg.action)
       alertController.addAction(okAction)
-      self.present(alertController, animated: true, completion: nil)
+      self?.present(alertController, animated: true, completion: nil)
     }).disposed(by: disposeBag)
     
     model.isLoading.asObservable()
     .bind(to: SVProgressHUD.rx.isAnimating)
     .disposed(by: disposeBag)
     
-    model.dismissNavigation.subscribe(onNext: { () in
+    model.dismissNavigation.subscribe(onNext: { [weak self] in
       SVProgressHUD.dismiss()
-      self.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
     }).disposed(by: disposeBag)
   }
   
   func setDefaultNavigationBar(page: Int = 0, _ nonNumericTitle: String? = nil, info: String? = nil, timerNeeded: Bool = true, versionNeeded: Bool = false, closeButtonIsAborting: Bool = true) {
-
+    self.page = page
     if let title = nonNumericTitle {
       if versionNeeded == false {
         navigationItem.title = title
@@ -160,7 +161,7 @@ class BaseViewController: UIViewController {
     if let info = info {
       if info.isBlank == false {
         setupInfo(info: info)
-        let infoBarButtonItem = UIBarButtonItem(image: UIImage.FLImage("info_icon"), style: .plain, target: self, action: #selector(infoButtonPressed))
+        let infoBarButtonItem = UIBarButtonItem(title: "Помощь", style: .plain, target: self, action: #selector(infoButtonPressed))
         infoBarButtonItem.tintColor = .white
         navigationItem.rightBarButtonItem = infoBarButtonItem
       }
@@ -211,25 +212,49 @@ class BaseViewController: UIViewController {
   }
   
   @objc func cancelDiagnosticAlert() {
+    //Если юзер не на экранах теста то просто закрываем диагностику
     let alertController = UIAlertController(title: "Прервать тест", message: "Устройство не получит грейд. Вы действительно хотите прервать тест?", preferredStyle: .alert)
 
     let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: nil)
     alertController.addAction(cancelAction)
     
-    let stopAction = UIAlertAction(title: "Прервать", style: .destructive) { (_) in
-      self.cancelDiagnostic()
+    let stopAction = UIAlertAction(title: "Прервать", style: .destructive) { [weak self] (_) in
+      if self?.page == 0 {
+        self?.cancelDiagnostic()
+      } else {
+        self?.saveDiagnosticAndCancel()
+      }
     }
     alertController.addAction(stopAction)
 
     self.present(alertController, animated: true, completion: nil)
+  
+  }
+  
+  
+  func saveDiagnosticAndCancel() {
+    guard let id = DiagnosticService.shared.id else { return }
+    let tests = DiagnosticService.shared.createTestResultParameters()
+    let questions = DiagnosticService.shared.createQuestionsResultParameters()
+    APIService.shared.saveDiagnostic(id, tests, questions)
+      .trackActivity(model.isLoading)
+      .subscribe(onNext: { [weak self] (result) in
+      switch result {
+      case .success(let response):
+        self?.cancelDiagnostic()
+      case .failure(let error):
+        self?.model.showError.onNext((error.localizedDescription, nil))
+        break;
+      }
+    }).disposed(by: disposeBag)
   }
   
   private func cancelDiagnostic() {
     guard let id = DiagnosticService.shared.id else { removeNavigationController(); return }
     timer?.invalidate()
-    APIService.shared.cancelDiagnostic(id).trackActivity(model.isLoading).subscribe(onNext: { (result) in
+    APIService.shared.cancelDiagnostic(id).trackActivity(model.isLoading).subscribe(onNext: { [weak self] (result) in
       DiagnosticService.shared.onGetGrade?(nil, "Диагностика была отменена")
-      self.removeNavigationController()
+      self?.removeNavigationController()
     }).disposed(by: disposeBag)
   }
   

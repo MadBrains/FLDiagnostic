@@ -20,17 +20,16 @@ class VolumeTestViewController: BaseViewController {
     private var viewModel: VolumeTestViewModel!
     private var disposeBag = DisposeBag()
 
-    private var currentBittonTypeTest = VolumeTestViewModel.VolumeButtonType.up
+    private var currentBittonTypeTest = VolumeButtonType.up
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupStyle()
 
-        viewModel.startVolumeTest().subscribe(onNext: { [weak self] buttonType in
-            if self?.currentBittonTypeTest == buttonType {
-                self?.buttonChecked()
-            }
+        viewModel.volumeChanged.subscribe(onNext: { [weak self] buttonType in
+          if self?.currentBittonTypeTest == buttonType {
+            self?.buttonChecked()
+          }
         })
         .disposed(by: disposeBag)
 

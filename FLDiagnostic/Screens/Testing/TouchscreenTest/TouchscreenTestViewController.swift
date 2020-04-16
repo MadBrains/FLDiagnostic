@@ -18,7 +18,6 @@ class TouchscreenTestViewController: BaseViewController {
   @IBOutlet private weak var timeLabel: UILabel!
   @IBOutlet private weak var testCounterLabel: UILabel!
   @IBOutlet private weak var closeButton: UIButton!
-  @IBOutlet private weak var infoButton: UIButton!
 
   @IBOutlet private weak var collectionView: UICollectionView!
   @IBOutlet private weak var collectionViewFLowLayout: UICollectionViewFlowLayout!
@@ -75,12 +74,6 @@ class TouchscreenTestViewController: BaseViewController {
           self.hideTutorialView()
           self.showTestSettingsView()
         }
-        .disposed(by: disposeBag)
-
-      infoButton.rx.tap
-        .subscribe(onNext: { () in
-          self.showInfo()
-        })
         .disposed(by: disposeBag)
 
       viewModel.circles

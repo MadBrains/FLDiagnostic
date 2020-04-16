@@ -27,7 +27,7 @@ class DeviceColorViewController: BaseCollectionViewController {
   }
   
   private func setupStyle() {
-    setDefaultNavigationBar(page: 0, "", info: nil, timerNeeded: false, closeButtonIsAborting: true)
+    setDefaultNavigationBar(page: 0, "", info: nil, timerNeeded: false)
     flowLayout.estimatedItemSize = CGSize(width: 64, height: 64)
   }
 

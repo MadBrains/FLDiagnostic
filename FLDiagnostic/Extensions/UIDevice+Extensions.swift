@@ -20,8 +20,8 @@ public extension UIDevice {
             }
         }
         var modelMap : [ String : Model ] = [
-            "i386"       : .iPhone7plus,
-            "x86_64"     : .iPhone7plus,
+            "i386"       : .iPhone8,
+            "x86_64"     : .iPhone8,
             "iPod1,1"    : .iPod1,
             "iPod2,1"    : .iPod2,
             "iPod3,1"    : .iPod3,
@@ -76,7 +76,9 @@ public extension UIDevice {
             "iPhone9,3"  : .iPhone7,
             "iPhone9,4"  : .iPhone7plus,
             "iPhone10,1" : .iPhone8,
+            "iPhone10,4" : .iPhone8,
             "iPhone10,2" : .iPhone8plus,
+            "iPhone10,5" : .iPhone8plus,
             "iPhone10,3" : .iPhoneX,
             "iPhone10,6" : .iPhoneX,
             "iPhone11,2" : .iPhoneXS,

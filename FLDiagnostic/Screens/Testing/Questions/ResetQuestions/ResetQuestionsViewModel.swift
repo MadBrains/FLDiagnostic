@@ -39,26 +39,32 @@ class ResetQuestionsViewModel: BaseTableViewViewModel {
   }
   override func createCellModels() {
     var cellModels = [BaseCellModel]()
-    let binaryQuestions = questions.filter({ $0.type == "general" })
-    binaryQuestions.forEach { question in
-      let binaryCellModel = BinaryCellModel(question: question)
-      binaryCellModel.onBinaryButtonTapped = { [unowned self] (answer: Bool) -> Void in
-        question.isPassed = answer
+    
+    let titleCellModel = TitleCellModel(title: "Подтвердите свои ответы")
+    cellModels.append(titleCellModel)
+    
+    questions.forEach { question in
+      switch question.type {
+      case "general":
+        let binaryCellModel = BinaryCellModel(question: question)
+        binaryCellModel.onBinaryButtonTapped = {(answer: Bool) -> Void in
+          question.isPassed = answer
+        }
+        
+        binaryCellModel.onAbortDiagnostic = { [unowned self] () -> Void in
+          self.notWorkingDiagnostic(nil, question)
+        }
+        cellModels.append(binaryCellModel)
+      case "number_from_interval":
+        let numberCellModel = NumberCellModel(question: question)
+        numberCellModel.onTextEdited = { [weak self] (answer: String) -> Void in
+          question.answer = answer.isEmpty ? "" : answer
+          self?.answersChanged.onNext(())
+        }
+        cellModels.append(numberCellModel)
+      default:
+        break
       }
-      
-      binaryCellModel.onAbortDiagnostic = { [unowned self] () -> Void in
-        self.notWorkingDiagnostic(nil, question)
-      }
-      cellModels.append(binaryCellModel)
-    }
-    let numberQuestions = questions.filter({ $0.type == "number_from_interval" })
-    numberQuestions.forEach { question in
-      let numberCellModel = NumberCellModel(question: question)
-      numberCellModel.onTextEdited = { [unowned self] (answer: String) -> Void in
-        question.answer = answer.isEmpty ? "" : answer
-        self.answersChanged.onNext(())
-      }
-      cellModels.append(numberCellModel)
     }
     tableViewOutput.cellModels.onNext(cellModels)
   }
