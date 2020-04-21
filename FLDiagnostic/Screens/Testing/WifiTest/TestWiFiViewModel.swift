@@ -8,7 +8,6 @@
 
 import RxSwift
 import Reachability
-import RxReachability
 
 class TestWifiViewModel: BaseControllerViewModel {
   var test: Test
@@ -74,16 +73,6 @@ class TestWifiViewModel: BaseControllerViewModel {
         }
       }
     }
-    
-    Reachability.rx.status.subscribe(onNext: { [unowned self] (connection) in
-      self.isProgressing.onNext(false)
-      if self.isSucceed == true { return }
-      if connection == .wifi {
-        self.setTestSucceed()
-      } else {
-        self.setTestError()
-      }
-    }).disposed(by: disposeBag)
   }
   
   
@@ -93,6 +82,9 @@ class TestWifiViewModel: BaseControllerViewModel {
     infoTextColor.onNext(#colorLiteral(red: 0, green: 0.7529411765, blue: 0.1882352941, alpha: 1))
     infoText.onNext("Тест успешно пройден")
     infoImage.onNext(UIImage.FLImage("TestComplete"))
+    
+    retryHidden.onNext(true)
+    notWorkingHidden.onNext(true)
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
       self.test.timeSpent = DiagnosticService.shared.calculateSpentTime()
@@ -113,10 +105,10 @@ class TestWifiViewModel: BaseControllerViewModel {
 }
 
 struct WifiInfo {
-    public let interface:String
-    public let ssid:String
-    public let bssid:String
-    init(_ interface:String, _ ssid:String,_ bssid:String) {
+    public let interface: String
+    public let ssid: String
+    public let bssid: String
+    init(_ interface: String, _ ssid: String,_ bssid: String) {
         self.interface = interface
         self.ssid = ssid
         self.bssid = bssid

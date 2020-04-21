@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                = "FLDiagnostic"
-  s.version             = "1.2.1"
+  s.version             = "1.2.2"
   s.summary             = "Summary"
   s.description         = "Description"
   s.resources = "FLDiagnostic/**/*.{xcassets,ttf,mp3}"
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
   s.dependency 'Alamofire', '~> 4.8.2'
-  s.dependency 'RxReachability', '~> 1.0.0'
+  s.dependency 'Reachability'
   s.dependency 'RxOptional', '~> 4.1.0'
   s.dependency 'RxKeyboard', '~> 1.0.0'
   s.dependency 'RxCoreMotion', '~> 1.2.1'
