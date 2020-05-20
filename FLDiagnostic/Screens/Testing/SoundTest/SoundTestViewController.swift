@@ -22,29 +22,29 @@ class SoundTestViewController: BaseViewController {
     @IBOutlet private weak var haveSoundButton: BorderedButton!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
 
-        setupStyle()
+      setupStyle()
 
-        playSoundAgainButton.rx.tap
-            .subscribe(onNext: {
-                self.viewModel.playSound()
-            })
-            .disposed(by: disposeBag)
+      playSoundAgainButton.rx.tap
+          .subscribe(onNext: {
+              self.viewModel.playSound()
+          })
+          .disposed(by: disposeBag)
 
-        noSoundButton.rx.tap
-            .subscribe(onNext: { [unowned self] in
-              self.viewModel.test.isPassed = false
-              self.viewModel.notWorkingDiagnostic(self.viewModel.test)
-            })
-            .disposed(by: disposeBag)
+      noSoundButton.rx.tap
+          .subscribe(onNext: { [unowned self] in
+            self.viewModel.test.isPassed = false
+            self.viewModel.notWorkingDiagnostic(self.viewModel.test)
+          })
+          .disposed(by: disposeBag)
 
-        haveSoundButton.rx.tap
-            .subscribe(onNext: {
-                self.endTest()
-            })
-            .disposed(by: disposeBag)
-      
+      haveSoundButton.rx.tap
+          .subscribe(onNext: {
+              self.endTest()
+          })
+          .disposed(by: disposeBag)
+    
       viewModel.isAdviceHidden.bind(to: adviceView.rx.isHidden).disposed(by: disposeBag)
     }
   override func viewWillDisappear(_ animated: Bool) {

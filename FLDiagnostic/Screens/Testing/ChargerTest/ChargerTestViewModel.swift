@@ -14,6 +14,9 @@ class ChargerTestViewModel: BaseControllerViewModel {
   var test: Test
   var page: Int
 
+  let plugState = BehaviorSubject<PlugState>(value: .initial)
+  private let disposeBag = DisposeBag()
+  
   init(_ test: Test, page: Int) {
     self.test = test
     self.page = page
@@ -21,31 +24,26 @@ class ChargerTestViewModel: BaseControllerViewModel {
   }
   
   enum PlugState {
+    case initial
     case plugedIn
     case plugedOut
   }
 
   var obs: NSKeyValueObservation?
 
-  func startTest() -> Observable<PlugState> {
-      let batteryState = PublishSubject<PlugState>()
-      UIDevice.current.isBatteryMonitoringEnabled = true
+  func startTest() {
+    NotificationCenter.default.rx.notification(UIDevice.batteryStateDidChangeNotification).subscribe(onNext: { [weak self] (notification) in
+      guard let currentState = try? self?.plugState.value() else { return }
+      
       let currentBatteryState = UIDevice.current.batteryState
-      if currentBatteryState == .charging || currentBatteryState == .full {
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-              batteryState.onNext(.plugedIn)
-          }
+      if (currentBatteryState == .charging || currentBatteryState == .full) && currentState == .initial {
+        self?.plugState.onNext(.plugedIn)
       }
-      obs = UIDevice.current.observe(\.batteryState, options: []) { (_, _) in
-          let currentBatteryState = UIDevice.current.batteryState
-          if currentBatteryState == .charging || currentBatteryState == .full {
-              batteryState.onNext(.plugedIn)
-          }
-          if currentBatteryState == .unplugged {
-              batteryState.onNext(.plugedOut)
-          }
+      if currentBatteryState == .unplugged && currentState == .plugedIn {
+       self?.plugState.onNext(.plugedOut)
       }
-      return batteryState.asObservable()
+    }).disposed(by: disposeBag)
+
   }
 
   func testFailed() {

@@ -22,62 +22,57 @@ class ChargerTestViewController: BaseViewController {
     private var testEnded = false
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+      super.viewDidLoad()
+      setupStyle()
+      viewModel.plugState.subscribe(onNext: { [weak self] plugState in
+          switch plugState {
+          case .plugedIn:
+            self?.animatePlugArrow(self?.chargerPlugInImageView, chargerState: plugState)
+          case .plugedOut:
+            self?.animatePlugArrow(self?.chargerPlugOutImageView, chargerState: plugState)
+          default:
+            break;
+          }
+      }).disposed(by: disposeBag)
 
-        setupStyle()
-        viewModel.startTest()
-            .subscribe(onNext: { plugState in
-                switch plugState {
-                case .plugedIn:
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.chargerPlugInImageView.alpha = 0
-                    }) { _ in
-                        self.chargerPlugInImageView.isHidden = true
-                        if self.chargerPlugOutImageView.isHidden {
-                            if !self.testEnded {
-                                self.testEnded = true
-                                self.endTest()
-                            }
-                        }
-                    }
-                case .plugedOut:
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.chargerPlugOutImageView.alpha = 0
-                    }) { _ in
-                        self.chargerPlugOutImageView.isHidden = true
-                        if self.chargerPlugInImageView.isHidden {
-                            if !self.testEnded {
-                                self.testEnded = true
-                                self.endTest()
-                            }
-                        }
-                    }
-                }
-            })
-            .disposed(by: disposeBag)
+      
+      notWorkingButton.rx.tap.subscribe(onNext: { [unowned self] in
+        self.viewModel.notWorkingDiagnostic(self.viewModel.test)
+      }).disposed(by: disposeBag)
 
-        notWorkingButton.rx.tap
-            .subscribe(onNext: { [unowned self] in
-              self.viewModel.notWorkingDiagnostic(self.viewModel.test)
-            })
-            .disposed(by: disposeBag)
-
-        #if targetEnvironment(simulator)
-            self.endTest()
-        #endif
+      #if targetEnvironment(simulator)
+        self.endTest()
+      #endif
+      viewModel.startTest()
     }
 
     private func setupStyle() {
       setDefaultNavigationBar(page: viewModel.page, info: viewModel.test.information)
     }
+  
+    private func animatePlugArrow(_ imageView: UIImageView?, chargerState: ChargerTestViewModel.PlugState) {
+      guard let imageView = imageView else { return }
+      UIView.animate(withDuration: 0.3, animations: {
+        imageView.alpha = 0
+      }) { _ in
+        imageView.isHidden = true
+        if chargerState == .plugedOut {
+          if !self.testEnded {
+            self.endTest()
+          }
+        }
+      }
+    }
 
     func endTest() {
-        DispatchQueue.main.async {
-            self.testCompletedView.isHidden = false
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
-            viewModel?.startNextTest()
-        }
+      self.testEnded = true
+      
+      DispatchQueue.main.async {
+          self.testCompletedView.isHidden = false
+      }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
+          viewModel?.startNextTest()
+      }
     }
 }
 extension ChargerTestViewController {

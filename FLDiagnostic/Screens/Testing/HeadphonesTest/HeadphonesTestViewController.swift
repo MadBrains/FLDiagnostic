@@ -25,32 +25,14 @@ class HeadphonesTestViewController: BaseViewController {
 
         setupStyle()
         viewModel.startTest()
-            .subscribe(onNext: { headphonesState in
+          .subscribe(onNext: { [weak self] headphonesState in
                 switch headphonesState {
                 case .plugedIn:
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.headphonesPlugInImageView.alpha = 0
-                    }) { _ in
-                        self.headphonesPlugInImageView.isHidden = true
-                        if self.headphonesPlugOutImageView.isHidden {
-                            if !self.testEnded {
-                                self.testEnded = true
-                                self.endTest()
-                            }
-                        }
-                    }
+                  self?.animatePlugArrow(self?.headphonesPlugInImageView, headphonesState: headphonesState)
                 case .plugedOut:
-                    UIView.animate(withDuration: 0.3, animations: {
-                        self.headphonesPlugOutImageView.alpha = 0
-                    }) { _ in
-                        self.headphonesPlugOutImageView.isHidden = true
-                        if self.headphonesPlugInImageView.isHidden {
-                            if !self.testEnded {
-                                self.testEnded = true
-                                self.endTest()
-                            }
-                        }
-                    }
+                  self?.animatePlugArrow(self?.headphonesPlugOutImageView, headphonesState: headphonesState)
+                default:
+                  break;
                 }
             })
             .disposed(by: disposeBag)
@@ -65,17 +47,32 @@ class HeadphonesTestViewController: BaseViewController {
         #endif
     }
 
+  private func animatePlugArrow(_ imageView: UIImageView?, headphonesState: HeadphonesTestViewModel.PlugState) {
+    guard let imageView = imageView else { return }
+    UIView.animate(withDuration: 0.3, animations: {
+      imageView.alpha = 0
+    }) { _ in
+      imageView.isHidden = true
+      if headphonesState == .plugedOut {
+        if !self.testEnded {
+          self.endTest()
+        }
+      }
+    }
+  }
     private func setupStyle() {
       setDefaultNavigationBar(page: viewModel.page, info: viewModel.test.information)
     }
 
     func endTest() {
-        DispatchQueue.main.async {
-            self.testCompletedView.isHidden = false
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
-            viewModel?.startNextTest()
-        }
+      self.testEnded = true
+
+      DispatchQueue.main.async {
+          self.testCompletedView.isHidden = false
+      }
+      DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
+          viewModel?.startNextTest()
+      }
     }
 }
 extension HeadphonesTestViewController {
