@@ -38,9 +38,9 @@ class VolumeTestViewModel: BaseControllerViewModel {
     volume = AVAudioSession.sharedInstance().outputVolume
     NotificationCenter.default.rx.notification(NSNotification.Name(rawValue: volumeNotificationName)).subscribe(onNext: { [weak self] (notification) in
       if let newVolume = notification.userInfo?[volumeParameter] as? Float {
-        if self?.volume ?? 0 < newVolume {
+        if self?.volume ?? 0 <= newVolume {
           self?.volumeChanged.onNext(.up)
-        } else if self?.volume ?? 0 > newVolume {
+        } else if self?.volume ?? 0 >= newVolume {
           self?.volumeChanged.onNext(.down)
         }
         self?.volume = newVolume

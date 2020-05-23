@@ -20,14 +20,15 @@ class VolumeTestViewController: BaseViewController {
     private var viewModel: VolumeTestViewModel!
     private var disposeBag = DisposeBag()
 
-    private var currentBittonTypeTest = VolumeButtonType.up
+    private var currentButtonTypeTest = VolumeButtonType.up
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStyle()
-
+        //viewModel.startVolumeTest()
+      
         viewModel.volumeChanged.subscribe(onNext: { [weak self] buttonType in
-          if self?.currentBittonTypeTest == buttonType {
+          if self?.currentButtonTypeTest == buttonType {
             self?.buttonChecked()
           }
         })
@@ -49,13 +50,13 @@ class VolumeTestViewController: BaseViewController {
   }
 
   func buttonChecked() {
-    switch currentBittonTypeTest {
+    switch currentButtonTypeTest {
     case .up:
       UIView.animate(withDuration: 0.3, animations: {
         self.testLabel.text = "Нажмите кнопку \"Уменьшить громкость\""
         self.testArt.image = UIImage.FLImage("VolumeDownTestArt")
       }) { _ in
-        self.currentBittonTypeTest = .down
+        self.currentButtonTypeTest = .down
       }
     case .down:
       endTest()
