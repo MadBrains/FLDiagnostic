@@ -34,6 +34,9 @@ class VolumeTestViewModel: BaseControllerViewModel {
 
   override func setupModel() {
     super.setupModel()
+    //Наблюдение за изменением звука не работает в родительском приложении без этого кода
+    let volumeView = MPVolumeView(frame: CGRect(x: 100, y: 100, width: 0, height: 0))
+    UIApplication.shared.keyWindow?.addSubview(volumeView)
     
     volume = AVAudioSession.sharedInstance().outputVolume
     NotificationCenter.default.rx.notification(NSNotification.Name(rawValue: volumeNotificationName)).subscribe(onNext: { [weak self] (notification) in

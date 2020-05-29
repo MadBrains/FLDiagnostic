@@ -23,26 +23,25 @@ class VolumeTestViewController: BaseViewController {
     private var currentButtonTypeTest = VolumeButtonType.up
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        setupStyle()
-        //viewModel.startVolumeTest()
-      
-        viewModel.volumeChanged.subscribe(onNext: { [weak self] buttonType in
-          if self?.currentButtonTypeTest == buttonType {
-            self?.buttonChecked()
-          }
-        })
-        .disposed(by: disposeBag)
+      super.viewDidLoad()
+      setupStyle()
+    
+      viewModel.volumeChanged.subscribe(onNext: { [weak self] buttonType in
+        if self?.currentButtonTypeTest == buttonType {
+          self?.buttonChecked()
+        }
+      })
+      .disposed(by: disposeBag)
 
-        notWorkingButton.rx.tap
-        .subscribe(onNext: { [unowned self] () in
-          self.viewModel.notWorkingDiagnostic(self.viewModel.test)
-        })
-        .disposed(by: disposeBag)
-        // на симуляторе нельзя проверить кнопки громкости
-        #if targetEnvironment(simulator)
-            self.endTest()
-        #endif
+      notWorkingButton.rx.tap
+      .subscribe(onNext: { [unowned self] () in
+        self.viewModel.notWorkingDiagnostic(self.viewModel.test)
+      })
+      .disposed(by: disposeBag)
+      // на симуляторе нельзя проверить кнопки громкости
+      #if targetEnvironment(simulator)
+          self.endTest()
+      #endif
     }
 
   private func setupStyle() {
