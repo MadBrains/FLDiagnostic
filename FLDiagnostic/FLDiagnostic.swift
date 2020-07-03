@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 public class FLDiagnostic {
-  static let SDKVerison = "1.2.5"
+  static let SDKVerison = "1.2.6"
 
   public typealias GradeBlock = (_ grade: String?, _ error: String?) -> Void
   
