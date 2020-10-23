@@ -38,14 +38,7 @@ class CellNetworkTestViewModel: BaseControllerViewModel {
     let info = CTTelephonyNetworkInfo()
     let carrier = info.subscriberCellularProvider
     availabilitySIM.onNext(carrier?.mobileNetworkCode != nil)
-
-    info.subscriberCellularProviderDidUpdateNotifier = { inCTCarrier in
-        DispatchQueue.main.async(execute: {
-          self.availabilitySIM.onNext(inCTCarrier.mobileNetworkCode != nil)
-        })
-    }
-
-  }
+	}
 
   func testFailed() {
     test.isPassed = false

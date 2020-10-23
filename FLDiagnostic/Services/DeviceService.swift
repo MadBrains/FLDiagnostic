@@ -92,5 +92,9 @@ public enum Model : String {
     iPhone11Pro      = "iPhone 11 Pro",
     iPhone11ProMax   = "iPhone 11 Pro Max",
     iPhoneSE2        = "iPhone SE 2",
+		iPhone12Mini     = "iPhone 12 mini",
+	  iPhone12         = "iPhone 12",
+	  iPhone12Pro      = "iPhone 12 Pro",
+	  iPhone12ProMax   = "iPhone 12 Pro Max",
     unrecognized     = "?unrecognized?"
 }

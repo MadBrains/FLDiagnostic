@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="67p-Bd-7IH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="67p-Bd-7IH">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +29,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FL_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="G6d-qf-EKN">
                                 <rect key="frame" x="136.66666666666666" y="332" width="140.99999999999997" height="28"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBT-NK-W0P">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBT-NK-W0P">
                                 <rect key="frame" x="20" y="620" width="374" height="52"/>
                                 <color key="backgroundColor" red="1" green="0.40392156862745099" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -44,7 +45,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUZ-P4-gIx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUZ-P4-gIx">
                                 <rect key="frame" x="20" y="11" width="51" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Выйти">
@@ -52,6 +53,7 @@
                                 </state>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3U7-wt-cgR"/>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.027450980392156862" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bUZ-P4-gIx" firstAttribute="leading" secondItem="3U7-wt-cgR" secondAttribute="leading" constant="20" id="83K-aA-rjt"/>
@@ -62,7 +64,6 @@
                             <constraint firstItem="G6d-qf-EKN" firstAttribute="centerX" secondItem="3U7-wt-cgR" secondAttribute="centerX" id="afD-Dy-hWG"/>
                             <constraint firstItem="bUZ-P4-gIx" firstAttribute="top" secondItem="3U7-wt-cgR" secondAttribute="top" constant="11" id="fZY-0b-7Aa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3U7-wt-cgR"/>
                     </view>
                     <navigationItem key="navigationItem" id="XEI-tn-1Tf"/>
                     <connections>
@@ -97,23 +98,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="6zW-Ku-o6g">
-                                        <rect key="frame" x="152" y="108" width="70" height="468"/>
+                                        <rect key="frame" x="152" y="213" width="70" height="258"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccelerometerX" translatesAutoresizingMaskIntoConstraints="NO" id="jQ8-MP-wL3" customClass="AccelerometerCheckView" customModule="FLDiagnostic" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="140"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccelerometerY" translatesAutoresizingMaskIntoConstraints="NO" id="p2d-gN-271" customClass="AccelerometerCheckView" customModule="FLDiagnostic" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="164" width="70" height="140"/>
+                                                <rect key="frame" x="0.0" y="94" width="70" height="70"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AccelerometerZ" translatesAutoresizingMaskIntoConstraints="NO" id="Vew-Iz-iLC" customClass="AccelerometerCheckView" customModule="FLDiagnostic" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="328" width="70" height="140"/>
+                                                <rect key="frame" x="0.0" y="188" width="70" height="70"/>
                                             </imageView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="kpA-IV-fJp"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a50-HF-Bx4" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a50-HF-Bx4" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="zxb-3E-wFd"/>
@@ -200,6 +201,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="OyR-C5-X4N"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OyR-C5-X4N" firstAttribute="bottom" secondItem="nP8-p6-6rN" secondAttribute="bottom" constant="26" id="GtF-Na-ITV"/>
@@ -207,7 +209,6 @@
                             <constraint firstItem="OyR-C5-X4N" firstAttribute="trailing" secondItem="nP8-p6-6rN" secondAttribute="trailing" constant="20" id="j2z-kS-sYV"/>
                             <constraint firstItem="nP8-p6-6rN" firstAttribute="leading" secondItem="OyR-C5-X4N" secondAttribute="leading" constant="20" id="oEl-uc-2ib"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OyR-C5-X4N"/>
                     </view>
                     <navigationItem key="navigationItem" id="690-SD-Xc8"/>
                     <connections>
@@ -265,7 +266,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-Z4-IjG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-Z4-IjG">
                                 <rect key="frame" x="20" y="668" width="374" height="52"/>
                                 <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -280,7 +281,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSu-J0-ViJ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSu-J0-ViJ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="20" y="576" width="374" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -303,7 +304,8 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gjm-Vn-2oh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gjm-Vn-2oh" firstAttribute="trailing" secondItem="kSu-J0-ViJ" secondAttribute="trailing" constant="20" id="5HI-BA-CC7"/>
                             <constraint firstItem="0dJ-Z4-IjG" firstAttribute="top" secondItem="kSu-J0-ViJ" secondAttribute="bottom" constant="16" id="FZl-U6-6a3"/>
@@ -318,7 +320,6 @@
                             <constraint firstItem="JNu-E4-Gqh" firstAttribute="top" secondItem="Rxn-z9-iKi" secondAttribute="bottom" constant="8" id="uPB-tk-0mT"/>
                             <constraint firstItem="Rxn-z9-iKi" firstAttribute="leading" secondItem="gjm-Vn-2oh" secondAttribute="leading" constant="20" id="yrV-De-kQk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gjm-Vn-2oh"/>
                     </view>
                     <navigationItem key="navigationItem" id="suk-6S-JAw"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -358,7 +359,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="2D5-af-Uly"/>
                                     <constraint firstItem="4GH-Zi-rTP" firstAttribute="centerY" secondItem="248-mJ-lds" secondAttribute="centerY" id="8la-4f-slm"/>
@@ -389,7 +390,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="0t5-O1-zzo" firstAttribute="centerY" secondItem="lV2-Zq-i5e" secondAttribute="centerY" id="1Aq-ZM-lgC"/>
                                     <constraint firstItem="0t5-O1-zzo" firstAttribute="leading" secondItem="lV2-Zq-i5e" secondAttribute="leading" constant="16" id="1Cq-uQ-qqP"/>
@@ -404,7 +405,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7C-es-hGx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7C-es-hGx">
                                 <rect key="frame" x="20" y="624" width="374" height="52"/>
                                 <color key="backgroundColor" red="1" green="0.40392156862745099" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -420,6 +421,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EiR-GH-Oyl"/>
                         <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lV2-Zq-i5e" firstAttribute="top" secondItem="248-mJ-lds" secondAttribute="bottom" constant="16" id="B1W-FJ-iae"/>
@@ -432,7 +434,6 @@
                             <constraint firstItem="EiR-GH-Oyl" firstAttribute="trailing" secondItem="q7C-es-hGx" secondAttribute="trailing" constant="20" id="y09-ga-x6k"/>
                             <constraint firstItem="EiR-GH-Oyl" firstAttribute="trailing" secondItem="248-mJ-lds" secondAttribute="trailing" constant="16" id="zDv-9k-22X"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EiR-GH-Oyl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Подготовка" id="GR7-3n-pwN">
                         <barButtonItem key="leftBarButtonItem" image="ic_cross" id="E84-du-m9C">
@@ -480,9 +481,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VolumeUpTestArt" translatesAutoresizingMaskIntoConstraints="NO" id="dFF-B3-BaL">
-                                        <rect key="frame" x="0.0" y="73" width="374" height="538"/>
+                                        <rect key="frame" x="0.0" y="159" width="374" height="366"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E85-Jc-0cJ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E85-Jc-0cJ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="AkI-fU-VwH"/>
@@ -597,6 +598,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="LNH-SA-Aps"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LNH-SA-Aps" firstAttribute="trailing" secondItem="XXm-iD-m6W" secondAttribute="trailing" constant="20" id="9tg-wG-H1J"/>
@@ -604,7 +606,6 @@
                             <constraint firstItem="LNH-SA-Aps" firstAttribute="bottom" secondItem="XXm-iD-m6W" secondAttribute="bottom" constant="26" id="aSa-3g-wGA"/>
                             <constraint firstItem="XXm-iD-m6W" firstAttribute="leading" secondItem="LNH-SA-Aps" secondAttribute="leading" constant="20" id="xG8-RG-g8t"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LNH-SA-Aps"/>
                     </view>
                     <navigationItem key="navigationItem" id="ekH-pa-R0i"/>
                     <connections>
@@ -638,14 +639,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="HomeButtonTestArt" translatesAutoresizingMaskIntoConstraints="NO" id="8vY-pm-Plc">
-                                        <rect key="frame" x="0.0" y="129" width="374" height="335"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeButtonTestArt" translatesAutoresizingMaskIntoConstraints="NO" id="8vY-pm-Plc">
+                                        <rect key="frame" x="0.0" y="133" width="374" height="335"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-fC-EXq" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="464" width="366" height="120"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-fC-EXq" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
+                                        <rect key="frame" x="4" y="468" width="366" height="116"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Приложение будет свернуто, для продолжения работы вернитесь обратно с помощью функции «Активные приложения»." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-Ua-zSR">
-                                                <rect key="frame" x="16" y="16" width="334" height="88"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приложение будет свернуто, для продолжения работы вернитесь обратно с помощью функции «Активные приложения»." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-Ua-zSR">
+                                                <rect key="frame" x="16" y="16" width="334" height="84"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -664,7 +665,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5T-RX-v3L" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5T-RX-v3L" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="RA1-Qp-V3j"/>
@@ -756,6 +757,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="7ew-lY-eKA"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ew-lY-eKA" firstAttribute="bottom" secondItem="Z7v-wY-CWR" secondAttribute="bottom" constant="26" id="3jQ-PF-OKa"/>
@@ -763,7 +765,6 @@
                             <constraint firstItem="Z7v-wY-CWR" firstAttribute="top" secondItem="7ew-lY-eKA" secondAttribute="top" constant="26" id="Oc7-gN-XT1"/>
                             <constraint firstItem="7ew-lY-eKA" firstAttribute="trailing" secondItem="Z7v-wY-CWR" secondAttribute="trailing" constant="20" id="Ycv-Ne-EjT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7ew-lY-eKA"/>
                     </view>
                     <navigationItem key="navigationItem" id="YDQ-oy-P4K"/>
                     <connections>
@@ -788,8 +789,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9M-4l-5Vh" customClass="ShadowedView" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="20" y="26" width="374" height="684"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Подключите и отключите зарядное устройство, подключенное к питанию" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci6-CI-aTT">
-                                        <rect key="frame" x="16" y="16" width="342" height="73.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подключите и отключите зарядное устройство, подключенное к питанию" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci6-CI-aTT">
+                                        <rect key="frame" x="16" y="16" width="342" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="ivQ-sY-xIJ"/>
                                         </constraints>
@@ -797,27 +798,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ChargerMobileArt" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-V9-izS">
-                                        <rect key="frame" x="0.0" y="119.33333333333337" width="374" height="198"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerMobileArt" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-V9-izS">
+                                        <rect key="frame" x="0.0" y="116" width="374" height="198"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ChargerArt" translatesAutoresizingMaskIntoConstraints="NO" id="6JY-OW-ZRi">
-                                        <rect key="frame" x="149" y="325.33333333333331" width="76" height="124"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerArt" translatesAutoresizingMaskIntoConstraints="NO" id="6JY-OW-ZRi">
+                                        <rect key="frame" x="168" y="322" width="38" height="124"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ChargerPlugIn" translatesAutoresizingMaskIntoConstraints="NO" id="axN-au-aNe">
-                                        <rect key="frame" x="95" y="371.33333333333331" width="32" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerPlugIn" translatesAutoresizingMaskIntoConstraints="NO" id="axN-au-aNe">
+                                        <rect key="frame" x="114" y="368" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="jBT-lI-7U8"/>
                                             <constraint firstAttribute="height" constant="32" id="lCN-xJ-otG"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ChargerPlugOut" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Fj-VvE">
-                                        <rect key="frame" x="247" y="371.33333333333331" width="32" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerPlugOut" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Fj-VvE">
+                                        <rect key="frame" x="228" y="368" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="dui-5M-2hd"/>
                                             <constraint firstAttribute="height" constant="32" id="q1Q-co-9aO"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saj-dM-gFW" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saj-dM-gFW" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="0I1-Dv-SpJ"/>
@@ -911,6 +912,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="yiy-rJ-cH6"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yiy-rJ-cH6" firstAttribute="bottom" secondItem="p9M-4l-5Vh" secondAttribute="bottom" constant="26" id="8aW-kj-TkU"/>
@@ -918,7 +920,6 @@
                             <constraint firstItem="p9M-4l-5Vh" firstAttribute="leading" secondItem="yiy-rJ-cH6" secondAttribute="leading" constant="20" id="kg3-fi-zci"/>
                             <constraint firstItem="yiy-rJ-cH6" firstAttribute="trailing" secondItem="p9M-4l-5Vh" secondAttribute="trailing" constant="20" id="vrM-3f-D1B"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="yiy-rJ-cH6"/>
                     </view>
                     <navigationItem key="navigationItem" id="OGb-VM-x4c"/>
                     <connections>
@@ -952,27 +953,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="HeadphonesMobileArt" translatesAutoresizingMaskIntoConstraints="NO" id="Vm0-tD-cFx">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeadphonesMobileArt" translatesAutoresizingMaskIntoConstraints="NO" id="Vm0-tD-cFx">
                                         <rect key="frame" x="39" y="103" width="335" height="198"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="HeadphonesArt" translatesAutoresizingMaskIntoConstraints="NO" id="CcM-um-iUV">
-                                        <rect key="frame" x="159" y="309" width="56" height="123"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeadphonesArt" translatesAutoresizingMaskIntoConstraints="NO" id="CcM-um-iUV">
+                                        <rect key="frame" x="173" y="309" width="28" height="123"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ChargerPlugIn" translatesAutoresizingMaskIntoConstraints="NO" id="o4a-9A-3Rm">
-                                        <rect key="frame" x="105" y="354.66666666666669" width="32" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerPlugIn" translatesAutoresizingMaskIntoConstraints="NO" id="o4a-9A-3Rm">
+                                        <rect key="frame" x="119" y="354.66666666666669" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="Gth-X9-MUY"/>
                                             <constraint firstAttribute="height" constant="32" id="MqI-Oo-8zV"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ChargerPlugOut" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-YY-RDw">
-                                        <rect key="frame" x="237" y="354.66666666666669" width="32" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerPlugOut" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-YY-RDw">
+                                        <rect key="frame" x="223" y="354.66666666666669" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="SDG-ER-tlR"/>
                                             <constraint firstAttribute="height" constant="32" id="dR5-QN-KBV"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx4-oO-7a5" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx4-oO-7a5" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="LgD-4h-ms4"/>
@@ -1065,6 +1066,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VcO-fZ-sWs"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VcO-fZ-sWs" firstAttribute="trailing" secondItem="GjB-tn-zd7" secondAttribute="trailing" constant="20" id="4Es-oS-zto"/>
@@ -1072,7 +1074,6 @@
                             <constraint firstItem="GjB-tn-zd7" firstAttribute="leading" secondItem="VcO-fZ-sWs" secondAttribute="leading" constant="20" id="G2Y-qf-RWS"/>
                             <constraint firstItem="VcO-fZ-sWs" firstAttribute="bottom" secondItem="GjB-tn-zd7" secondAttribute="bottom" constant="26" id="GtM-FR-FsU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VcO-fZ-sWs"/>
                     </view>
                     <navigationItem key="navigationItem" id="fbm-rt-Iiv"/>
                     <connections>
@@ -1107,9 +1108,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BluetoothOffArt" translatesAutoresizingMaskIntoConstraints="NO" id="Y2v-o8-vlb">
-                                        <rect key="frame" x="0.0" y="294" width="374" height="96"/>
+                                        <rect key="frame" x="0.0" y="318" width="374" height="48"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-RU-g0j">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeB-RU-g0j">
                                         <rect key="frame" x="16" y="524" width="342" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="76" id="xlG-CG-ovp"/>
@@ -1119,7 +1120,7 @@
                                             <color key="titleColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-Df-5E3" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRE-Df-5E3" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="YRo-gu-WIt"/>
@@ -1231,7 +1232,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOB-dc-QAI">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOB-dc-QAI">
                                                 <rect key="frame" x="16" y="524" width="342" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="TuT-eF-bSa"/>
@@ -1244,7 +1245,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mCY-gr-WwB">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-eh-fPT" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-eh-fPT" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Не работает">
@@ -1262,7 +1263,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDU-xv-T0w" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDU-xv-T0w" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.40392156862745099" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -1348,6 +1349,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="M8D-8R-Wf1"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="M8D-8R-Wf1" firstAttribute="bottom" secondItem="RlU-RU-DQr" secondAttribute="bottom" constant="26" id="HSl-BM-cOr"/>
@@ -1355,7 +1357,6 @@
                             <constraint firstItem="RlU-RU-DQr" firstAttribute="top" secondItem="M8D-8R-Wf1" secondAttribute="top" constant="26" id="nY7-hZ-mwm"/>
                             <constraint firstItem="RlU-RU-DQr" firstAttribute="leading" secondItem="M8D-8R-Wf1" secondAttribute="leading" constant="20" id="wdF-l5-wFJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="M8D-8R-Wf1"/>
                     </view>
                     <navigationItem key="navigationItem" id="MnM-Lr-MEk"/>
                     <connections>
@@ -1396,7 +1397,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl7-JQ-83Z" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl7-JQ-83Z" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1421,7 +1422,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMB-fO-rrz">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0U-vS-cwi">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0U-vS-cwi">
                                                 <rect key="frame" x="20" y="20" width="334" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="Rru-3D-W0Y"/>
@@ -1442,7 +1443,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0vP-Vi-Jmt">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAf-Tg-fEg" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAf-Tg-fEg" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -1461,7 +1462,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVp-pa-Vrc" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVp-pa-Vrc" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -1486,7 +1487,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="g0U-vS-cwi" firstAttribute="top" secondItem="wMB-fO-rrz" secondAttribute="top" constant="20" symbolic="YES" id="Cyr-T9-R06"/>
                                             <constraint firstAttribute="trailing" secondItem="0vP-Vi-Jmt" secondAttribute="trailing" constant="16" id="GAn-EW-vEo"/>
@@ -1577,7 +1578,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="hHG-M0-1Cs" firstAttribute="centerX" secondItem="awL-sY-ELo" secondAttribute="centerX" id="5qP-nA-TiJ"/>
                                             <constraint firstAttribute="trailing" secondItem="hHG-M0-1Cs" secondAttribute="trailing" constant="20" id="7o9-Oz-EeW"/>
@@ -1593,13 +1594,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="awL-sY-ELo" firstAttribute="leading" secondItem="gFb-tM-XBT" secondAttribute="leading" constant="20" id="62N-ry-RPJ"/>
                                     <constraint firstAttribute="trailing" secondItem="awL-sY-ELo" secondAttribute="trailing" constant="20" id="e55-mV-4qv"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZE6-39-nD3"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gFb-tM-XBT" firstAttribute="top" secondItem="0uH-ul-Pux" secondAttribute="top" id="DaN-bb-uHE"/>
@@ -1612,7 +1614,6 @@
                             <constraint firstItem="ZE6-39-nD3" firstAttribute="bottom" secondItem="Lx2-Bm-WeF" secondAttribute="bottom" constant="26" id="rmc-kd-Nmp"/>
                             <constraint firstItem="Lx2-Bm-WeF" firstAttribute="top" secondItem="ZE6-39-nD3" secondAttribute="top" constant="26" id="z4f-0f-9DI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZE6-39-nD3"/>
                     </view>
                     <navigationItem key="navigationItem" id="bZh-DH-xRI"/>
                     <connections>
@@ -1644,7 +1645,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH4-so-ffb">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hft-aK-LEK">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hft-aK-LEK">
                                                 <rect key="frame" x="20" y="20" width="334" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="cpx-zc-lFH"/>
@@ -1663,7 +1664,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lt6-hi-AGl">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1i-qi-xv9" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1i-qi-xv9" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -1682,7 +1683,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-qp-m7Q" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-qp-m7Q" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -1730,7 +1731,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="hft-aK-LEK" firstAttribute="top" secondItem="GH4-so-ffb" secondAttribute="top" constant="20" symbolic="YES" id="0lS-iR-Rjb"/>
                                             <constraint firstAttribute="bottom" secondItem="lt6-hi-AGl" secondAttribute="bottom" constant="16" id="ETn-SH-MfS"/>
@@ -1806,6 +1807,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hkv-tq-w78"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Hkv-tq-w78" firstAttribute="trailing" secondItem="sRd-4O-tg6" secondAttribute="trailing" constant="20" id="2vc-Jf-p2J"/>
@@ -1813,7 +1815,6 @@
                             <constraint firstItem="sRd-4O-tg6" firstAttribute="leading" secondItem="Hkv-tq-w78" secondAttribute="leading" constant="20" id="HqF-Pn-s6m"/>
                             <constraint firstItem="sRd-4O-tg6" firstAttribute="top" secondItem="Hkv-tq-w78" secondAttribute="top" constant="26" id="fux-QQ-vrS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Hkv-tq-w78"/>
                     </view>
                     <navigationItem key="navigationItem" id="8vS-F5-em8"/>
                     <connections>
@@ -1848,7 +1849,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraFocusTestBackground" translatesAutoresizingMaskIntoConstraints="NO" id="MRB-UB-0Kk">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-EA-L9j" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPX-EA-L9j" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="16" y="668" width="382" height="52"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1914,6 +1915,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jv3-fl-U4Y"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LbE-eB-n33" firstAttribute="top" secondItem="amg-UH-1UI" secondAttribute="top" id="9RD-TQ-vWW"/>
@@ -1929,7 +1931,6 @@
                             <constraint firstItem="Jv3-fl-U4Y" firstAttribute="top" secondItem="DaF-VK-kDb" secondAttribute="top" constant="44" id="wh0-tx-xWB"/>
                             <constraint firstItem="Jv3-fl-U4Y" firstAttribute="bottom" secondItem="FPX-EA-L9j" secondAttribute="bottom" constant="16" id="zLl-D1-7Xh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jv3-fl-U4Y"/>
                     </view>
                     <navigationItem key="navigationItem" id="dgJ-XP-pvH"/>
                     <connections>
@@ -1955,17 +1956,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="flu-eG-xBk">
-                                        <rect key="frame" x="121.66666666666667" y="332.66666666666669" width="170.66666666666663" height="71"/>
+                                        <rect key="frame" x="124" y="332.66666666666669" width="166" height="71"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestCompleteLight" translatesAutoresizingMaskIntoConstraints="NO" id="w74-dn-U5V">
-                                                <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="L9f-mj-jbx"/>
                                                     <constraint firstAttribute="width" constant="40" id="MQm-iv-aT2"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etk-rs-zLZ">
-                                                <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="Q1N-hB-wdZ"/>
                                                 </constraints>
@@ -2003,7 +2004,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jGY-ci-56k" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jGY-ci-56k" secondAttribute="height" multiplier="1:1" id="iRA-dP-8dj"/>
                                                         <constraint firstAttribute="width" constant="75" id="pwp-zt-TWe"/>
@@ -2036,7 +2037,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uvP-Ix-qvc">
                                         <rect key="frame" x="0.0" y="16" width="382" height="140"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPY-aq-Wy1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPY-aq-Wy1">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="Gv0-ar-eQf"/>
@@ -2046,7 +2047,7 @@
                                                     <color key="titleColor" red="1" green="0.40392156862745099" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc9-yl-fPz">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc9-yl-fPz">
                                                 <rect key="frame" x="0.0" y="52" width="382" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="g49-sq-kI5"/>
@@ -2056,7 +2057,7 @@
                                                     <color key="titleColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-mE-aou">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-mE-aou">
                                                 <rect key="frame" x="0.0" y="104" width="382" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="EJZ-Cj-VL5"/>
@@ -2083,22 +2084,22 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Nt-wG-0Y6" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
-                                <rect key="frame" x="24" y="295" width="366" height="146.33333333333337"/>
+                                <rect key="frame" x="24" y="293.33333333333331" width="366" height="149.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZN-GV-fLY">
-                                        <rect key="frame" x="162.66666666666666" y="15.999999999999998" width="41" height="20.333333333333329"/>
+                                        <rect key="frame" x="163" y="15.999999999999998" width="40.333333333333343" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HU-IX-3rX">
-                                        <rect key="frame" x="16.000000000000004" y="15.999999999999998" width="51.333333333333343" height="23.333333333333329"/>
+                                        <rect key="frame" x="16" y="16" width="44" height="24.666666666666671"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGr-bw-pyO">
-                                        <rect key="frame" x="16" y="52.333333333333314" width="334" height="70"/>
+                                        <rect key="frame" x="16" y="52.333333333333364" width="334" height="73.333333333333314"/>
                                         <string key="text">Проведите по всем кругам,
 если дисплей неисправен, выполните двойной тап</string>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
@@ -2134,6 +2135,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Exz-Iw-xlS"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.035294117647058823" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="3Nt-wG-0Y6" firstAttribute="centerY" secondItem="lpP-ej-d3N" secondAttribute="centerY" id="767-Le-cCJ"/>
@@ -2151,7 +2153,6 @@
                             <constraint firstItem="a3R-qq-ZP7" firstAttribute="top" secondItem="Exz-Iw-xlS" secondAttribute="top" id="lDt-zl-ATE"/>
                             <constraint firstItem="a3R-qq-ZP7" firstAttribute="leading" secondItem="Exz-Iw-xlS" secondAttribute="leading" id="nO1-au-Yui"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Exz-Iw-xlS"/>
                     </view>
                     <navigationItem key="navigationItem" id="uMj-Yi-wgU"/>
                     <connections>
@@ -2193,15 +2194,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoSimArt" translatesAutoresizingMaskIntoConstraints="NO" id="Rq6-VJ-cLU">
-                                        <rect key="frame" x="0.0" y="294" width="374" height="96"/>
+                                        <rect key="frame" x="0.0" y="318" width="374" height="48"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет сим-карты" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNR-Go-bX7">
-                                        <rect key="frame" x="117.00000000000001" y="398" width="140.33333333333337" height="23.333333333333314"/>
+                                        <rect key="frame" x="117.00000000000001" y="374" width="140.33333333333337" height="23.333333333333314"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-PN-bhA" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-PN-bhA" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="MTF-Z0-DrB"/>
@@ -2221,6 +2222,16 @@
                                                 <real key="value" value="1.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzL-cs-9Xl">
+                                        <rect key="frame" x="16" y="524" width="342" height="76"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="76" id="3ir-eu-OuS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
+                                        <state key="normal" title="Повторить поиск">
+                                            <color key="titleColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seC-jG-292">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
@@ -2266,7 +2277,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-a3-UpB" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-a3-UpB" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -2289,7 +2300,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="5NK-Oc-Idw" firstAttribute="leading" secondItem="NTk-g9-7W4" secondAttribute="leading" constant="16" id="N14-xb-HHt"/>
                                             <constraint firstAttribute="bottom" secondItem="TkH-a3-UpB" secondAttribute="bottom" constant="16" id="Oq7-KF-pSi"/>
@@ -2302,7 +2313,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mg0-fE-GXD">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqV-Rr-zhh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqV-Rr-zhh">
                                                 <rect key="frame" x="20" y="20" width="334" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="5x6-gx-U1p"/>
@@ -2323,7 +2334,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ief-DV-DJH">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKW-ZO-toL" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKW-ZO-toL" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2342,7 +2353,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4F-zR-OPR" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4F-zR-OPR" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2367,7 +2378,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vof-gu-2w9" secondAttribute="trailing" id="E1L-OQ-TJy"/>
                                             <constraint firstItem="ief-DV-DJH" firstAttribute="leading" secondItem="mg0-fE-GXD" secondAttribute="leading" constant="16" id="R5K-ud-PDZ"/>
@@ -2383,7 +2394,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-t1-jsJ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGM-62-gr6">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGM-62-gr6">
                                                 <rect key="frame" x="20" y="20" width="334" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="dSQ-Qr-hOY"/>
@@ -2404,7 +2415,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nGa-h3-xl9">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmt-cH-DDZ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmt-cH-DDZ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2423,7 +2434,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0h-Yj-J9M" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0h-Yj-J9M" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2448,7 +2459,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6SR-qa-tBX" secondAttribute="trailing" id="2eh-S5-sfP"/>
                                             <constraint firstItem="bGM-62-gr6" firstAttribute="top" secondItem="hF3-t1-jsJ" secondAttribute="top" constant="20" symbolic="YES" id="96L-yH-XDW"/>
@@ -2466,12 +2477,14 @@
                                 <constraints>
                                     <constraint firstItem="Rq6-VJ-cLU" firstAttribute="centerY" secondItem="DYq-du-CFS" secondAttribute="centerY" id="11P-ek-kUd"/>
                                     <constraint firstAttribute="bottom" secondItem="seC-jG-292" secondAttribute="bottom" id="193-Wf-cx6"/>
+                                    <constraint firstItem="xzL-cs-9Xl" firstAttribute="leading" secondItem="DYq-du-CFS" secondAttribute="leading" constant="16" id="1Ux-7H-ibP"/>
                                     <constraint firstAttribute="trailing" secondItem="seC-jG-292" secondAttribute="trailing" id="3uz-oB-Gxd"/>
                                     <constraint firstItem="seC-jG-292" firstAttribute="leading" secondItem="DYq-du-CFS" secondAttribute="leading" id="5Gu-Yj-C0L"/>
                                     <constraint firstItem="GNR-Go-bX7" firstAttribute="top" secondItem="Rq6-VJ-cLU" secondAttribute="bottom" constant="8" id="8wH-Yh-k8s"/>
                                     <constraint firstItem="XbP-8a-f8P" firstAttribute="top" secondItem="DYq-du-CFS" secondAttribute="top" constant="16" id="974-sf-EBZ"/>
                                     <constraint firstItem="mg0-fE-GXD" firstAttribute="centerX" secondItem="DYq-du-CFS" secondAttribute="centerX" id="CHH-4g-icc"/>
                                     <constraint firstItem="Rq6-VJ-cLU" firstAttribute="centerX" secondItem="DYq-du-CFS" secondAttribute="centerX" id="D5Z-Kc-lmP"/>
+                                    <constraint firstAttribute="trailing" secondItem="xzL-cs-9Xl" secondAttribute="trailing" constant="16" id="DtH-Ez-HdL"/>
                                     <constraint firstAttribute="trailing" secondItem="Rq6-VJ-cLU" secondAttribute="trailing" id="GIT-CN-mEL"/>
                                     <constraint firstItem="GNR-Go-bX7" firstAttribute="centerX" secondItem="DYq-du-CFS" secondAttribute="centerX" id="GLN-Vz-PIq"/>
                                     <constraint firstItem="NTk-g9-7W4" firstAttribute="centerY" secondItem="DYq-du-CFS" secondAttribute="centerY" id="GOO-Tp-qno"/>
@@ -2486,6 +2499,7 @@
                                     <constraint firstAttribute="trailing" secondItem="XbP-8a-f8P" secondAttribute="trailing" constant="16" id="ZiT-mD-e5q"/>
                                     <constraint firstItem="mg0-fE-GXD" firstAttribute="centerY" secondItem="DYq-du-CFS" secondAttribute="centerY" id="Zv9-gm-Km7"/>
                                     <constraint firstItem="NTk-g9-7W4" firstAttribute="width" secondItem="DYq-du-CFS" secondAttribute="width" id="btT-JU-YlD"/>
+                                    <constraint firstItem="pbe-PN-bhA" firstAttribute="top" secondItem="xzL-cs-9Xl" secondAttribute="bottom" constant="16" id="cTh-sB-fBN"/>
                                     <constraint firstItem="hF3-t1-jsJ" firstAttribute="centerX" secondItem="DYq-du-CFS" secondAttribute="centerX" id="f2v-UW-ic3"/>
                                     <constraint firstAttribute="trailing" secondItem="pbe-PN-bhA" secondAttribute="trailing" constant="20" id="pma-Yr-x8Z"/>
                                     <constraint firstItem="XbP-8a-f8P" firstAttribute="leading" secondItem="DYq-du-CFS" secondAttribute="leading" constant="16" id="qPy-Yf-PSw"/>
@@ -2512,6 +2526,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Un8-Lc-5W8"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DYq-du-CFS" firstAttribute="top" secondItem="Un8-Lc-5W8" secondAttribute="top" constant="26" id="6o6-zF-EaN"/>
@@ -2519,7 +2534,6 @@
                             <constraint firstItem="Un8-Lc-5W8" firstAttribute="bottom" secondItem="DYq-du-CFS" secondAttribute="bottom" constant="26" id="gNT-LJ-tdK"/>
                             <constraint firstItem="DYq-du-CFS" firstAttribute="leading" secondItem="Un8-Lc-5W8" secondAttribute="leading" constant="20" id="vxg-IR-eMh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Un8-Lc-5W8"/>
                     </view>
                     <navigationItem key="navigationItem" id="Yf8-to-HtI"/>
                     <connections>
@@ -2532,6 +2546,7 @@
                         <outlet property="notWorkingButton" destination="pbe-PN-bhA" id="eVt-tZ-Xht"/>
                         <outlet property="retryCallButton" destination="pqV-Rr-zhh" id="yQp-i7-Qet"/>
                         <outlet property="retryCallSoundButton" destination="bGM-62-gr6" id="8cB-CY-3Nw"/>
+                        <outlet property="searchAgainButton" destination="xzL-cs-9Xl" id="vGR-nm-NuV"/>
                         <outlet property="speakerQuestionTestView" destination="hF3-t1-jsJ" id="VwX-ma-TgG"/>
                         <outlet property="testCompletedView" destination="seC-jG-292" id="1k5-w8-96F"/>
                         <outlet property="wasSoundButton" destination="h0h-Yj-J9M" id="QN6-I5-mzA"/>
@@ -2539,7 +2554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWe-vk-U5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8878" y="139"/>
+            <point key="canvasLocation" x="8876.8115942028999" y="138.58695652173915"/>
         </scene>
         <!--Vibration Test View Controller-->
         <scene sceneID="jax-uS-wcU">
@@ -2555,7 +2570,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zK-P1-LXV">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZJ-9R-ehw">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZJ-9R-ehw">
                                                 <rect key="frame" x="20" y="20" width="334" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="jPc-rH-4Q6"/>
@@ -2574,7 +2589,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-cq-5AC">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-Yc-kEz" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-Yc-kEz" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2593,7 +2608,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-fb-diz" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gi9-fb-diz" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2618,7 +2633,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="SOI-Dc-Jy6" firstAttribute="centerY" secondItem="1zK-P1-LXV" secondAttribute="centerY" id="0bf-XN-7Qb"/>
                                             <constraint firstItem="SOI-Dc-Jy6" firstAttribute="centerX" secondItem="1zK-P1-LXV" secondAttribute="centerX" id="Anf-4c-ZNf"/>
@@ -2655,6 +2670,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="WBL-79-52M"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="868-M8-tfB" firstAttribute="top" secondItem="WBL-79-52M" secondAttribute="top" constant="26" id="HPM-na-WX6"/>
@@ -2662,7 +2678,6 @@
                             <constraint firstItem="WBL-79-52M" firstAttribute="trailing" secondItem="868-M8-tfB" secondAttribute="trailing" constant="20" id="n4B-Cm-0eV"/>
                             <constraint firstItem="868-M8-tfB" firstAttribute="leading" secondItem="WBL-79-52M" secondAttribute="leading" constant="20" id="x1b-Yz-z3m"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WBL-79-52M"/>
                     </view>
                     <navigationItem key="navigationItem" id="xXo-l2-uWj"/>
                     <connections>
@@ -2700,7 +2715,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0zR-7e-phm">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-yc-iiy" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-yc-iiy" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2719,7 +2734,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQl-Y2-sSc" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQl-Y2-sSc" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -2744,7 +2759,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="BDo-Ss-vHp" firstAttribute="centerY" secondItem="JPP-Pe-NjR" secondAttribute="centerY" id="Bp9-UI-6Kd"/>
                                             <constraint firstItem="BDo-Ss-vHp" firstAttribute="centerX" secondItem="JPP-Pe-NjR" secondAttribute="centerX" id="IF3-iH-Wfc"/>
@@ -2778,6 +2793,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ae4-Sk-fyU"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ae4-Sk-fyU" firstAttribute="bottom" secondItem="2Or-WG-cvR" secondAttribute="bottom" constant="26" id="PoY-cB-Z9I"/>
@@ -2785,7 +2801,6 @@
                             <constraint firstItem="2Or-WG-cvR" firstAttribute="top" secondItem="Ae4-Sk-fyU" secondAttribute="top" constant="26" id="ZrV-nd-Ikv"/>
                             <constraint firstItem="Ae4-Sk-fyU" firstAttribute="trailing" secondItem="2Or-WG-cvR" secondAttribute="trailing" constant="20" id="w45-1I-vZd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ae4-Sk-fyU"/>
                     </view>
                     <navigationItem key="navigationItem" id="Es7-Df-ze4"/>
                     <connections>
@@ -2802,13 +2817,13 @@
             <objects>
                 <viewController storyboardIdentifier="DeviceColorViewController" id="cpR-2P-tNz" customClass="DeviceColorViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QPh-E0-Rs3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnM-CM-VKt" customClass="ShadowedView" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="20" y="26" width="374" height="640"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZk-gl-5rx" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZk-gl-5rx" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="572" width="334" height="52"/>
                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -2838,7 +2853,7 @@
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="82w-kj-rFb">
                                         <rect key="frame" x="21" y="78.666666666666657" width="332" height="463.33333333333337"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3OI-p8-qto">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -2886,6 +2901,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eBv-4q-tq5"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cnM-CM-VKt" firstAttribute="leading" secondItem="eBv-4q-tq5" secondAttribute="leading" constant="20" id="dIp-f6-AhG"/>
@@ -2893,7 +2909,6 @@
                             <constraint firstItem="eBv-4q-tq5" firstAttribute="trailing" secondItem="cnM-CM-VKt" secondAttribute="trailing" constant="20" id="v9w-87-ZZS"/>
                             <constraint firstItem="eBv-4q-tq5" firstAttribute="bottom" secondItem="cnM-CM-VKt" secondAttribute="bottom" constant="26" id="wsP-Uf-JgK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eBv-4q-tq5"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z34-EL-hfq"/>
                     <connections>
@@ -2911,7 +2926,7 @@
             <objects>
                 <viewController storyboardIdentifier="TextQuestionViewController" id="2hX-sp-kee" customClass="TextQuestionViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNX-px-KWJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мелкие царапины" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GbK-Ca-zwt">
@@ -2947,7 +2962,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Mpm-zx-dn5" firstAttribute="centerY" secondItem="u4k-Yw-IKO" secondAttribute="centerY" id="6bs-si-I7r"/>
                                     <constraint firstItem="Mpm-zx-dn5" firstAttribute="leading" secondItem="u4k-Yw-IKO" secondAttribute="leading" constant="16" id="Lb1-rm-Ry9"/>
@@ -2955,7 +2970,7 @@
                                     <constraint firstAttribute="height" constant="52" id="vAS-yX-0iH"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTm-rL-7tL" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTm-rL-7tL" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="20" y="624" width="374" height="52"/>
                                 <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2985,7 +3000,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hii-AU-L83"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hii-AU-L83" firstAttribute="trailing" secondItem="gTm-rL-7tL" secondAttribute="trailing" constant="20" id="5lI-d2-rHG"/>
                             <constraint firstItem="hii-AU-L83" firstAttribute="trailing" secondItem="rUz-Lb-hDt" secondAttribute="trailing" constant="20" id="6Wg-Xf-TAB"/>
@@ -3005,7 +3021,6 @@
                             <constraint firstItem="gTm-rL-7tL" firstAttribute="leading" secondItem="hii-AU-L83" secondAttribute="leading" constant="20" id="pTV-hb-xCj"/>
                             <constraint firstItem="hii-AU-L83" firstAttribute="trailing" secondItem="GbK-Ca-zwt" secondAttribute="trailing" constant="20" id="qDg-x4-vdh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hii-AU-L83"/>
                     </view>
                     <navigationItem key="navigationItem" id="sG8-to-1QF"/>
                     <connections>
@@ -3028,13 +3043,13 @@
             <objects>
                 <viewController storyboardIdentifier="TestWiFiViewController" id="s6c-d2-XsN" customClass="TestWiFiViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLs-DG-HO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o7-Oh-Eyo" customClass="ShadowedView" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="20" y="26" width="374" height="640"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoO-Sg-pnN" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoO-Sg-pnN" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="572" width="334" height="52"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3062,7 +3077,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9k-hm-Obo" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9k-hm-Obo" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="480" width="374" height="76"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3085,10 +3100,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wifi_off_grey" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-jg-tu4">
-                                        <rect key="frame" x="139" y="272" width="96" height="96"/>
+                                        <rect key="frame" x="163" y="296" width="48" height="48"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY2-Ui-6be">
-                                        <rect key="frame" x="30" y="382" width="314" height="18.666666666666686"/>
+                                        <rect key="frame" x="30" y="358" width="314" height="18.666666666666686"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3097,10 +3112,10 @@
                                         <rect key="frame" x="163" y="296" width="48" height="48"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="p24-2U-xuf">
-                                                <rect key="frame" x="-24" y="-24" width="96" height="96"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="AZo-U7-jBE"/>
                                             <constraint firstAttribute="height" constant="48" id="MCZ-BP-xrg"/>
@@ -3147,6 +3162,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="iW1-du-oua"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iW1-du-oua" firstAttribute="bottom" secondItem="9o7-Oh-Eyo" secondAttribute="bottom" constant="26" id="647-0O-Dk4"/>
@@ -3154,7 +3170,6 @@
                             <constraint firstItem="9o7-Oh-Eyo" firstAttribute="top" secondItem="iW1-du-oua" secondAttribute="top" constant="26" id="cDi-ms-laP"/>
                             <constraint firstItem="iW1-du-oua" firstAttribute="trailing" secondItem="9o7-Oh-Eyo" secondAttribute="trailing" constant="20" id="dxe-Z0-lkP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iW1-du-oua"/>
                     </view>
                     <navigationItem key="navigationItem" id="CUa-Lr-faL"/>
                     <connections>
@@ -3177,7 +3192,7 @@
             <objects>
                 <viewController storyboardIdentifier="BinarQuestionViewController" id="Pr1-ZN-7Ve" customClass="BinarQuestionViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kkr-ir-oqI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Есть ли потертости?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRd-Tb-rw1">
@@ -3195,7 +3210,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lK5-0x-WHh">
                                 <rect key="frame" x="20" y="624" width="374" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-n5-cLy" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VF-n5-cLy" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="183" height="52"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3217,7 +3232,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXV-Sz-L2x" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXV-Sz-L2x" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="191" y="0.0" width="183" height="52"/>
                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -3242,7 +3257,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="T2v-Md-iOj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HRd-Tb-rw1" firstAttribute="top" secondItem="T2v-Md-iOj" secondAttribute="top" constant="26" id="1AG-uR-N4e"/>
                             <constraint firstItem="T2v-Md-iOj" firstAttribute="trailing" secondItem="HRd-Tb-rw1" secondAttribute="trailing" constant="20" id="VCb-3n-cjg"/>
@@ -3254,7 +3270,6 @@
                             <constraint firstItem="lK5-0x-WHh" firstAttribute="leading" secondItem="T2v-Md-iOj" secondAttribute="leading" constant="20" id="sFO-vn-Gxf"/>
                             <constraint firstItem="Do4-aA-uNT" firstAttribute="top" secondItem="HRd-Tb-rw1" secondAttribute="bottom" constant="5" id="x8B-RQ-9Ez"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="T2v-Md-iOj"/>
                     </view>
                     <navigationItem key="navigationItem" id="IMs-NF-3fN"/>
                     <connections>
@@ -3292,7 +3307,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WLu-c5-OJK">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8V-a0-Men" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8V-a0-Men" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3311,7 +3326,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG7-Ie-kzi" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG7-Ie-kzi" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3336,7 +3351,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="kN1-QD-rrh" firstAttribute="centerX" secondItem="yDi-nd-nEC" secondAttribute="centerX" id="Eog-Zm-zGA"/>
                                             <constraint firstAttribute="bottom" secondItem="WLu-c5-OJK" secondAttribute="bottom" constant="16" id="LgD-Ut-DTB"/>
@@ -3369,7 +3384,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xP-9r-gXl" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xP-9r-gXl" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -3392,7 +3407,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="1xP-9r-gXl" secondAttribute="trailing" constant="16" id="9Iq-fU-XYP"/>
                                             <constraint firstItem="hpg-pT-pH0" firstAttribute="centerY" secondItem="6Gd-oj-uzs" secondAttribute="centerY" id="A2S-wD-TYb"/>
@@ -3465,6 +3480,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="UU0-Ds-KVj"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BTw-sf-FNm" firstAttribute="leading" secondItem="UU0-Ds-KVj" secondAttribute="leading" constant="20" id="H1g-dX-mHh"/>
@@ -3472,7 +3488,6 @@
                             <constraint firstItem="UU0-Ds-KVj" firstAttribute="trailing" secondItem="BTw-sf-FNm" secondAttribute="trailing" constant="20" id="mwz-rt-z1g"/>
                             <constraint firstItem="UU0-Ds-KVj" firstAttribute="bottom" secondItem="BTw-sf-FNm" secondAttribute="bottom" constant="26" id="tyN-20-Dyy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UU0-Ds-KVj"/>
                     </view>
                     <navigationItem key="navigationItem" id="DvN-Q1-wlq"/>
                     <connections>
@@ -3501,7 +3516,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DVX-Cm-L71">
                                 <rect key="frame" x="16" y="668" width="382" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5t-Bw-LrB" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5t-Bw-LrB" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="52"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3520,7 +3535,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-yv-wC7" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-yv-wC7" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="195" y="0.0" width="187" height="52"/>
                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3551,6 +3566,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="s44-hI-VWg"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="s44-hI-VWg" firstAttribute="trailing" secondItem="DVX-Cm-L71" secondAttribute="trailing" constant="16" id="M5C-Kl-PLX"/>
@@ -3560,7 +3576,6 @@
                             <constraint firstItem="r6K-4d-NOX" firstAttribute="top" secondItem="w0F-Ae-6Ss" secondAttribute="top" constant="80" id="ju7-a0-oPL"/>
                             <constraint firstItem="r6K-4d-NOX" firstAttribute="centerX" secondItem="w0F-Ae-6Ss" secondAttribute="centerX" id="xNV-nq-KHX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="s44-hI-VWg"/>
                     </view>
                     <navigationItem key="navigationItem" id="3vO-ra-3eE"/>
                     <connections>
@@ -3584,7 +3599,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="10Q-lr-1nm">
                                 <rect key="frame" x="16" y="668" width="382" height="52"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDu-nM-rg7" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDu-nM-rg7" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="52"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3603,7 +3618,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-bG-cex" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xs-bG-cex" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="195" y="0.0" width="187" height="52"/>
                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3634,6 +3649,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lV8-Hu-4yl"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IlO-iY-2BK" firstAttribute="top" secondItem="jg6-lh-iUC" secondAttribute="top" constant="80" id="0Hp-f5-ga5"/>
@@ -3643,7 +3659,6 @@
                             <constraint firstItem="lV8-Hu-4yl" firstAttribute="trailing" secondItem="10Q-lr-1nm" secondAttribute="trailing" constant="16" id="khL-fr-awY"/>
                             <constraint firstItem="IlO-iY-2BK" firstAttribute="centerX" secondItem="jg6-lh-iUC" secondAttribute="centerX" id="zOq-2v-Vcx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lV8-Hu-4yl"/>
                     </view>
                     <navigationItem key="navigationItem" id="XER-wg-CUB"/>
                     <connections>
@@ -3687,7 +3702,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D3d-bG-yca">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZy-Ea-SMN" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZy-Ea-SMN" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3706,7 +3721,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-VR-ISY" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjl-VR-ISY" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -3731,7 +3746,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="D3d-bG-yca" secondAttribute="trailing" constant="16" id="1mt-xd-Wjx"/>
                                             <constraint firstItem="FG9-yq-dzR" firstAttribute="leading" secondItem="cor-78-mVl" secondAttribute="leading" constant="16" id="3V3-4r-NDn"/>
@@ -3768,6 +3783,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="w6l-KI-Tvn"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="w6l-KI-Tvn" firstAttribute="bottom" secondItem="NuK-vV-Doe" secondAttribute="bottom" constant="26" id="61p-tp-mkA"/>
@@ -3775,7 +3791,6 @@
                             <constraint firstItem="w6l-KI-Tvn" firstAttribute="trailing" secondItem="NuK-vV-Doe" secondAttribute="trailing" constant="20" id="gNG-Im-Mx0"/>
                             <constraint firstItem="NuK-vV-Doe" firstAttribute="leading" secondItem="w6l-KI-Tvn" secondAttribute="leading" constant="20" id="rIb-3h-Ado"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="w6l-KI-Tvn"/>
                     </view>
                     <navigationItem key="navigationItem" id="gn0-pG-jSq"/>
                     <connections>
@@ -3810,9 +3825,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VolumeOffTestArt" translatesAutoresizingMaskIntoConstraints="NO" id="ukG-jy-uls">
-                                        <rect key="frame" x="0.0" y="73" width="374" height="538"/>
+                                        <rect key="frame" x="0.0" y="159" width="374" height="366"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-fj-5ub" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ri-fj-5ub" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                         <rect key="frame" x="20" y="616" width="334" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="aDF-kH-g8m"/>
@@ -3901,6 +3916,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fgi-ct-oDZ"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NIe-kU-fhR" firstAttribute="top" secondItem="Fgi-ct-oDZ" secondAttribute="top" constant="26" id="2mv-ea-WPb"/>
@@ -3908,7 +3924,6 @@
                             <constraint firstItem="Fgi-ct-oDZ" firstAttribute="trailing" secondItem="NIe-kU-fhR" secondAttribute="trailing" constant="20" id="P0n-af-a8h"/>
                             <constraint firstItem="Fgi-ct-oDZ" firstAttribute="bottom" secondItem="NIe-kU-fhR" secondAttribute="bottom" constant="26" id="nQd-Wu-Jac"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Fgi-ct-oDZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="OL6-RQ-EWi"/>
                     <connections>
@@ -3964,7 +3979,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldu-wN-NZt">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldu-wN-NZt">
                                                 <rect key="frame" x="16" y="524" width="342" height="76"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="76" id="7iU-lo-bdV"/>
@@ -3974,7 +3989,7 @@
                                                     <color key="titleColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbC-GW-S1m" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbC-GW-S1m" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -3997,7 +4012,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="KbC-GW-S1m" firstAttribute="leading" secondItem="hLu-hF-jxB" secondAttribute="leading" constant="16" id="JK8-7M-vTX"/>
                                             <constraint firstItem="KbC-GW-S1m" firstAttribute="top" secondItem="ldu-wN-NZt" secondAttribute="bottom" constant="16" id="Nwd-AW-tnE"/>
@@ -4023,7 +4038,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RFIDAndPhoneArt" translatesAutoresizingMaskIntoConstraints="NO" id="reA-s1-LqZ">
-                                                <rect key="frame" x="32" y="76" width="310" height="532"/>
+                                                <rect key="frame" x="88" y="172" width="198" height="340"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="reA-s1-LqZ" secondAttribute="height" multiplier="99:170" id="KJs-TX-WLr"/>
                                                 </constraints>
@@ -4031,7 +4046,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a6o-B6-V46">
                                                 <rect key="frame" x="16" y="616" width="342" height="52"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stx-Hl-cwD" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stx-Hl-cwD" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -4050,7 +4065,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6a-5A-PtC" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6a-5A-PtC" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                                         <rect key="frame" x="175" y="0.0" width="167" height="52"/>
                                                         <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -4075,7 +4090,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="a6o-B6-V46" firstAttribute="leading" secondItem="6lL-oz-1T8" secondAttribute="leading" constant="16" id="2hf-Yu-iVj"/>
                                             <constraint firstItem="1MV-ib-KGJ" firstAttribute="leading" secondItem="6lL-oz-1T8" secondAttribute="leading" constant="16" id="Eyq-DV-zJf"/>
@@ -4153,6 +4168,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1VY-8t-gER"/>
                         <color key="backgroundColor" white="0.84999999999999998" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1VY-8t-gER" firstAttribute="trailing" secondItem="OTa-ed-im0" secondAttribute="trailing" constant="20" id="R4h-Ie-vgQ"/>
@@ -4160,7 +4176,6 @@
                             <constraint firstItem="OTa-ed-im0" firstAttribute="leading" secondItem="1VY-8t-gER" secondAttribute="leading" constant="20" id="p47-iV-qrA"/>
                             <constraint firstItem="OTa-ed-im0" firstAttribute="top" secondItem="1VY-8t-gER" secondAttribute="top" constant="26" id="s1p-nP-fwB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1VY-8t-gER"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q7d-Mr-V02"/>
                     <connections>
@@ -4190,7 +4205,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="652"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-kf-LPJ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNl-kf-LPJ" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="16" y="668" width="382" height="52"/>
                                 <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -4213,6 +4228,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="e6K-y2-Si6"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5ge-5r-Z9g" firstAttribute="top" secondItem="e6K-y2-Si6" secondAttribute="top" id="99d-a1-J9h"/>
@@ -4223,7 +4239,6 @@
                             <constraint firstItem="uNl-kf-LPJ" firstAttribute="leading" secondItem="e18-8M-Knv" secondAttribute="leading" constant="16" id="hTc-8M-hXX"/>
                             <constraint firstItem="5ge-5r-Z9g" firstAttribute="leading" secondItem="e6K-y2-Si6" secondAttribute="leading" id="oWj-H2-Ap0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="e6K-y2-Si6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Подготовка" id="rjQ-x0-Jvo">
                         <barButtonItem key="leftBarButtonItem" image="ic_cross" id="q28-1g-m1p">
@@ -4250,13 +4265,14 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xLv-Yg-MTF">
                                 <rect key="frame" x="20" y="26" width="374" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9uz-LC-bPS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xLv-Yg-MTF" firstAttribute="top" secondItem="9uz-LC-bPS" secondAttribute="top" constant="26" id="91M-5A-3BC"/>
@@ -4264,7 +4280,6 @@
                             <constraint firstItem="9uz-LC-bPS" firstAttribute="trailing" secondItem="xLv-Yg-MTF" secondAttribute="trailing" constant="20" id="mQL-wo-qRa"/>
                             <constraint firstItem="xLv-Yg-MTF" firstAttribute="leading" secondItem="9uz-LC-bPS" secondAttribute="leading" constant="20" id="wNd-sT-bwG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9uz-LC-bPS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Информация" id="QVC-PO-ByB">
                         <barButtonItem key="leftBarButtonItem" image="ic_cross" id="tLR-8H-rox">
@@ -4284,7 +4299,7 @@
             <objects>
                 <viewController storyboardIdentifier="IMEIViewController" id="65M-ug-oic" customClass="IMEIViewController" customModule="FLDiagnostic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9r-IA-U32">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMEI первого SIM-слота" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uy-eX-knh">
@@ -4294,13 +4309,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 цифр" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-QY-xUR">
-                                <rect key="frame" x="36" y="202.33333333333334" width="342" height="14"/>
+                                <rect key="frame" x="36" y="181.33333333333334" width="342" height="14"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrQ-ex-YTd">
-                                <rect key="frame" x="20" y="145.33333333333334" width="374" height="52"/>
+                                <rect key="frame" x="20" y="124.33333333333334" width="374" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-Hl-kGu">
                                         <rect key="frame" x="16" y="-1" width="342" height="52"/>
@@ -4314,7 +4329,7 @@
                                         </connections>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="AH8-Hl-kGu" firstAttribute="centerY" secondItem="QrQ-ex-YTd" secondAttribute="centerY" id="Dwk-jh-PhL"/>
                                     <constraint firstAttribute="height" constant="52" id="TSt-0V-GMj"/>
@@ -4323,13 +4338,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" IMEI устройства  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do7-JL-BFD">
-                                <rect key="frame" x="29.999999999999993" y="138.33333333333334" width="101.33333333333331" height="14"/>
+                                <rect key="frame" x="29.999999999999993" y="117.33333333333334" width="101.33333333333331" height="14"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYy-uP-k2O" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYy-uP-k2O" customClass="BorderedButton" customModule="FLDiagnostic" customModuleProvider="target">
                                 <rect key="frame" x="20" y="624" width="374" height="52"/>
                                 <color key="backgroundColor" red="1" green="0.4039215686" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -4352,13 +4367,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="и скопируйте IMEI" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxb-Ed-huz">
-                                <rect key="frame" x="16" y="101.33333333333334" width="382" height="21"/>
+                                <rect key="frame" x="16" y="80.333333333333329" width="382" height="21"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ8-z0-zHs">
-                                <rect key="frame" x="16" y="54.333333333333329" width="382" height="42"/>
+                                <rect key="frame" x="16" y="54.333333333333329" width="382" height="21"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Перейдите в настройки " image="settings">
@@ -4366,7 +4381,8 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ugb-8v-0XC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4Uy-eX-knh" firstAttribute="top" secondItem="ugb-8v-0XC" secondAttribute="top" constant="26" id="0Hg-v6-n1u"/>
                             <constraint firstItem="ugb-8v-0XC" firstAttribute="trailing" secondItem="QrQ-ex-YTd" secondAttribute="trailing" constant="20" id="Bb5-AZ-jUe"/>
@@ -4389,7 +4405,6 @@
                             <constraint firstItem="AH8-Hl-kGu" firstAttribute="top" secondItem="Yxb-Ed-huz" secondAttribute="bottom" constant="23" id="qdA-ew-w8C"/>
                             <constraint firstItem="V2S-QY-xUR" firstAttribute="leading" secondItem="ugb-8v-0XC" secondAttribute="leading" constant="36" id="zx8-XD-Ej0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ugb-8v-0XC"/>
                     </view>
                     <navigationItem key="navigationItem" id="YRR-Mc-F2f">
                         <barButtonItem key="leftBarButtonItem" image="ic_cross" id="3gL-Jt-Hbk">
@@ -4415,6 +4430,146 @@
             <point key="canvasLocation" x="-554" y="837"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1xP-9r-gXl">
+            <size key="intrinsicContentSize" width="96" height="31"/>
+        </designable>
+        <designable name="2ff-Yc-kEz">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="4Xs-bG-cex">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="5ri-fj-5ub">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="9VF-n5-cLy">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="B9k-hm-Obo">
+            <size key="intrinsicContentSize" width="129" height="31"/>
+        </designable>
+        <designable name="E4F-zR-OPR">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="E85-Jc-0cJ">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="FPX-EA-L9j">
+            <size key="intrinsicContentSize" width="143" height="31"/>
+        </designable>
+        <designable name="G5T-RX-v3L">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="Gi9-fb-diz">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="IDu-nM-rg7">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="JZy-Ea-SMN">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="KbC-GW-S1m">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="KoO-Sg-pnN">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="LVp-pa-Vrc">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="Nmt-cH-DDZ">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="QRE-Df-5E3">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="T8V-a0-Men">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="TkH-a3-UpB">
+            <size key="intrinsicContentSize" width="138" height="31"/>
+        </designable>
+        <designable name="XYy-uP-k2O">
+            <size key="intrinsicContentSize" width="47" height="31"/>
+        </designable>
+        <designable name="Y1i-qi-xv9">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="Yl7-JQ-83Z">
+            <size key="intrinsicContentSize" width="129" height="31"/>
+        </designable>
+        <designable name="ZKW-ZO-toL">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="a50-HF-Bx4">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="aAf-Tg-fEg">
+            <size key="intrinsicContentSize" width="35" height="31"/>
+        </designable>
+        <designable name="aDU-xv-T0w">
+            <size key="intrinsicContentSize" width="70" height="31"/>
+        </designable>
+        <designable name="bQl-Y2-sSc">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="bZk-gl-5rx">
+            <size key="intrinsicContentSize" width="91" height="32"/>
+        </designable>
+        <designable name="cG7-Ie-kzi">
+            <size key="intrinsicContentSize" width="70" height="31"/>
+        </designable>
+        <designable name="cgn-yc-iiy">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="cx4-oO-7a5">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="dG1-yv-wC7">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="gPK-qp-m7Q">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="gTm-rL-7tL">
+            <size key="intrinsicContentSize" width="47" height="32"/>
+        </designable>
+        <designable name="h0h-Yj-J9M">
+            <size key="intrinsicContentSize" width="30" height="31"/>
+        </designable>
+        <designable name="kSu-J0-ViJ">
+            <size key="intrinsicContentSize" width="170" height="32"/>
+        </designable>
+        <designable name="kXV-Sz-L2x">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="mAf-eh-fPT">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="n6a-5A-PtC">
+            <size key="intrinsicContentSize" width="70" height="31"/>
+        </designable>
+        <designable name="pbe-PN-bhA">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="saj-dM-gFW">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="stx-Hl-cwD">
+            <size key="intrinsicContentSize" width="94" height="31"/>
+        </designable>
+        <designable name="uNl-kf-LPJ">
+            <size key="intrinsicContentSize" width="187" height="31"/>
+        </designable>
+        <designable name="xjl-VR-ISY">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+        <designable name="y5t-Bw-LrB">
+            <size key="intrinsicContentSize" width="30" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="AccelerometerX" width="70" height="70"/>
         <image name="AccelerometerY" width="70" height="70"/>
@@ -4444,5 +4599,11 @@
         <image name="ic_wifi_off_grey" width="48" height="48"/>
         <image name="nfcArt" width="36" height="36"/>
         <image name="settings" width="20" height="21"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -22,7 +22,8 @@ class CellNetworkTestViewController: BaseViewController {
   @IBOutlet private weak var retryCallButton: UIButton!
   @IBOutlet private weak var noCallButton: BorderedButton!
   @IBOutlet private weak var hadCallButton: BorderedButton!
-
+	@IBOutlet private weak var searchAgainButton: UIButton!
+	
   @IBOutlet private weak var speakerQuestionTestView: UIView!
   @IBOutlet private weak var retryCallSoundButton: UIButton!
   @IBOutlet private weak var noSoundButton: BorderedButton!
@@ -33,6 +34,11 @@ class CellNetworkTestViewController: BaseViewController {
 
   var callDone = false
 
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.viewModel.checkSIMCard()
+	}
+	
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -84,6 +90,10 @@ class CellNetworkTestViewController: BaseViewController {
         }
       })
       .disposed(by: disposeBag)
+		
+		searchAgainButton.rx.tap.subscribe(onNext: { [unowned self] in
+			self.viewModel.checkSIMCard()
+		}).disposed(by: disposeBag)
 
     noSoundButton.rx.tap
       .subscribe(onNext: { [unowned self] in
@@ -113,11 +123,13 @@ class CellNetworkTestViewController: BaseViewController {
   }
   
   func showSimErrorView() {
+		searchAgainButton.isHidden = false
     callQuestionTestView.isHidden = true
     callTestView.isHidden = true
     speakerQuestionTestView.isHidden = true
   }
   func continueTest() {
+		searchAgainButton.isHidden = true
     callTestView.isHidden = false
     callQuestionTestView.isHidden = true
     speakerQuestionTestView.isHidden = true
