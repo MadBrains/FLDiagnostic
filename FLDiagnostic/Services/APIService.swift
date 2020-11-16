@@ -17,7 +17,18 @@ enum Result<T, U> where U: Error  {
 
 class APIService {
   static let shared = APIService()
-  
+	private let session: Session
+	
+	init() {
+		let configuration = URLSessionConfiguration.default
+		configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
+		configuration.timeoutIntervalForResource = 100
+		configuration.timeoutIntervalForRequest = 100
+		configuration.urlCredentialStorage = nil
+		configuration.shouldUseExtendedBackgroundIdleMode = true
+		session = Session(configuration: configuration)
+	}
+	
   func pathDevice(color: String = "") -> Observable<Result<DeviceResponse, APIError>> {
     var params: Parameters
       params = ["imei": DiagnosticService.shared.imei,
@@ -62,12 +73,10 @@ class APIService {
   //swiftlint:disable line_length
   func defaultRequest<T: Codable>(_ edpoint: FLEndpoint, method: HTTPMethod = .get, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, decodingType: T.Type) -> Observable<Result<T, APIError>> {
     print(edpoint.request)
-    return Observable.create { (observable) -> Disposable in
-      
-      Alamofire.request(edpoint.request, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString(completionHandler: { (string) in
-        print(string)
-      }).responseJSON { (response ) in
-      
+    return Observable.create { [weak session]  (observable) -> Disposable in
+			session?.request(edpoint.request, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString(completionHandler: { (response) in
+				print(response)
+			}).responseJSON { (response ) in
         if response.error != nil || response.data == nil {
           if NetworkManager.shared.status.value == .notReachable {
                observable.onNext(.failure(.noInternet))

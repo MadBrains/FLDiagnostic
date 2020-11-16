@@ -20,8 +20,8 @@ class DeviceModel: Codable {
   var id: String
   var os: String
   var brand: String
-  var name: String
-  var version: String
+  //var name: String
+  //var version: String
   //var isUbgradable: Bool
   //var isTradable: Bool
   var tests: [Test]?

@@ -19,14 +19,13 @@ class NetworkManager: NSObject {
 
   static let shared: NetworkManager = { return NetworkManager() }()
   
-  private let manager = Alamofire.NetworkReachabilityManager(host: "apple.com")
+  private let manager = NetworkReachabilityManager(host: "apple.com")
   private(set) var status = BehaviorRelay<Status>(value: .notReachable)
 
   override init() {
       super.init()
-      manager?.listener = { self.status.accept($0) }
-      manager?.startListening()
-    
+		   manager?.startListening(onUpdatePerforming: { self.status.accept($0) })
+
       reachability = Reachability(hostName: "www.google.com")
       reachability.startNotifier()
   }
