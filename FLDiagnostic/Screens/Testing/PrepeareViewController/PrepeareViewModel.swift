@@ -28,9 +28,7 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
   override func setupModel() {
     super.setupModel()
     
-    let deviceString = DeviceService.deviceModel + " " + "(\(DeviceService.diskSpaceGB))"
-    modelText.onNext(deviceString)
-    modelImage.onNext(UIImage.FLImage("TestComplete"))
+    modelText.onNext("Проверка модели")
     
     startDiagnosticSession()
     
@@ -69,8 +67,15 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
        case .success(let response):
         DiagnosticService.shared.setCurrentDiagnostikSesion(response.diagnostic)
         self.setSuccessForConnection()
+				self.setModelScheckSuccess()
+				self.setNextButtonAvailabel()
        case .failure(let error):
-       self.setErrorForConnection()
+				if error == .invalidModel {
+					self.setModelCheckError()
+					self.setSuccessForConnection()
+				} else {
+					self.setErrorForConnection()
+				}
       }
     }).disposed(by: disposeBag)
   }
@@ -81,7 +86,12 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
       case .success(let _):
         self.getActiveSesion()
       case .failure(let error):
-        self.setErrorForConnection()
+				if error == .invalidModel {
+					self.setModelCheckError()
+					self.setSuccessForConnection()
+				} else {
+					self.setErrorForConnection()
+				}
       }
     }).disposed(by: disposeBag)
   }
@@ -100,11 +110,24 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
     self.successConnection = true
     serverText.onNext("Подключение установлено")
     serverImage.onNext(UIImage.FLImage("TestComplete"))
-    
-    nextButtonHidden.onNext(false)
-    nextButtonColor.onNext(#colorLiteral(red: 1, green: 0.4918404222, blue: 0.2512650192, alpha: 1))
-    nextButtonText.onNext("Начать тестирование")
-    nextButtonTitleColor.onNext(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
   }
+	
+	private func setNextButtonAvailabel() {
+		nextButtonHidden.onNext(false)
+		nextButtonColor.onNext(#colorLiteral(red: 1, green: 0.4918404222, blue: 0.2512650192, alpha: 1))
+		nextButtonText.onNext("Начать тестирование")
+		nextButtonTitleColor.onNext(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+	}
+	
+	private func setModelScheckSuccess() {
+		let deviceString = DeviceService.deviceModel + " " + "(\(DeviceService.diskSpaceGB))"
+		modelText.onNext(deviceString)
+		modelImage.onNext(UIImage.FLImage("TestComplete"))
+	}
+	
+	private func setModelCheckError() {
+		modelText.onNext("Ошибка при проверке модели")
+		modelImage.onNext(UIImage.FLImage("TestError"))
+	}
 
 }

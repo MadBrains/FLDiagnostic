@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="67p-Bd-7IH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="67p-Bd-7IH">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -139,17 +139,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6tY-sy-EqM">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="d6H-sZ-pec">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Esq-0E-05z"/>
                                                             <constraint firstAttribute="width" constant="40" id="epD-6N-XT4"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zx6-VX-efQ">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="uyi-At-H6N"/>
                                                         </constraints>
@@ -505,10 +505,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRI-mf-ZLU" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="505" width="366" height="95"/>
+                                        <rect key="frame" x="4" y="502" width="366" height="98"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Убедитесь, что слайдер «Изменение кнопками» в «Звуки, тактильные сигналы» выключен." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="vGS-uM-u50">
-                                                <rect key="frame" x="16" y="16" width="334" height="63"/>
+                                                <rect key="frame" x="16" y="16" width="334" height="66"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -531,17 +531,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-TN-SZU">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="2Be-BB-c9b">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="2ZL-jV-7eI"/>
                                                             <constraint firstAttribute="width" constant="40" id="bJD-sY-0N1"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-nn-WDP">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="mDF-u3-oKw"/>
                                                         </constraints>
@@ -640,13 +640,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeButtonTestArt" translatesAutoresizingMaskIntoConstraints="NO" id="8vY-pm-Plc">
-                                        <rect key="frame" x="0.0" y="133" width="374" height="335"/>
+                                        <rect key="frame" x="0.0" y="129" width="374" height="335"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-fC-EXq" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="468" width="366" height="116"/>
+                                        <rect key="frame" x="4" y="464" width="366" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приложение будет свернуто, для продолжения работы вернитесь обратно с помощью функции «Активные приложения»." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-Ua-zSR">
-                                                <rect key="frame" x="16" y="16" width="334" height="84"/>
+                                                <rect key="frame" x="16" y="16" width="334" height="88"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -690,17 +690,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="8"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GMB-Oc-OEY">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="7jA-b4-Sh4">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="QOx-Ah-YLP"/>
                                                             <constraint firstAttribute="width" constant="40" id="SbR-h8-u3Y"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xO5-1Q-u5T">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="8cL-F9-7p3"/>
                                                         </constraints>
@@ -790,7 +790,7 @@
                                 <rect key="frame" x="20" y="26" width="374" height="684"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подключите и отключите зарядное устройство, подключенное к питанию" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci6-CI-aTT">
-                                        <rect key="frame" x="16" y="16" width="342" height="70"/>
+                                        <rect key="frame" x="16" y="16" width="342" height="73.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="ivQ-sY-xIJ"/>
                                         </constraints>
@@ -799,20 +799,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerMobileArt" translatesAutoresizingMaskIntoConstraints="NO" id="2ft-V9-izS">
-                                        <rect key="frame" x="0.0" y="116" width="374" height="198"/>
+                                        <rect key="frame" x="0.0" y="119.33333333333334" width="374" height="198.00000000000003"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerArt" translatesAutoresizingMaskIntoConstraints="NO" id="6JY-OW-ZRi">
-                                        <rect key="frame" x="168" y="322" width="38" height="124"/>
+                                        <rect key="frame" x="168" y="325.33333333333331" width="38" height="124"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerPlugIn" translatesAutoresizingMaskIntoConstraints="NO" id="axN-au-aNe">
-                                        <rect key="frame" x="114" y="368" width="32" height="32"/>
+                                        <rect key="frame" x="114" y="371.33333333333331" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="jBT-lI-7U8"/>
                                             <constraint firstAttribute="height" constant="32" id="lCN-xJ-otG"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChargerPlugOut" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Fj-VvE">
-                                        <rect key="frame" x="228" y="368" width="32" height="32"/>
+                                        <rect key="frame" x="228" y="371.33333333333331" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="dui-5M-2hd"/>
                                             <constraint firstAttribute="height" constant="32" id="q1Q-co-9aO"/>
@@ -843,17 +843,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gHT-hx-3sF">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="RTm-eH-gFH">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="Ov1-UW-aWN"/>
                                                             <constraint firstAttribute="height" constant="40" id="bdM-SU-ClI"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgI-eT-8dB">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="ECR-QY-nvF"/>
                                                         </constraints>
@@ -998,17 +998,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jhV-Pz-kF4">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="vRb-cu-TGC">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="4Ag-2K-61i"/>
                                                             <constraint firstAttribute="height" constant="40" id="w6I-a0-7z4"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkt-1X-VKu">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="UcS-yv-ha6"/>
                                                         </constraints>
@@ -1145,17 +1145,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="D5t-1v-Zha">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="eS5-ey-crU">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="0uf-Cv-naf"/>
                                                             <constraint firstAttribute="width" constant="40" id="xOS-Gj-z29"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-9g-PBH">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="tAj-Mf-rbB"/>
                                                         </constraints>
@@ -1177,17 +1177,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pNL-U7-pVh">
-                                                <rect key="frame" x="79.666666666666671" y="306.66666666666669" width="214.66666666666663" height="71"/>
+                                                <rect key="frame" x="84.333333333333329" y="306.66666666666669" width="205.66666666666669" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="tWY-2T-5Ew">
-                                                        <rect key="frame" x="87.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="82.666666666666671" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Uvw-xH-tjm"/>
                                                             <constraint firstAttribute="width" constant="40" id="knm-qR-w5j"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск устройств Bluetooth..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syE-N3-bc3">
-                                                        <rect key="frame" x="0.0" y="52" width="214.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="205.66666666666666" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="Jwv-Gd-l54"/>
                                                         </constraints>
@@ -1212,7 +1212,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iau-6z-lDq">
-                                                <rect key="frame" x="32" y="288" width="310" height="108"/>
+                                                <rect key="frame" x="32" y="286.66666666666669" width="310" height="110.66666666666669"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestError" translatesAutoresizingMaskIntoConstraints="NO" id="29x-F6-Ec4">
                                                         <rect key="frame" x="135" y="0.0" width="40" height="40"/>
@@ -1222,7 +1222,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-IL-2FH">
-                                                        <rect key="frame" x="26.666666666666686" y="52" width="257" height="56"/>
+                                                        <rect key="frame" x="30.000000000000014" y="52" width="250.33333333333337" height="58.666666666666657"/>
                                                         <string key="text">Устройства не найдены
 Попробуйте повторить поиск или проверьте Bluetooth в ручную</string>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
@@ -1386,7 +1386,7 @@
                                 <rect key="frame" x="20" y="26" width="374" height="684"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wba-Q0-npe">
-                                        <rect key="frame" x="16" y="272" width="342" height="140"/>
+                                        <rect key="frame" x="16" y="269" width="342" height="146.33333333333337"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="Fy7-zJ-bvp"/>
                                         </constraints>
@@ -1433,7 +1433,7 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcT-nR-gGo">
-                                                <rect key="frame" x="102.33333333333333" y="314" width="169.66666666666669" height="56"/>
+                                                <rect key="frame" x="105.33333333333333" y="312.66666666666669" width="163.33333333333337" height="58.666666666666686"/>
                                                 <string key="text">У дисплея
 есть дефекты?</string>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
@@ -1504,17 +1504,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="NmW-DX-hBp">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="xsC-El-QkG">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="9qq-aK-cz1"/>
                                                             <constraint firstAttribute="width" constant="40" id="WQX-B9-oov"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utt-Kt-kt7">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="8Re-Yw-gUw"/>
                                                         </constraints>
@@ -1569,10 +1569,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awL-sY-ELo" customClass="RoundedView" customModule="FLDiagnostic" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="646" width="374" height="74"/>
+                                        <rect key="frame" x="20" y="644" width="374" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для переключения цвета после проверки коснитесь экрана" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHG-M0-1Cs">
-                                                <rect key="frame" x="20" y="16" width="334" height="42"/>
+                                                <rect key="frame" x="20" y="16" width="334" height="44"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1656,7 +1656,7 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Слышите звук?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-JL-4Ax">
-                                                <rect key="frame" x="100.33333333333333" y="328" width="173.66666666666669" height="28"/>
+                                                <rect key="frame" x="102.66666666666669" y="327.33333333333331" width="169" height="29.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1708,10 +1708,10 @@
                                                 </constraints>
                                             </stackView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1z-7f-7zX">
-                                                <rect key="frame" x="0.0" y="489" width="374" height="95"/>
+                                                <rect key="frame" x="0.0" y="486" width="374" height="98"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если звук не слышно, отключите бесшумный режим или увеличьте громкость" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkk-Mp-QvJ">
-                                                        <rect key="frame" x="16" y="16" width="342" height="63"/>
+                                                        <rect key="frame" x="16" y="16" width="342" height="66"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                                         <color key="textColor" red="0.96078431369999995" green="0.95294117649999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1751,17 +1751,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="29"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="V1Z-xV-hVo">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="LXy-r6-cx2">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="21t-ES-5ML"/>
                                                             <constraint firstAttribute="height" constant="40" id="9DO-Ue-T3t"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEx-2B-E7W">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="ixn-Up-7ky"/>
                                                         </constraints>
@@ -1838,7 +1838,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Видите изображение?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5M-w6-SdI">
-                                <rect key="frame" x="0.0" y="80" width="414" height="28"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="29.333333333333329"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1886,17 +1886,17 @@
                                 <rect key="frame" x="0.0" y="-44" width="414" height="814"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2WK-xI-WRA">
-                                        <rect key="frame" x="121.66666666666667" y="371.66666666666669" width="170.66666666666663" height="71"/>
+                                        <rect key="frame" x="124" y="371.66666666666669" width="166" height="71"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestCompleteLight" translatesAutoresizingMaskIntoConstraints="NO" id="IwW-Ae-uDc">
-                                                <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="Ugc-nY-y1A"/>
                                                     <constraint firstAttribute="height" constant="40" id="hlK-6T-Rgg"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-kc-KG0">
-                                                <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="Fwa-Hw-tnY"/>
                                                 </constraints>
@@ -2185,7 +2185,7 @@
                                 <rect key="frame" x="20" y="26" width="374" height="684"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для продолжения теста необходимо вставить сим-карту без PIN-кода" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbP-8a-f8P">
-                                        <rect key="frame" x="16" y="16" width="342" height="70"/>
+                                        <rect key="frame" x="16" y="16" width="342" height="57"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="Nmk-Qv-e02"/>
                                         </constraints>
@@ -2197,7 +2197,7 @@
                                         <rect key="frame" x="0.0" y="318" width="374" height="48"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет сим-карты" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNR-Go-bX7">
-                                        <rect key="frame" x="117.00000000000001" y="374" width="140.33333333333337" height="23.333333333333314"/>
+                                        <rect key="frame" x="120.33333333333333" y="374" width="133.33333333333337" height="24.666666666666686"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -2237,17 +2237,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-cm-Vzu">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-c2-3Wr">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="JBU-hz-kqq"/>
                                                             <constraint firstAttribute="width" constant="40" id="dFb-u5-G1K"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By4-Oy-cgg">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="2JU-5G-YmR"/>
                                                         </constraints>
@@ -2269,7 +2269,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажмите кнопку &quot;Исходящий вызов&quot; для звонка на номер 060, для осуществления проверки связи" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NK-Oc-Idw">
-                                                <rect key="frame" x="16" y="16" width="342" height="70"/>
+                                                <rect key="frame" x="16" y="16" width="342" height="73.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="57" id="ujs-u2-Jxa"/>
                                                 </constraints>
@@ -2324,7 +2324,7 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vof-gu-2w9">
-                                                <rect key="frame" x="104.33333333333333" y="314" width="165.33333333333337" height="56"/>
+                                                <rect key="frame" x="105" y="312.66666666666669" width="164" height="58.666666666666686"/>
                                                 <string key="text">Вызов прошел
 успешно?</string>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
@@ -2405,7 +2405,7 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SR-qa-tBX">
-                                                <rect key="frame" x="71" y="314" width="232" height="56"/>
+                                                <rect key="frame" x="73.333333333333329" y="312.66666666666669" width="227.66666666666669" height="58.666666666666686"/>
                                                 <string key="text">Вы слышали звук во
 время звонка?</string>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
@@ -3072,7 +3072,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подключитесь к сети Wi-Fi для прохождения теста" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-RC-Bsd">
-                                        <rect key="frame" x="20" y="16.999999999999996" width="334" height="46.666666666666657"/>
+                                        <rect key="frame" x="20" y="17" width="334" height="49"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3103,7 +3103,7 @@
                                         <rect key="frame" x="163" y="296" width="48" height="48"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY2-Ui-6be">
-                                        <rect key="frame" x="30" y="358" width="314" height="18.666666666666686"/>
+                                        <rect key="frame" x="30" y="358" width="314" height="19.666666666666686"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3299,7 +3299,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Проверьте работу face id, если face id не срабатывает, попробуйте проверить его в ручную" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN1-QD-rrh">
-                                                <rect key="frame" x="8" y="286" width="358" height="112"/>
+                                                <rect key="frame" x="13.333333333333343" y="283.66666666666669" width="347.66666666666663" height="117"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3365,17 +3365,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hpg-pT-pH0">
-                                                <rect key="frame" x="130.33333333333334" y="288.66666666666669" width="113.66666666666666" height="107"/>
+                                                <rect key="frame" x="131" y="287.33333333333331" width="112.33333333333331" height="109.66666666666669"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FaceIDArt" translatesAutoresizingMaskIntoConstraints="NO" id="NQY-fj-SA4">
-                                                        <rect key="frame" x="35.333333333333314" y="0.0" width="43" height="43"/>
+                                                        <rect key="frame" x="34.666666666666657" y="0.0" width="43" height="43"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="43" id="1RC-gQ-Fyh"/>
                                                             <constraint firstAttribute="height" constant="43" id="TWl-6G-Q8O"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVS-JH-jq6">
-                                                        <rect key="frame" x="0.0" y="51" width="113.66666666666667" height="56"/>
+                                                        <rect key="frame" x="0.0" y="51" width="112.33333333333333" height="58.666666666666657"/>
                                                         <string key="text">Face id
 не найден</string>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="24"/>
@@ -3420,17 +3420,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vXr-VJ-Ubi">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-BO-av6">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="RcE-Lr-MIh"/>
                                                             <constraint firstAttribute="width" constant="40" id="Ub3-wp-LLD"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bni-gD-pyp">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="rrD-4C-to2"/>
                                                         </constraints>
@@ -3852,17 +3852,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="mTd-V4-M6i">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="9lk-xK-uWo">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="hXX-oK-z9C"/>
                                                             <constraint firstAttribute="height" constant="40" id="vYa-z5-9IM"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVw-zm-ZUK">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="r7X-vP-R06"/>
                                                         </constraints>
@@ -3952,23 +3952,23 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Включите NFC        в настройках телефона" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8C-51-jrl">
-                                                <rect key="frame" x="16" y="15.999999999999996" width="342" height="46.666666666666657"/>
+                                                <rect key="frame" x="16" y="16" width="342" height="49"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Wx7-sl-zuW">
-                                                <rect key="frame" x="148" y="306.66666666666669" width="78.333333333333314" height="71"/>
+                                                <rect key="frame" x="148.33333333333334" y="306.66666666666669" width="77.333333333333343" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nfcArt" translatesAutoresizingMaskIntoConstraints="NO" id="uzl-wN-Zt2">
-                                                        <rect key="frame" x="19" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="18.666666666666657" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="Xzd-pu-5Q6"/>
                                                             <constraint firstAttribute="height" constant="40" id="z77-qX-Ss0"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выключен" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-AI-nIg">
-                                                        <rect key="frame" x="0.0" y="52" width="78.333333333333329" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="77.333333333333329" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="i9D-n2-wKN"/>
                                                         </constraints>
@@ -4032,7 +4032,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приложите смартфон к карточке с RFID-меткой" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-ib-KGJ">
-                                                <rect key="frame" x="16" y="15.999999999999996" width="342" height="46.666666666666657"/>
+                                                <rect key="frame" x="16" y="16" width="342" height="49"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -4108,17 +4108,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="684"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Pgo-7N-7Pi">
-                                                <rect key="frame" x="101.66666666666667" y="306.66666666666669" width="170.66666666666663" height="71"/>
+                                                <rect key="frame" x="104" y="306.66666666666669" width="166" height="71"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestComplete" translatesAutoresizingMaskIntoConstraints="NO" id="psG-g2-gNk">
-                                                        <rect key="frame" x="65.333333333333329" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="63" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="3cS-Wg-zs9"/>
                                                             <constraint firstAttribute="width" constant="40" id="a7G-Lo-9YO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тест успешно пройден" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky4-mt-vpD">
-                                                        <rect key="frame" x="0.0" y="52" width="170.66666666666666" height="19"/>
+                                                        <rect key="frame" x="0.0" y="52" width="166" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="43i-25-hNX"/>
                                                         </constraints>
@@ -4303,19 +4303,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMEI первого SIM-слота" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uy-eX-knh">
-                                <rect key="frame" x="16" y="26" width="382" height="23.333333333333329"/>
+                                <rect key="frame" x="16" y="26" width="382" height="24.666666666666671"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 цифр" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-QY-xUR">
-                                <rect key="frame" x="36" y="181.33333333333334" width="342" height="14"/>
+                                <rect key="frame" x="36" y="184.66666666666666" width="342" height="14.666666666666657"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrQ-ex-YTd">
-                                <rect key="frame" x="20" y="124.33333333333334" width="374" height="52"/>
+                                <rect key="frame" x="20" y="127.66666666666666" width="374" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AH8-Hl-kGu">
                                         <rect key="frame" x="16" y="-1" width="342" height="52"/>
@@ -4338,7 +4338,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" IMEI устройства  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="do7-JL-BFD">
-                                <rect key="frame" x="29.999999999999993" y="117.33333333333334" width="101.33333333333331" height="14"/>
+                                <rect key="frame" x="30.000000000000007" y="120.66666666666666" width="95.666666666666686" height="14"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
                                 <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -4367,13 +4367,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="и скопируйте IMEI" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxb-Ed-huz">
-                                <rect key="frame" x="16" y="80.333333333333329" width="382" height="21"/>
+                                <rect key="frame" x="16" y="82.666666666666671" width="382" height="22"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ8-z0-zHs">
-                                <rect key="frame" x="16" y="54.333333333333329" width="382" height="21"/>
+                                <rect key="frame" x="16" y="55.666666666666671" width="382" height="22"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Перейдите в настройки " image="settings">
@@ -4432,7 +4432,7 @@
     </scenes>
     <designables>
         <designable name="1xP-9r-gXl">
-            <size key="intrinsicContentSize" width="96" height="31"/>
+            <size key="intrinsicContentSize" width="92" height="32"/>
         </designable>
         <designable name="2ff-Yc-kEz">
             <size key="intrinsicContentSize" width="30" height="32"/>
@@ -4441,25 +4441,25 @@
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="5ri-fj-5ub">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="9VF-n5-cLy">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="B9k-hm-Obo">
-            <size key="intrinsicContentSize" width="129" height="31"/>
+            <size key="intrinsicContentSize" width="125" height="32"/>
         </designable>
         <designable name="E4F-zR-OPR">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="E85-Jc-0cJ">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="FPX-EA-L9j">
-            <size key="intrinsicContentSize" width="143" height="31"/>
+            <size key="intrinsicContentSize" width="139" height="32"/>
         </designable>
         <designable name="G5T-RX-v3L">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="Gi9-fb-diz">
             <size key="intrinsicContentSize" width="30" height="32"/>
@@ -4471,46 +4471,46 @@
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="KbC-GW-S1m">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="KoO-Sg-pnN">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="LVp-pa-Vrc">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Nmt-cH-DDZ">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="QRE-Df-5E3">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="T8V-a0-Men">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="TkH-a3-UpB">
-            <size key="intrinsicContentSize" width="138" height="31"/>
+            <size key="intrinsicContentSize" width="137" height="32"/>
         </designable>
         <designable name="XYy-uP-k2O">
-            <size key="intrinsicContentSize" width="47" height="31"/>
+            <size key="intrinsicContentSize" width="47" height="32"/>
         </designable>
         <designable name="Y1i-qi-xv9">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="Yl7-JQ-83Z">
-            <size key="intrinsicContentSize" width="129" height="31"/>
+            <size key="intrinsicContentSize" width="129" height="32"/>
         </designable>
         <designable name="ZKW-ZO-toL">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="a50-HF-Bx4">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="aAf-Tg-fEg">
-            <size key="intrinsicContentSize" width="35" height="31"/>
+            <size key="intrinsicContentSize" width="32" height="32"/>
         </designable>
         <designable name="aDU-xv-T0w">
-            <size key="intrinsicContentSize" width="70" height="31"/>
+            <size key="intrinsicContentSize" width="67" height="32"/>
         </designable>
         <designable name="bQl-Y2-sSc">
             <size key="intrinsicContentSize" width="30" height="32"/>
@@ -4519,25 +4519,25 @@
             <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="cG7-Ie-kzi">
-            <size key="intrinsicContentSize" width="70" height="31"/>
+            <size key="intrinsicContentSize" width="67" height="32"/>
         </designable>
         <designable name="cgn-yc-iiy">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="cx4-oO-7a5">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="dG1-yv-wC7">
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="gPK-qp-m7Q">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="gTm-rL-7tL">
             <size key="intrinsicContentSize" width="47" height="32"/>
         </designable>
         <designable name="h0h-Yj-J9M">
-            <size key="intrinsicContentSize" width="30" height="31"/>
+            <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="kSu-J0-ViJ">
             <size key="intrinsicContentSize" width="170" height="32"/>
@@ -4546,22 +4546,22 @@
             <size key="intrinsicContentSize" width="30" height="32"/>
         </designable>
         <designable name="mAf-eh-fPT">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="n6a-5A-PtC">
-            <size key="intrinsicContentSize" width="70" height="31"/>
+            <size key="intrinsicContentSize" width="67" height="32"/>
         </designable>
         <designable name="pbe-PN-bhA">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="saj-dM-gFW">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="stx-Hl-cwD">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="91" height="32"/>
         </designable>
         <designable name="uNl-kf-LPJ">
-            <size key="intrinsicContentSize" width="187" height="31"/>
+            <size key="intrinsicContentSize" width="185" height="32"/>
         </designable>
         <designable name="xjl-VR-ISY">
             <size key="intrinsicContentSize" width="30" height="32"/>

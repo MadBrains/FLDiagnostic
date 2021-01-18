@@ -92,7 +92,9 @@ class APIService {
                   print(error)
                 do {
                   let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: data)
-                  if let message = errorResponse.message {
+									if errorResponse.statusCode == 409 {
+										observable.onNext(.failure(.invalidModel))
+									} else if let message = errorResponse.message {
                     observable.onNext(.failure(.customError(message)))
                   } else {
                     observable.onNext(.failure(.serverError))
@@ -122,6 +124,7 @@ enum FLEndpoint {
   case diagnostics
   case deviceInfo
   case diagnosticsActive
+	case specifyDeviceInfo
   case diagnosticsFinish(_ id: String)
   case diagnosticsCancel(_ id: String)
   case diagnosticsSave(_ id: String)
@@ -141,6 +144,7 @@ extension FLEndpoint: Endpoint {
     
     var path: String {
         switch self {
+				case .specifyDeviceInfo: return "/diagnostics/specifyDeviceInfo"
         case .login: return "/auth/login"
         case .diagnostics: return "/diagnostics/\(DiagnosticService.shared.id ?? "")"
         case .deviceInfo: return "/diagnostics/\(DiagnosticService.shared.id ?? "")/device-info"
@@ -161,26 +165,33 @@ extension Endpoint {
   
 }
 
-enum APIError: Error {
-    case requestFailed
-    case jsonConversionFailure
-    case invalidData
-    case responseUnsuccessful
-    case jsonParsingFailure
-    case serverError
-    case noInternet
-    case customError(_ message: String)
-  
-    var localizedDescription: String {
-        switch self {
-        case .requestFailed: return "Request Failed"
-        case .invalidData: return "Invalid Data"
-        case .responseUnsuccessful: return "Response Unsuccessful"
-        case .jsonParsingFailure: return "JSON Parsing Failure"
-        case .jsonConversionFailure: return "JSON Conversion Failure"
-        case .serverError: return "Server Error"
-        case .noInternet: return "Отсутствует соединение с интернетом"
-        case .customError(let message): return message
-        }
-    }
+enum APIError: Error, Equatable {
+	
+	case requestFailed
+	case jsonConversionFailure
+	case invalidData
+	case responseUnsuccessful
+	case jsonParsingFailure
+	case serverError
+	case noInternet
+	case invalidModel
+	case customError(_ message: String)
+	
+	var localizedDescription: String {
+		switch self {
+		case .requestFailed: return "Request Failed"
+		case .invalidData: return "Invalid Data"
+		case .responseUnsuccessful: return "Response Unsuccessful"
+		case .jsonParsingFailure: return "JSON Parsing Failure"
+		case .jsonConversionFailure: return "JSON Conversion Failure"
+		case .serverError: return "Server Error"
+		case .noInternet: return "Отсутствует соединение с интернетом"
+		case .invalidModel: return "Ошибка при проверке модели"
+		case .customError(let message): return message
+		}
+	}
+	
+	static func == (lhs: APIError, rhs: APIError) -> Bool {
+		return lhs.localizedDescription == rhs.localizedDescription
+	}
 }
