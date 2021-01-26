@@ -20,6 +20,7 @@ class SilentModeTestViewModel: BaseControllerViewModel {
     self.page = page
     super.init()
   }
+	
   let disposeBag = DisposeBag()
   var completed: Bool = false
 
@@ -28,6 +29,7 @@ class SilentModeTestViewModel: BaseControllerViewModel {
 
     Mute.shared.checkInterval = 0
     Mute.shared.alwaysNotify = true
+		Mute.shared.isPaused = false
     Mute.shared.notify = { mute in
       if self.isMute == nil {
         self.isMute = mute

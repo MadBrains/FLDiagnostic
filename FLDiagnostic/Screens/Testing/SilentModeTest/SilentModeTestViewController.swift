@@ -26,13 +26,14 @@ class SilentModeTestViewController: BaseViewController {
     setupStyle()
 
     viewModel.startVolumeOffTest()
-      .subscribe(onNext: {
-        self.endTest()
+			.subscribe(onNext: { [weak self] in
+        self?.endTest()
       })
       .disposed(by: disposeBag)
 
     notWorkingButton.rx.tap
-      .subscribe(onNext: { [unowned self] () in
+      .subscribe(onNext: { [weak self] () in
+				guard let self = self else { return }
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)
       })
       .disposed(by: disposeBag)
@@ -46,7 +47,7 @@ class SilentModeTestViewController: BaseViewController {
     DispatchQueue.main.async {
       self.testCompletedView.isHidden = false
     }
-    DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [viewModel] in
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak viewModel] in
       viewModel?.startNextTest()
     }
   }
