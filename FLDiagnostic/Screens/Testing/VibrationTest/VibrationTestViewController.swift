@@ -24,12 +24,14 @@ class VibrationTestViewController: BaseViewController {
         setupStyle()
 
         playVibroAgainButton.rx.tap
+            .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: {
                 self.viewModel.playVibro()
             })
             .disposed(by: disposeBag)
 
         noVibroButton.rx.tap
+            .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: { [unowned self] in
               self.viewModel.test.isPassed = false
               self.viewModel.notWorkingDiagnostic(self.viewModel.test)
@@ -37,6 +39,7 @@ class VibrationTestViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         haveVibroButton.rx.tap
+            .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: {
                 self.endTest()
             })

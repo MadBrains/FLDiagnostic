@@ -25,6 +25,8 @@ class BluetoothTestViewController: BaseViewController {
 
     private var viewModel: BluetoothTestViewModel!
     private var disposeBag = DisposeBag()
+  
+  private var isFinished = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,13 @@ class BluetoothTestViewController: BaseViewController {
 
         manualWorkingButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.viewModel.startNextTest()
+              guard let self = self, !self.isFinished else {
+                return
+              }
+              
+              self.isFinished = true
+              
+              self.viewModel.startNextTest()
             })
             .disposed(by: disposeBag)
 
@@ -112,6 +120,12 @@ class BluetoothTestViewController: BaseViewController {
     }
 
     func endTest() {
+      guard !self.isFinished else {
+        return
+      }
+      
+      self.isFinished = true
+      
         DispatchQueue.main.async {
             self.testCompletedView.isHidden = false
             self.hideLoadingView()

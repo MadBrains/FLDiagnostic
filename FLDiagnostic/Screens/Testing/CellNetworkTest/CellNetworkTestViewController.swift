@@ -44,7 +44,9 @@ class CellNetworkTestViewController: BaseViewController {
 
     setupStyle()
 
-    notWorkingButton.rx.tap.bind(to: viewModel.notWorkingButtonPressed).disposed(by: disposeBag)
+    notWorkingButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
+      .bind(to: viewModel.notWorkingButtonPressed).disposed(by: disposeBag)
 
     viewModel.availabilitySIM
       .subscribe(onNext: { isSimCardAvailable in
@@ -57,6 +59,7 @@ class CellNetworkTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     callButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         let app = UIApplication.shared
         if let phoneCallURL = URL(string: "tel://060"), app.canOpenURL(phoneCallURL) {
@@ -70,6 +73,7 @@ class CellNetworkTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     retryCallButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         let app = UIApplication.shared
         if let phoneCallURL = URL(string: "tel://060"), app.canOpenURL(phoneCallURL) {
@@ -83,6 +87,7 @@ class CellNetworkTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     retryCallSoundButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         let app = UIApplication.shared
         if let phoneCallURL = URL(string: "tel://060"), app.canOpenURL(phoneCallURL) {
@@ -96,6 +101,7 @@ class CellNetworkTestViewController: BaseViewController {
 		}).disposed(by: disposeBag)
 
     noSoundButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)
@@ -103,6 +109,7 @@ class CellNetworkTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     noCallButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)
@@ -110,12 +117,14 @@ class CellNetworkTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     hadCallButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.showCallSoundTestQuestionView()
       })
       .disposed(by: disposeBag)
 
     wasSoundButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.endTest()
       })

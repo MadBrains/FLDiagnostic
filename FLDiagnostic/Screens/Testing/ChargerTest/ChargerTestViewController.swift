@@ -36,7 +36,9 @@ class ChargerTestViewController: BaseViewController {
       }).disposed(by: disposeBag)
 
       
-      notWorkingButton.rx.tap.subscribe(onNext: { [unowned self] in
+      notWorkingButton.rx.tap
+        .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
+        .subscribe(onNext: { [unowned self] in
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)
       }).disposed(by: disposeBag)
 

@@ -86,7 +86,19 @@ class GradeViewModel: BaseControllerViewModel {
   }
   func finishDiagnostics() {
     guard let id = DiagnosticService.shared.id else { return }
-    APIService.shared.finishDiagnostic(id).trackActivity(isLoading)
+    
+    Observable<Void>
+      .just(())
+      .withLatestFrom(isLoading.asObservable())
+      .filter { !$0 }
+      .flatMapLatest { [weak self] _ -> Observable<Result<DefaultSuccessResponse, APIError>> in
+        guard let self = self else {
+          return .empty()
+        }
+        
+        return APIService.shared.finishDiagnostic(id)
+          .trackActivity(self.isLoading)
+      }
       .subscribe(onNext: { (result) in
         DiagnosticService.shared.onGetGrade?(self.grade, nil)
         self.dismissNavigation.onNext(())

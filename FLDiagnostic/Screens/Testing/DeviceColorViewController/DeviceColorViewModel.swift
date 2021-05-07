@@ -15,27 +15,33 @@ class DeviceColorViewModel: BaseCollectionViewViewModel {
   var nextButtonColor = BehaviorSubject<UIColor>(value: #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1))
   var nextButtonPressed = PublishSubject<Void>()
   
+  let isFLLoading = ActivityIndicator()
+  
   var selectedColor: DeviceColor? = nil
   var colors: [DeviceColor] = DeviceColor.colors()
   private var disposeBag = DisposeBag()
   
   override func setupModel() {
     super.setupModel()
-    self.nextButtonPressed.asObserver()
-      .filter({ self.selectedColor != nil })
-      .subscribe(onNext: { [unowned self] () in
+    
+    self.nextButtonPressed.asObservable()
+      .withLatestFrom(isFLLoading.asObservable()) { $1 }
+      .filter { isLoading in self.selectedColor != nil && !isLoading }
+      .subscribe(onNext: { [unowned self] _ in
         guard let color = self.selectedColor?.name else { return }
-        APIService.shared.pathDevice(color: color).subscribe(onNext: { response in
-          switch response {
-          case .success(_):
-            DiagnosticService.shared.resetTimer()
-            self.showNextTestViewController()
-          case .failure(let error):
-            self.showError.onNext((error.localizedDescription, nil))
-          default:
-            break
-          }
-        })
+        APIService.shared.pathDevice(color: color)
+          .trackActivity(isFLLoading)
+          .subscribe(onNext: { response in
+              switch response {
+              case .success(_):
+                DiagnosticService.shared.resetTimer()
+                self.showNextTestViewController()
+              case .failure(let error):
+                self.showError.onNext((error.localizedDescription, nil))
+              default:
+                break
+              }
+          })
           .disposed(by: self.disposeBag)
     }).disposed(by: disposeBag)
   }

@@ -41,6 +41,7 @@ class BiometricsTestViewController: BaseViewController {
     }
 
     biometricsNotWorkingButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)
@@ -48,12 +49,14 @@ class BiometricsTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     biometricsDontHaveButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.viewModel.startNextTest()
       })
       .disposed(by: disposeBag)
 
     biometricsWorkingButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.endTest()
       })

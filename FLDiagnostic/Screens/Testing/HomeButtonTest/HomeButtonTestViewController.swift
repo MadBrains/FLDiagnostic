@@ -33,10 +33,11 @@ class HomeButtonTestViewController: BaseViewController {
     }).disposed(by: disposeBag)
 
     notWorkingButton.rx.tap
-    .subscribe(onNext: { [unowned self] in
-      self.viewModel.notWorkingDiagnostic(self.viewModel.test)
-    })
-    .disposed(by: disposeBag)
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
+      .subscribe(onNext: { [unowned self] in
+        self.viewModel.notWorkingDiagnostic(self.viewModel.test)
+      })
+      .disposed(by: disposeBag)
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 4.5) {
       self.tutorialView.isHidden = true

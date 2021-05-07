@@ -38,24 +38,28 @@ class ScreenTestViewController: BaseViewController {
     setupStyle()
 
     startScreenTestButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.showScreenTestView()
       })
       .disposed(by: disposeBag)
 
     retryScreenTestButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.showScreenTestView()
       })
       .disposed(by: disposeBag)
 
     noDefectsButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.endTest()
       })
       .disposed(by: disposeBag)
 
     haveDefectsButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)

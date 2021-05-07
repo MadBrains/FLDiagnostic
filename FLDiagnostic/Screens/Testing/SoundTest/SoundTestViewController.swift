@@ -33,6 +33,7 @@ class SoundTestViewController: BaseViewController {
           .disposed(by: disposeBag)
 
       noSoundButton.rx.tap
+          .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
           .subscribe(onNext: { [unowned self] in
             self.viewModel.test.isPassed = false
             self.viewModel.notWorkingDiagnostic(self.viewModel.test)
@@ -40,6 +41,7 @@ class SoundTestViewController: BaseViewController {
           .disposed(by: disposeBag)
 
       haveSoundButton.rx.tap
+          .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
           .subscribe(onNext: {
               self.endTest()
           })

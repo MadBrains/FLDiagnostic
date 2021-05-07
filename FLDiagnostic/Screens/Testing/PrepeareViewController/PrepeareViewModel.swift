@@ -32,7 +32,9 @@ class PrepeareControllerViewModel: BaseControllerViewModel {
     
     startDiagnosticSession()
     
-    nextButtonPressed.asObserver().subscribe(onNext: { [unowned self] () in
+    nextButtonPressed.asObserver()
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
+      .subscribe(onNext: { [unowned self] () in
       if self.successConnection {
         self.showNextTestViewController()
       } else {

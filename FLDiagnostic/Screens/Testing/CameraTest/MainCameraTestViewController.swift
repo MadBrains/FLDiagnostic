@@ -29,12 +29,14 @@ class MainCameraTestViewController: BaseViewController {
     setupStyle()
 
     yesButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: {
         self.endTest()
       })
       .disposed(by: disposeBag)
 
     noButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)

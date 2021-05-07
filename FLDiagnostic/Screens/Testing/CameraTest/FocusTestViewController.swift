@@ -30,6 +30,7 @@ class FocusTestViewController: BaseViewController {
     setupStyle()
 
     focusNotWorkingButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [unowned self] in
         self.viewModel.test.isPassed = false
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)

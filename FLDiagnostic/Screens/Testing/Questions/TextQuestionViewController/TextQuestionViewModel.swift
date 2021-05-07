@@ -45,11 +45,14 @@ class TextQuestionViewModel: BaseControllerViewModel {
     textFieldText.subscribe(onNext: { text in
       self.nextButtonColor.onNext(!text.isEmpty ? #colorLiteral(red: 1, green: 0.4039215686, blue: 0.1960784314, alpha: 1) : #colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1))
       }).disposed(by: disposeBag)
-    nextButtonPressed.asObserver().withLatestFrom(textFieldText).subscribe(onNext: { [unowned self] (text) in
-      self.question.timeSpent = DiagnosticService.shared.calculateSpentTime()
-      self.question.answer = text
-      self.showNextTestViewController()
-    }).disposed(by: disposeBag)
+    nextButtonPressed.asObserver()
+      .withLatestFrom(textFieldText)
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
+      .subscribe(onNext: { [unowned self] (text) in
+        self.question.timeSpent = DiagnosticService.shared.calculateSpentTime()
+        self.question.answer = text
+        self.showNextTestViewController()
+      }).disposed(by: disposeBag)
   }
 }
 extension TextQuestionViewModel: UITextFieldDelegate {

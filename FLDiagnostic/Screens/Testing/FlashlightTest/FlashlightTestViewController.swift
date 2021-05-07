@@ -22,6 +22,7 @@ class FlashlightTestViewController: BaseViewController {
         setupStyle()
 
         noLightButton.rx.tap
+            .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: { [unowned self] () in
               self.viewModel.test.isPassed = false
               self.viewModel.notWorkingDiagnostic(self.viewModel.test)
@@ -29,6 +30,7 @@ class FlashlightTestViewController: BaseViewController {
             .disposed(by: disposeBag)
 
         haveLightButton.rx.tap
+            .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
             .subscribe(onNext: {
                 self.endTest()
             })

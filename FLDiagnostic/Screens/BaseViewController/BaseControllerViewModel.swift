@@ -19,6 +19,9 @@ class BaseControllerViewModel: NSObject {
   var modalAlert = PublishSubject<UIViewController>()
   var isLoading = ActivityIndicator()
   var dismissNavigation = PublishSubject<Void>()
+  
+  private let isFinishing = BehaviorSubject<Bool>(value: false)
+  
   private var disposeBag = DisposeBag()
   
   override init() {
@@ -67,7 +70,7 @@ class BaseControllerViewModel: NSObject {
     alertController.addAction(cancelAction)
 
     let abortAction = UIAlertAction(title: "Продолжить", style: .destructive) { (_) in
-      //Меняет ответ для вопроса, если денаим диангностику из экрана повторных ответов
+      //Меняет ответ для вопроса, если денаим диагностику из экрана повторных ответов
       if let question = question {
         if let isPassed = question.isPassed { question.isPassed = !isPassed }
       }
@@ -83,29 +86,60 @@ class BaseControllerViewModel: NSObject {
     guard let id = DiagnosticService.shared.id else { return }
     let tests = DiagnosticService.shared.createTestResultParameters()
     let questions = DiagnosticService.shared.createQuestionsResultParameters()
-    APIService.shared.saveDiagnostic(id, tests, questions)
-      .trackActivity(self.isLoading)
-      .subscribe(onNext: { [unowned self] (result) in
-      switch result {
-      case .success(let response):
-        self.getGrade()
-      case .failure(let error):
-        self.showError.onNext((error.localizedDescription, nil))
-        break;
+    
+    Observable<Void>
+      .just(())
+      .withLatestFrom(isFinishing.asObservable())
+      .filter { !$0 }
+      .do(
+        onNext: { [weak self] _ in
+          self?.isFinishing.onNext(true)
+        }
+      )
+      .flatMapLatest { [weak self] _ -> Observable<Result<DefaultSuccessResponse, APIError>> in
+        guard let self = self else {
+          return .empty()
+        }
+        
+        return APIService.shared.saveDiagnostic(id, tests, questions)
+          .trackActivity(self.isLoading)
       }
-    }).disposed(by: disposeBag)
+      .do(
+        onError: { [weak self] _ in
+          self?.isFinishing.onNext(false)
+        }
+      )
+      .subscribe(onNext: { [unowned self] (result) in
+        switch result {
+        case .success(let response):
+          self.getGrade()
+        case .failure(let error):
+          self.isFinishing.onNext(false)
+          self.showError.onNext((error.localizedDescription, nil))
+          break;
+        }
+      }).disposed(by: disposeBag)
   }
   
-  func getGrade() {
+  private func getGrade() {
     guard let id = DiagnosticService.shared.id else { return }
-    APIService.shared.getDiagnoscicResult(id).trackActivity(self.isLoading).subscribe(onNext: { (result) in
-      switch result {
-      case .success(let response):
-        self.showGradeViewController(response)
-      case .failure(let error):
-        self.showError.onNext((error.localizedDescription, nil))
-        break;
-      }
+    APIService.shared.getDiagnoscicResult(id).trackActivity(self.isLoading)
+      .do(
+        onNext: { [weak self] _ in
+          self?.isFinishing.onNext(false)
+        },
+        onError: { [weak self] _ in
+          self?.isFinishing.onNext(false)
+        }
+      )
+      .subscribe(onNext: { [weak self] (result) in
+        switch result {
+        case .success(let response):
+          self?.showGradeViewController(response)
+        case .failure(let error):
+          self?.showError.onNext((error.localizedDescription, nil))
+          break;
+        }
       }).disposed(by: disposeBag)
   }
   

@@ -32,6 +32,7 @@ class SilentModeTestViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     notWorkingButton.rx.tap
+      .throttle(.milliseconds(1000), scheduler: MainScheduler.asyncInstance)
       .subscribe(onNext: { [weak self] () in
 				guard let self = self else { return }
         self.viewModel.notWorkingDiagnostic(self.viewModel.test)
